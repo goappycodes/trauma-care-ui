@@ -30,7 +30,7 @@ real content, and it stops invented copy surviving to launch.
 | "Improving the outcome of the trauma victim" | ✏️ | Compressed from "We aim to improve the outcome of the trauma victim by establishing best practice throughout the whole chain of care" |
 | Lead paragraph | ✏️ | Synthesised from the mission statement. **"From the roadside to rehabilitation" is our phrase** — theirs is "from the moment of injury, to the return to active life" |
 | "Join Trauma Care" (CTA) | ✏️ | Live site uses "JOIN TODAY!" |
-| "Watch free CPD webinars" (CTA) | ✏️ | Live site: "All of our CPD webinars are completely free to attend" |
+| "Watch CPD webinars" (CTA) | ✏️ | Ours. Previously "Watch free CPD webinars" — see the withheld-claims section |
 | "Registered charity 1078780" | ✅ | Footer, every page |
 | "Founded 1996" | ❓ | About text says 1996; the live footer says "© 1994 – 2025" |
 | "200+ CPD recordings" | ✅ | "There are over 200 more webinars available in the Member's Portal" |
@@ -70,7 +70,7 @@ real content, and it stops invented copy surviving to launch.
 
 | Content | Status | Source / note |
 |---|---|---|
-| "Subscribing is completely free…" | ✏️ | Close paraphrase of "Subscribing to Trauma Care is completely free, and means you will always receive the latest news and event notifications!" |
+| "You will get our event announcements, new webinar dates and the latest CPD poster, and nothing else." | ✏️ | Rewritten from "Subscribing to Trauma Care is completely free, and means you will always receive the latest news and event notifications!" — the "completely free" opening is withheld, see below |
 | Consent wording | ✏️ | Ours. The live site collects subscribers with **no** consent statement — a PECR gap |
 
 ### Sponsor strip
@@ -80,7 +80,8 @@ real content, and it stops invented copy surviving to launch.
 | Slater + Gordon — Platinum partner | ✅ | Named as Platinum Partner on the conference page |
 | Galen — Corporate partner | ✅ | Live homepage |
 | Academic partners | ✅ | Live nav |
-| Two "Partner logo" tiles | ⚠️ | Placeholders. Real logo files outstanding |
+| Six partner logos — Slater + Gordon, Galen, Qualsafe, University of Plymouth, University of Gloucestershire, TCAR Education Programs | ✅ | Downloaded from the charity's own CDN (homepage and conference pages). Placeholder tiles replaced |
+| Tier captions ("Platinum partner" etc.) | 🚫 | **Withheld from the strip.** Only Slater + Gordon's Platinum status is sourced (conference page); the other five tiers are unknown. Asserting them would be invention. Tiers belong on partners.html |
 
 ---
 
@@ -226,3 +227,36 @@ styleguide. Re-checking the source: that line is an **unattributed pull-quote** 
 the top of the membership page. Greaves signs a different passage further down.
 The attributed passage is now used in both places, and the pull-quote is only
 safe to use unattributed.
+
+---
+
+## index.html — Welcome and Donate sections
+
+| Content | Status | Source / note |
+|---|---|---|
+| Welcome heading and body | ✅ | Live homepage welcome note. Wording verbatim; the "exclusive section for Members" and "we hope you'll find something" paragraphs are **merged into one**, at the client's request |
+| Signature — Professor Ian Greaves, Co-Founder | ✅ | As it appears on the live homepage. The fuller "Professor Colonel … Chairman" form is from the membership page and is not used here |
+| "Donate to Trauma Care" + body | ✅ | Live homepage donate block. **"quality free education" → "quality education"** — see the withheld-claims section |
+| "Add Gift Aid and we receive 25% more, at no extra cost to you" | ✏️ | The 25% uplift is the standard HMRC rate. Covers D3 |
+| "Other ways to give" | ✏️ | Ours. Routes to the fundraising page |
+
+**Earlier rewrite withdrawn.** The welcome copy was briefly replaced with a
+heading drawn from the membership page and the member professions shown as
+tags. The client asked for the live section content, so the original copy is
+restored verbatim — including its references to the site's own navigation.
+
+---|---|---|
+| "Welcome to Trauma Care" | ✅ | Live homepage section heading |
+| "We are delighted that membership is growing at a very healthy rate… doctors, nurses, paramedics, first responders, physiotherapists, remote environmental medics, military medical personnel…" | ✅ | Membership page, verbatim |
+| "Our aims are clear: to improve patient care through education, publishing and research" | ✅ | Membership page, verbatim |
+| "consider becoming part of the Trauma Care family" | ✅ | Live homepage welcome note |
+| Signature — Professor Colonel Ian Greaves, Chairman and Co-Founder | ✅ | He signs the membership passage as Chairman; the homepage note as Co-Founder |
+| "Donate to Trauma Care" + body | ✅ | Live homepage donate block. **"quality free education" → "quality education"** — see the withheld-claims section |
+| "Other ways to give" CTA | ✏️ | Ours. Routes to the fundraising page |
+
+**Welcome copy deliberately differs from the live original.** The live note is
+largely a description of the site's own navigation — "you can find out how to
+become one… by clicking on Membership at the top of this page". The route cards
+above it already do that job. The sentiment and the signature are kept; the
+navigation-in-prose is replaced with the membership-page passage, which says
+something about the organisation instead.

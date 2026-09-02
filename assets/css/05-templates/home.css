@@ -81,3 +81,27 @@
 .tc-membership-price .tc-stat__label {
   max-width: 36ch;
 }
+
+/* --------------------------------------------------------------------------
+   Welcome signature
+   The signed sign-off on the welcome note. Name reads at text colour, role
+   stays muted beneath it.
+   -------------------------------------------------------------------------- */
+
+.tc-signature {
+  margin-block-start: var(--tc-space-6);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+}
+
+.tc-signature b {
+  display: block;
+  color: var(--tc-color-text);
+}
+
+/* Centred body copy inside a 960px container. Without a measure it runs
+   to ~110 characters a line. */
+.tc-prose-center {
+  max-width: 60ch;
+  margin-inline: auto;
+}

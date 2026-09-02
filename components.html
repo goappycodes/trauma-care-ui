@@ -23,6 +23,13 @@
 
 <a class="tc-skip-link" href="#main">Skip to main content</a>
 
+<!-- Target for the footer's "Back to top". It cannot live on the <header>:
+     that is position:sticky, so once the page is scrolled it is already
+     pinned at the viewport top and the browser scrolls nowhere. This span is
+     in normal flow at document offset 0. tabindex="-1" moves focus with it,
+     so the next Tab starts from the top of the page rather than the footer. -->
+<span id="top" tabindex="-1"></span>
+
 <!-- ==================================================================== -->
 <!-- template-part: header                                                -->
 <!-- WordPress: header.php → get_template_part('template-parts/header')   -->
@@ -31,7 +38,7 @@
 <!-- Logged-out state. The signed-in variant swaps .tc-nav__actions for   -->
 <!-- the account menu — see components.html.                              -->
 <!-- ==================================================================== -->
-<header class="tc-site-header" id="top" data-site-header>
+<header class="tc-site-header" data-site-header>
 
   <!-- Utility bar ---------------------------------------------------- -->
   <div class="tc-utility-bar">
@@ -483,7 +490,7 @@
               <tr><th scope="row">Contact as a description list</th><td>Address, phone and opening hours are label/value pairs, so <code>dl</code> conveys the relationship that a stack of paragraphs loses.</td></tr>
               <tr><th scope="row">Social links are 44&nbsp;×&nbsp;44px</th><td>Icon-only targets, each with visually hidden text naming the network. The icon alone is never the accessible name.</td></tr>
               <tr><th scope="row">Every colour measured</th><td>The lowest-contrast text in the footer is the legal line at <strong>6.35:1</strong> on the navy ground; body text sits at <strong>10.7:1</strong>. Both clear AA.</td></tr>
-              <tr><th scope="row">Back to top is a link, not a button</th><td>It moves to a document fragment, so it belongs in the same category as any other in-page link and works without JavaScript.</td></tr>
+              <tr><th scope="row">Back to top is a link, not a button</th><td>It moves to a document fragment, so it belongs in the same category as any other in-page link and works without JavaScript. The target is a zero-height <code>#top</code> anchor at the start of <code>&lt;body&gt;</code> &mdash; not the header, which is sticky and therefore already at the top of the viewport, so jumping to it would scroll nowhere.</td></tr>
             </tbody>
           </table>
         </div>

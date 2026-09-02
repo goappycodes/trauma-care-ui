@@ -55,6 +55,15 @@
 }
 
 /* --------------------------------------------------------------------------
+   Top anchor — the footer's "Back to top" target. Zero-size and in flow at
+   the very start of <body>. It takes focus so the next Tab resumes from the
+   top of the page, but a focus ring on a 0 × 0 box is just a stray dot in
+   the corner, so it is suppressed here.
+   -------------------------------------------------------------------------- */
+
+#top:focus { outline: none; box-shadow: none; }
+
+/* --------------------------------------------------------------------------
    Visually hidden — available to screen readers, removed from view.
    -------------------------------------------------------------------------- */
 

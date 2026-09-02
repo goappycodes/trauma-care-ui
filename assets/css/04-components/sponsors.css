@@ -26,6 +26,15 @@
   border-radius: var(--tc-radius-md);
 }
 
+/* Supplied logos vary wildly: 1.5:1 to 4.25:1, some transparent PNGs, one
+   opaque JPEG. Capping the height and containing rather than cropping keeps
+   them optically comparable and stops one wide logo dominating the row. */
+.tc-sponsor img {
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Placeholder used while real logo files are outstanding. */
 .tc-sponsor__placeholder {
   font-family: var(--tc-font-display);

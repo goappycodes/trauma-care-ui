@@ -159,6 +159,9 @@
   gap: var(--tc-space-3);
 }
 
+/* For actions under a centred section head. */
+.tc-btn-group--center { justify-content: center; }
+
 /* --------------------------------------------------------------------------
    Text link with a trailing arrow — used in cards and section headers.
    -------------------------------------------------------------------------- */
