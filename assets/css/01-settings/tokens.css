@@ -1,0 +1,228 @@
+/* ==========================================================================
+   TRAUMA CARE — DESIGN TOKENS
+   --------------------------------------------------------------------------
+   Single source of truth for colour, type, space, radius, shadow and motion.
+   Every other stylesheet consumes these variables and must not hard-code a
+   raw value. When this becomes a WordPress theme these map 1:1 to
+   theme.json / CSS custom properties, so keep the naming stable.
+
+   Prefix: --tc-  (avoids collisions with WordPress core and plugin CSS)
+   ========================================================================== */
+
+:root {
+
+  /* ------------------------------------------------------------------
+     1. COLOUR — RAW RAMPS
+     Ramps are the palette. Never reference a ramp value directly in a
+     component; use the semantic aliases in section 2.
+     ------------------------------------------------------------------ */
+
+  /* Green — derived from the Trauma Care logo.
+     500 is the exact brand green. It measures 2.68:1 on white, so it is an
+     identity / accent colour only: large shapes, icons, graphic devices.
+     700 and darker are the text- and UI-safe steps. */
+  --tc-green-50:  #edf9f0;
+  --tc-green-100: #d5f2dd;
+  --tc-green-200: #a8e5bb;
+  --tc-green-300: #6ed491;
+  --tc-green-500: #03b732;  /* BRAND — accent only, never small text */
+  --tc-green-600: #05913c;
+  --tc-green-700: #04773a;  /* 5.67:1 on white — links, buttons, UI */
+  --tc-green-800: #05602f;  /* 7.71:1 on white */
+  --tc-green-900: #063f21;
+
+  /* Ink — the neutral spine of the system. A cool navy-grey rather than
+     pure grey, so dark sections read as considered rather than default. */
+  --tc-ink-50:  #f7fafc;
+  --tc-ink-100: #f0f4f8;
+  --tc-ink-200: #e1e7ee;
+  --tc-ink-300: #c2ccd8;
+  --tc-ink-400: #8a9aae;  /* decorative / disabled only — 3.0:1 */
+  --tc-ink-500: #5f7189;  /* 4.99:1 on white — muted body text */
+  --tc-ink-600: #445771;
+  --tc-ink-700: #24354d;
+  --tc-ink-800: #14243a;
+  --tc-ink-900: #0b1622;  /* headings, dark section grounds */
+
+  /* Red — the third figure in the logo. Used for Donate and for errors.
+     Because one hue carries two meanings, errors are ALWAYS accompanied by
+     an icon and by text, so colour is never the only signal (WCAG 1.4.1). */
+  --tc-red-50:  #fdeceD;
+  --tc-red-500: #df0000;  /* identity red, from the logo */
+  --tc-red-600: #c8102e;  /* 5.88:1 on white — Donate, error text */
+  --tc-red-700: #9b0b21;
+
+  /* Support hues — status only, not brand */
+  --tc-amber-50:  #fdf6e9;
+  --tc-amber-600: #b45309;  /* 5.02:1 on white */
+  --tc-blue-50:   #eaf2fb;
+  --tc-blue-600:  #0f5fa6;  /* 5.63:1 on white */
+
+  --tc-white: #ffffff;
+
+  /* Focus ring — deliberately outside the brand palette so it is never
+     confused with a state, and legible on light and dark grounds alike. */
+  --tc-focus-inner: #ffdd00;
+  --tc-focus-outer: var(--tc-ink-900);
+
+  /* ------------------------------------------------------------------
+     2. COLOUR — SEMANTIC ALIASES
+     Components reference these. Re-point them to re-theme the site.
+     ------------------------------------------------------------------ */
+
+  --tc-color-bg:              var(--tc-white);
+  --tc-color-bg-subtle:       var(--tc-ink-50);
+  --tc-color-bg-inverse:      var(--tc-ink-900);
+  /* A second dark ground, one step lighter, so consecutive dark bands stay
+     readable as separate bands rather than merging into one mass. */
+  --tc-color-bg-inverse-alt:  var(--tc-ink-800);
+  --tc-color-bg-brand-subtle: var(--tc-green-50);
+
+  --tc-color-surface:         var(--tc-white);
+
+  --tc-color-border:          var(--tc-ink-200);
+  --tc-color-border-strong:   var(--tc-ink-300);
+  --tc-color-border-inverse:  rgba(255, 255, 255, 0.18);
+
+  --tc-color-text:            var(--tc-ink-900);
+  --tc-color-text-body:       var(--tc-ink-700);
+  --tc-color-text-muted:      var(--tc-ink-500);
+  --tc-color-text-inverse:    var(--tc-white);
+  --tc-color-text-inverse-muted: rgba(255, 255, 255, 0.76);
+  --tc-color-text-on-brand:   var(--tc-white);
+
+  --tc-color-brand:           var(--tc-green-500);
+  --tc-color-brand-strong:    var(--tc-green-700);
+  --tc-color-brand-deep:      var(--tc-green-800);
+
+  --tc-color-link:            var(--tc-green-700);
+  --tc-color-link-hover:      var(--tc-green-800);
+  --tc-color-link-inverse:    var(--tc-green-300);
+
+  --tc-color-donate:          var(--tc-red-600);
+  --tc-color-donate-hover:    var(--tc-red-700);
+
+  --tc-color-danger:          var(--tc-red-600);
+  --tc-color-danger-bg:       var(--tc-red-50);
+  --tc-color-success:         var(--tc-green-700);
+  --tc-color-success-bg:      var(--tc-green-50);
+  --tc-color-warning:         var(--tc-amber-600);
+  --tc-color-warning-bg:      var(--tc-amber-50);
+  --tc-color-info:            var(--tc-blue-600);
+  --tc-color-info-bg:         var(--tc-blue-50);
+
+  /* ------------------------------------------------------------------
+     3. TYPOGRAPHY
+     Display: Plus Jakarta Sans — geometric and confident, echoing the
+     weight of the logo wordmark. Headings and numerals only.
+     Body: Inter — a UI/reading face with a tall x-height, chosen for
+     dense clinical content read on phones in the field.
+     ------------------------------------------------------------------ */
+
+  --tc-font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --tc-font-body:    "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --tc-font-mono:    ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  /* Fluid scale. Min = 360px viewport, max = 1280px viewport. */
+  --tc-fs-2xs:  0.75rem;                                   /* 12px */
+  --tc-fs-xs:   0.8125rem;                                 /* 13px */
+  --tc-fs-sm:   0.875rem;                                  /* 14px */
+  --tc-fs-base: 1.0625rem;                                 /* 17px */
+  --tc-fs-md:   clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem);   /* 17 → 18 */
+  --tc-fs-lg:   clamp(1.125rem, 1.06rem + 0.3vw, 1.25rem);     /* 18 → 20 */
+  --tc-fs-xl:   clamp(1.25rem, 1.11rem + 0.6vw, 1.5rem);       /* 20 → 24 */
+  --tc-fs-2xl:  clamp(1.5rem, 1.29rem + 0.9vw, 1.875rem);      /* 24 → 30 */
+  --tc-fs-3xl:  clamp(1.75rem, 1.43rem + 1.4vw, 2.25rem);      /* 28 → 36 */
+  --tc-fs-4xl:  clamp(2rem, 1.53rem + 2.1vw, 2.75rem);         /* 32 → 44 */
+  --tc-fs-5xl:  clamp(2.375rem, 1.61rem + 3.4vw, 3.5rem);      /* 38 → 56 */
+  --tc-fs-6xl:  clamp(2.75rem, 1.61rem + 5.1vw, 4.5rem);       /* 44 → 72 */
+
+  --tc-lh-none:    1;
+  --tc-lh-tight:   1.15;
+  --tc-lh-snug:    1.25;
+  --tc-lh-normal:  1.5;
+  --tc-lh-relaxed: 1.65;
+
+  --tc-fw-regular:   400;
+  --tc-fw-medium:    500;
+  --tc-fw-semibold:  600;
+  --tc-fw-bold:      700;
+  --tc-fw-extrabold: 800;
+
+  --tc-tracking-tight:  -0.02em;
+  --tc-tracking-snug:   -0.01em;
+  --tc-tracking-wide:   0.06em;
+
+  /* Measure — caps line length for readability (WCAG 1.4.8 guidance). */
+  --tc-measure:        66ch;
+
+  /* ------------------------------------------------------------------
+     4. SPACING — 4px base grid
+     ------------------------------------------------------------------ */
+
+  --tc-space-1:  0.25rem;   /*  4px */
+  --tc-space-2:  0.5rem;    /*  8px */
+  --tc-space-3:  0.75rem;   /* 12px */
+  --tc-space-4:  1rem;      /* 16px */
+  --tc-space-5:  1.25rem;   /* 20px */
+  --tc-space-6:  1.5rem;    /* 24px */
+  --tc-space-7:  2rem;      /* 32px */
+  --tc-space-8:  2.5rem;    /* 40px */
+  --tc-space-9:  3rem;      /* 48px */
+  --tc-space-10: 4rem;      /* 64px */
+  --tc-space-11: 5rem;      /* 80px */
+  --tc-space-12: 6rem;      /* 96px */
+
+  /* Section rhythm — fluid so mobile does not waste vertical space. */
+  --tc-section-y:       clamp(3rem, 2rem + 5vw, 6rem);
+  --tc-section-y-tight: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+
+  /* ------------------------------------------------------------------
+     5. LAYOUT
+     ------------------------------------------------------------------ */
+
+  --tc-container:        1240px;
+  --tc-container-narrow: 960px;
+  --tc-container-prose:  760px;
+  --tc-gutter:           clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+
+  /* ------------------------------------------------------------------
+     6. RADIUS
+     The logo is a rounded square; the card radius deliberately echoes it.
+     ------------------------------------------------------------------ */
+
+  --tc-radius-xs:   4px;
+  --tc-radius-sm:   6px;
+  --tc-radius-md:   10px;
+  --tc-radius-lg:   16px;
+  --tc-radius-full: 999px;
+
+  /* ------------------------------------------------------------------
+     7. ELEVATION
+     Low, cool shadows. Elevation signals interactivity, not decoration.
+     ------------------------------------------------------------------ */
+
+  --tc-shadow-xs: 0 1px 2px rgba(11, 22, 34, 0.06);
+  --tc-shadow-sm: 0 1px 3px rgba(11, 22, 34, 0.08), 0 1px 2px rgba(11, 22, 34, 0.04);
+  --tc-shadow-md: 0 4px 12px rgba(11, 22, 34, 0.08), 0 2px 4px rgba(11, 22, 34, 0.04);
+  --tc-shadow-lg: 0 12px 28px rgba(11, 22, 34, 0.12), 0 4px 8px rgba(11, 22, 34, 0.05);
+
+  /* ------------------------------------------------------------------
+     8. MOTION
+     ------------------------------------------------------------------ */
+
+  --tc-duration-fast: 120ms;
+  --tc-duration-base: 200ms;
+  --tc-duration-slow: 320ms;
+  --tc-ease:          cubic-bezier(0.2, 0, 0.2, 1);
+  --tc-ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ------------------------------------------------------------------
+     9. Z-INDEX
+     ------------------------------------------------------------------ */
+
+  --tc-z-base:     1;
+  --tc-z-header:   200;
+  --tc-z-dropdown: 300;
+  --tc-z-skiplink: 700;
+}

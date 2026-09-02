@@ -1,0 +1,60 @@
+/* ==========================================================================
+   COMPONENT — SPONSOR / PARTNER STRIP
+   --------------------------------------------------------------------------
+   The current site repeats "Our Sponsors and Partners" plus a logo grid on
+   almost every page, so it is a component rather than page content.
+
+   Logos are supplied by the client at wildly different aspect ratios, so
+   each sits in a fixed-height tile and is contained rather than cropped —
+   that stops one wide logo dominating the row.
+   ========================================================================== */
+
+.tc-sponsors__grid {
+  display: grid;
+  gap: var(--tc-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  align-items: stretch;
+}
+
+.tc-sponsor {
+  display: grid;
+  place-items: center;
+  min-height: 88px;
+  padding: var(--tc-space-4);
+  background-color: var(--tc-color-surface);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+}
+
+/* Placeholder used while real logo files are outstanding. */
+.tc-sponsor__placeholder {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-bold);
+  line-height: var(--tc-lh-snug);
+  text-align: center;
+  color: var(--tc-ink-600);
+}
+
+.tc-sponsor__tier {
+  display: block;
+  margin-block-start: var(--tc-space-1);
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-2xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-brand-strong);
+}
+
+a.tc-sponsor {
+  text-decoration: none;
+  transition: border-color var(--tc-duration-fast) var(--tc-ease),
+              box-shadow var(--tc-duration-fast) var(--tc-ease);
+}
+
+a.tc-sponsor:hover {
+  border-color: var(--tc-color-brand-strong);
+  box-shadow: var(--tc-shadow-sm);
+}
+

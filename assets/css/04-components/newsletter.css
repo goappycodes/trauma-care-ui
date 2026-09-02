@@ -1,0 +1,63 @@
+/* ==========================================================================
+   COMPONENT — NEWSLETTER BAND
+   --------------------------------------------------------------------------
+   Appears above the footer on most pages, and standalone within page
+   content. Consent is an explicit, unticked checkbox rather than an implied
+   opt-in, which is what UK GDPR and PECR require for marketing email.
+   ========================================================================== */
+
+.tc-newsletter {
+  background-color: var(--tc-color-bg-brand-subtle);
+}
+
+.tc-newsletter__inner {
+  display: grid;
+  gap: var(--tc-space-7);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .tc-newsletter__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--tc-space-10);
+    align-items: center;
+  }
+}
+
+.tc-newsletter__title {
+  font-size: var(--tc-fs-3xl);
+  margin: 0;
+}
+
+.tc-newsletter__text {
+  margin: var(--tc-space-4) 0 0;
+  color: var(--tc-color-text-body);
+  max-width: 46ch;
+}
+
+.tc-newsletter__form > * + * { margin-block-start: var(--tc-space-4); }
+
+.tc-newsletter__row {
+  display: grid;
+  gap: var(--tc-space-3);
+}
+
+@media (min-width: 520px) {
+  .tc-newsletter__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+.tc-newsletter .tc-input {
+  background-color: var(--tc-color-surface);
+}
+
+.tc-newsletter__consent {
+  font-size: var(--tc-fs-sm);
+}
+
+.tc-newsletter__consent .tc-choice__label {
+  font-size: var(--tc-fs-sm);
+}
+

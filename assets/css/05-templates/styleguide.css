@@ -1,0 +1,424 @@
+/* ==========================================================================
+   TEMPLATE — STYLEGUIDE
+   Chrome for the design-system document itself. None of this ships to the
+   public site; it exists so the system can be reviewed and signed off.
+   ========================================================================== */
+
+.sg-body { background-color: var(--tc-color-bg); }
+
+/* --------------------------------------------------------------------------
+   Masthead
+   -------------------------------------------------------------------------- */
+
+.sg-masthead {
+  background-color: var(--tc-ink-900);
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(3, 183, 50, 0.28), transparent 60%),
+    radial-gradient(40rem 24rem at 5% 110%, rgba(3, 183, 50, 0.14), transparent 60%);
+  color: var(--tc-white);
+  padding-block: clamp(3rem, 2rem + 5vw, 5.5rem);
+}
+
+.sg-masthead__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-3);
+  margin-block-end: var(--tc-space-7);
+}
+
+.sg-masthead__logo svg { width: 44px; height: 44px; }
+
+.sg-masthead__wordmark {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-extrabold);
+  letter-spacing: var(--tc-tracking-tight);
+  line-height: 1.05;
+  color: var(--tc-white);
+}
+
+.sg-masthead h1 {
+  color: var(--tc-white);
+  max-width: 18ch;
+}
+
+/* The default eyebrow green is a text colour for light grounds; on this dark
+   masthead it measures 3.22:1. Green 300 gives 9.97:1. */
+.sg-masthead .tc-eyebrow { color: var(--tc-green-300); }
+
+.sg-masthead__intro {
+  margin-block-start: var(--tc-space-5);
+  max-width: 62ch;
+  font-size: var(--tc-fs-lg);
+  color: var(--tc-color-text-inverse-muted);
+}
+
+.sg-masthead__meta {
+  margin-block-start: var(--tc-space-8);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tc-space-6);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-inverse-muted);
+}
+
+.sg-masthead__meta b {
+  display: block;
+  color: var(--tc-white);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  font-size: var(--tc-fs-2xs);
+  margin-block-end: var(--tc-space-1);
+}
+
+/* --------------------------------------------------------------------------
+   Layout — sticky contents rail beside the content
+   -------------------------------------------------------------------------- */
+
+.sg-layout {
+  display: grid;
+  gap: var(--tc-space-9);
+  padding-block: var(--tc-space-9);
+}
+
+/* Grid items default to min-width:auto, so a wide child can force its track
+   past the viewport. This lets them shrink instead. */
+.sg-layout > * { min-width: 0; }
+
+@media (min-width: 1024px) {
+  .sg-layout { grid-template-columns: 232px minmax(0, 1fr); gap: var(--tc-space-10); }
+}
+
+.sg-nav { position: relative; }
+
+@media (min-width: 1024px) {
+  .sg-nav {
+    position: sticky;
+    top: var(--tc-space-7);
+    align-self: start;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+}
+
+.sg-nav__title {
+  font-size: var(--tc-fs-2xs);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text-muted);
+  margin-block-end: var(--tc-space-3);
+}
+
+.sg-nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-inline-start: 2px solid var(--tc-color-border);
+}
+
+.sg-nav a {
+  display: block;
+  padding: var(--tc-space-2) var(--tc-space-4);
+  margin-inline-start: -2px;
+  border-inline-start: 2px solid transparent;
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-medium);
+  color: var(--tc-color-text-muted);
+  text-decoration: none;
+}
+
+.sg-nav a:hover {
+  color: var(--tc-color-brand-deep);
+  border-inline-start-color: var(--tc-color-brand-strong);
+  background-color: var(--tc-green-50);
+}
+
+/* --------------------------------------------------------------------------
+   Section scaffolding
+   -------------------------------------------------------------------------- */
+
+.sg-section + .sg-section { margin-block-start: var(--tc-space-12); }
+
+.sg-section__head {
+  padding-block-end: var(--tc-space-5);
+  margin-block-end: var(--tc-space-8);
+  border-block-end: 2px solid var(--tc-ink-900);
+}
+
+.sg-section__number {
+  font-family: var(--tc-font-mono);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-brand-strong);
+  font-weight: var(--tc-fw-bold);
+}
+
+.sg-section__head h2 { margin-block-start: var(--tc-space-2); font-size: var(--tc-fs-3xl); }
+
+.sg-section__head p {
+  margin-block-start: var(--tc-space-3);
+  max-width: var(--tc-measure);
+  color: var(--tc-color-text-muted);
+}
+
+.sg-sub {
+  margin-block: var(--tc-space-9) var(--tc-space-5);
+  font-size: var(--tc-fs-lg);
+}
+
+.sg-note {
+  margin-block-start: var(--tc-space-4);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+  max-width: var(--tc-measure);
+}
+
+/* --------------------------------------------------------------------------
+   Colour swatches
+   -------------------------------------------------------------------------- */
+
+.sg-swatches {
+  display: grid;
+  gap: var(--tc-space-4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+}
+
+.sg-swatch {
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  overflow: hidden;
+  background-color: var(--tc-color-surface);
+}
+
+.sg-swatch__chip {
+  height: 84px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--tc-space-2) var(--tc-space-3);
+  font-size: var(--tc-fs-2xs);
+  font-weight: var(--tc-fw-semibold);
+}
+
+.sg-swatch__info {
+  padding: var(--tc-space-3);
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+.sg-swatch__name {
+  display: block;
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text);
+}
+
+.sg-swatch__hex {
+  display: block;
+  font-family: var(--tc-font-mono);
+  font-size: var(--tc-fs-xs);
+  color: var(--tc-color-text-muted);
+  margin-block-start: 2px;
+  text-transform: uppercase;
+}
+
+.sg-swatch__ratio {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-block-start: var(--tc-space-2);
+  font-size: var(--tc-fs-2xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+}
+
+.sg-pass { color: var(--tc-green-800); }
+.sg-fail { color: var(--tc-red-700); }
+
+/* --------------------------------------------------------------------------
+   Specimen rows (type scale)
+   -------------------------------------------------------------------------- */
+
+.sg-specimen {
+  display: grid;
+  gap: var(--tc-space-3);
+  padding-block: var(--tc-space-5);
+  border-block-end: 1px solid var(--tc-color-border);
+  align-items: baseline;
+}
+
+@media (min-width: 768px) {
+  .sg-specimen { grid-template-columns: 190px minmax(0, 1fr); gap: var(--tc-space-6); }
+}
+
+.sg-specimen__spec {
+  font-family: var(--tc-font-mono);
+  font-size: var(--tc-fs-xs);
+  color: var(--tc-color-text-muted);
+  line-height: var(--tc-lh-normal);
+}
+
+.sg-specimen__spec b {
+  display: block;
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text);
+}
+
+.sg-specimen__sample { min-width: 0; overflow-wrap: break-word; }
+
+/* --------------------------------------------------------------------------
+   Spacing scale visualiser
+   -------------------------------------------------------------------------- */
+
+.sg-space-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--tc-space-4);
+  align-items: center;
+  padding-block: var(--tc-space-2);
+}
+
+.sg-space-row__label {
+  font-family: var(--tc-font-mono);
+  font-size: var(--tc-fs-xs);
+  color: var(--tc-color-text-muted);
+}
+
+.sg-space-row__bar {
+  height: 16px;
+  border-radius: var(--tc-radius-xs);
+  background-color: var(--tc-green-300);
+}
+
+/* --------------------------------------------------------------------------
+   Component demo frame
+   -------------------------------------------------------------------------- */
+
+.sg-demo {
+  padding: var(--tc-space-7);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-color-surface);
+  background-image:
+    linear-gradient(45deg, var(--tc-ink-50) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--tc-ink-50) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--tc-ink-50) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--tc-ink-50) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+.sg-demo--plain {
+  background-image: none;
+  background-color: var(--tc-color-surface);
+}
+
+.sg-demo--subtle {
+  background-image: none;
+  background-color: var(--tc-color-bg-subtle);
+}
+
+.sg-demo--dark {
+  background-image: none;
+  background-color: var(--tc-ink-900);
+  border-color: var(--tc-ink-900);
+}
+
+.sg-demo + .sg-demo { margin-block-start: var(--tc-space-4); }
+
+.sg-demo__label {
+  display: block;
+  font-family: var(--tc-font-mono);
+  font-size: var(--tc-fs-xs);
+  color: var(--tc-color-text-muted);
+  margin-block-end: var(--tc-space-4);
+}
+
+.sg-demo--dark .sg-demo__label { color: rgba(255, 255, 255, 0.6); }
+
+/* --------------------------------------------------------------------------
+   Spec table
+   -------------------------------------------------------------------------- */
+
+.sg-table {
+  font-size: var(--tc-fs-sm);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  overflow: hidden;
+}
+
+.sg-table th,
+.sg-table td {
+  text-align: left;
+  padding: var(--tc-space-3) var(--tc-space-4);
+  border-block-end: 1px solid var(--tc-color-border);
+  vertical-align: top;
+}
+
+.sg-table thead th {
+  background-color: var(--tc-ink-50);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text);
+  font-size: var(--tc-fs-xs);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+}
+
+.sg-table tbody tr:last-child th,
+.sg-table tbody tr:last-child td { border-block-end: 0; }
+
+.sg-table code {
+  font-size: var(--tc-fs-xs);
+  background-color: var(--tc-ink-100);
+  padding: 2px 6px;
+  border-radius: var(--tc-radius-xs);
+  color: var(--tc-ink-800);
+}
+
+/* --------------------------------------------------------------------------
+   Do / Don't
+   -------------------------------------------------------------------------- */
+
+.sg-rules {
+  display: grid;
+  gap: var(--tc-space-4);
+}
+
+@media (min-width: 720px) {
+  .sg-rules { grid-template-columns: 1fr 1fr; }
+}
+
+.sg-rule {
+  padding: var(--tc-space-5) var(--tc-space-6);
+  border-radius: var(--tc-radius-md);
+  border-inline-start: 4px solid;
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-relaxed);
+}
+
+.sg-rule b {
+  display: block;
+  margin-block-end: var(--tc-space-2);
+  font-size: var(--tc-fs-xs);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+}
+
+.sg-rule--do    { background-color: var(--tc-green-50); border-color: var(--tc-green-700); }
+.sg-rule--do b  { color: var(--tc-green-800); }
+.sg-rule--dont  { background-color: var(--tc-red-50); border-color: var(--tc-red-600); }
+.sg-rule--dont b { color: var(--tc-red-700); }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.sg-footer {
+  margin-block-start: var(--tc-space-12);
+  padding-block: var(--tc-space-9);
+  border-block-start: 1px solid var(--tc-color-border);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+}

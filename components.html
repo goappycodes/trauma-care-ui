@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components — Trauma Care</title>
+<meta name="description" content="The Trauma Care component library: reusable interface pieces documented for UI approval and WordPress conversion.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Sets the `js` class before first paint so the no-JavaScript fallback
+     styles never flash. Must stay inline and must stay in the head. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/05-templates/styleguide.css">
+</head>
+
+<body>
+
+<a class="tc-skip-link" href="#main">Skip to main content</a>
+
+<!-- ==================================================================== -->
+<!-- template-part: header                                                -->
+<!-- WordPress: header.php → get_template_part('template-parts/header')   -->
+<!-- Menu items come from the 'primary' nav menu location; the featured   -->
+<!-- block in each panel is an ACF options-page field group.              -->
+<!-- Logged-out state. The signed-in variant swaps .tc-nav__actions for   -->
+<!-- the account menu — see components.html.                              -->
+<!-- ==================================================================== -->
+<header class="tc-site-header" id="top" data-site-header>
+
+  <!-- Utility bar ---------------------------------------------------- -->
+  <div class="tc-utility-bar">
+    <div class="tc-container tc-utility-bar__inner">
+      <p>Improving the outcome of the trauma victim since 1996 · Registered charity 1078780</p>
+      <ul>
+        <li>
+          <a href="contact.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1l-2.22 2.2Z"/></svg>
+            0121 271 0380
+          </a>
+        </li>
+        <li><a href="journal.html">TRAUMA Journal</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li>
+          <a href="members/login.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A4.5 4.5 0 0 0 7.5 6v3H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-.5V6A4.5 4.5 0 0 0 12 1.5Zm2.5 7.5h-5V6a2.5 2.5 0 0 1 5 0v3Z"/></svg>
+            Member log in
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main bar ------------------------------------------------------- -->
+  <div class="tc-header-bar">
+    <div class="tc-container tc-header-bar__inner">
+
+      <a class="tc-logo" href="index.html">
+        <svg viewBox="0 0 64 64" role="img" aria-label="Trauma Care — home">
+          <rect x="2" y="2" width="60" height="60" rx="16" fill="#03b732"/>
+          <circle cx="18" cy="23" r="5.5" fill="#ffffff"/>
+          <circle cx="32" cy="21" r="6"   fill="#df0000"/>
+          <circle cx="46" cy="23" r="5.5" fill="#ffffff"/>
+          <rect x="8"    y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+          <rect x="33"   y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+          <rect x="20.5" y="34" width="23" height="16" rx="8" fill="none" stroke="#df0000" stroke-width="5"/>
+        </svg>
+        <span class="tc-logo__wordmark">Trauma Care</span>
+      </a>
+
+      <nav class="tc-nav" id="primary-nav" aria-label="Primary" data-nav>
+        <ul class="tc-nav__list">
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="about.html">About</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-about" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for About</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-about" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="about-team.html">Our people<span>Patrons, council, trustees and the support team</span></a></li>
+                <li><a class="tc-nav__sublink" href="about-fellowship.html">Trauma Care Fellowship<span>Recognising a lifetime contribution to trauma care</span></a></li>
+                <li><a class="tc-nav__sublink" href="about-ryan-lecture.html">The Ryan Lecture<span>Delivered annually at the conference</span></a></li>
+                <li><a class="tc-nav__sublink" href="contact.html">Contact us<span>Office hours, address and enquiry form</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">Accountability</span>
+                <p class="tc-nav__feature-title">Annual report 2023/24</p>
+                <p>How the charity spent its income and what it delivered for members.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="about-impact.html">Read the report</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="education.html">Education</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-education" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Education</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-education" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="webinars.html">CPD webinars<span>Upcoming live sessions</span></a></li>
+                <li><a class="tc-nav__sublink" href="video-library.html">Video library<span>Public recordings, with the full library for members</span></a></li>
+                <li><a class="tc-nav__sublink" href="courses.html">Courses<span>Practical training, including Foundations in Trauma</span></a></li>
+                <li><a class="tc-nav__sublink" href="cpd.html">CPD certificates<span>Issued automatically within 24 hours</span></a></li>
+                <li><a class="tc-nav__sublink" href="resources.html">Resource library<span>Posters, guidelines and downloads</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">Download</span>
+                <p class="tc-nav__feature-title">CPD Poster — Edition 30</p>
+                <p>Every upcoming presentation on one page. Print it for the mess room.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="resource.html">Download</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="events.html">Events</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-events" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Events</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-events" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="conference.html">The Annual Conference<span>Four days at Yarnfield Park</span></a></li>
+                <li><a class="tc-nav__sublink" href="exhibit-sponsor.html">Exhibit &amp; sponsor<span>Reach the trauma community at our events</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">Booking open</span>
+                <p class="tc-nav__feature-title">The 29th Annual Conference</p>
+                <p>Day tickets £115. Members save £25, and discounts combine from £60.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="event-register.html">Book your place</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="membership.html">Membership</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-membership" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Membership</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-membership" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="membership-tiers.html">Tiers &amp; pricing<span>Compare registered and non-registered membership</span></a></li>
+                <li><a class="tc-nav__sublink" href="journal.html">TRAUMA journal<span>Our peer-reviewed quarterly, published with SAGE</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">From £3 a month</span>
+                <p class="tc-nav__feature-title">Join the UK&rsquo;s largest trauma network</p>
+                <p>The journal, the video library and automated CPD certificates.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="membership-join.html">Join today</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item">
+            <a class="tc-nav__link" href="news.html">News</a>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="support-us.html">Support us</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-support" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Support us</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel" id="panel-support" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="donate.html">Donate<span>One-off or monthly, with Gift Aid</span></a></li>
+                <li><a class="tc-nav__sublink" href="fundraise.html">Fundraise for us<span>Including our London Marathon places</span></a></li>
+                <li><a class="tc-nav__sublink" href="volunteer.html">Volunteer<span>Give your time and expertise</span></a></li>
+                <li><a class="tc-nav__sublink" href="partners.html">Corporate partners<span>Partner with the charity</span></a></li>
+                <li><a class="tc-nav__sublink" href="shop.html">Shop<span>Books, clothing and merchandise</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Actions live inside the nav so the mobile drawer needs no
+             duplicate markup. -->
+        <div class="tc-nav__actions">
+          <a class="tc-btn tc-btn--tertiary tc-btn--sm tc-nav__login" href="members/login.html">Log in</a>
+          <a class="tc-btn tc-btn--primary tc-btn--sm" href="membership-join.html">Join</a>
+          <a class="tc-btn tc-btn--donate tc-btn--sm" href="donate.html">Donate</a>
+        </div>
+      </nav>
+
+      <button class="tc-icon-btn" type="button" aria-expanded="false" aria-controls="site-search" data-disclosure-toggle data-disclosure-focus>
+        <span class="tc-visually-hidden">Search this site</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 0 4.62 13.4l4.24 4.25a1 1 0 0 0 1.42-1.42l-4.25-4.24A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/></svg>
+      </button>
+
+      <button class="tc-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+        <svg class="tc-nav-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v2H3v-2Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
+        <svg class="tc-nav-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 5 5 6.4l5.6 5.6L5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6 6.4 5Z"/></svg>
+        <span class="tc-nav-toggle__label">Menu</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Search disclosure ---------------------------------------------- -->
+  <div class="tc-search-panel" id="site-search" hidden>
+    <div class="tc-container">
+      <form class="tc-search-panel__inner" action="search.html" method="get" role="search">
+        <div class="tc-field">
+          <label class="tc-label" for="site-search-input">Search Trauma Care</label>
+          <p class="tc-hint" id="site-search-hint">Searches pages, news and the resource library.</p>
+          <input class="tc-input" type="search" id="site-search-input" name="s" aria-describedby="site-search-hint">
+        </div>
+        <button class="tc-btn tc-btn--primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+</header>
+<!-- /template-part: header -->
+
+
+<div class="tc-container">
+  <div class="sg-layout">
+
+    <nav class="sg-nav" aria-label="Component library contents">
+      <p class="sg-nav__title" id="sg-contents">Components</p>
+      <ol aria-labelledby="sg-contents">
+        <li><a href="#header">Global header</a></li>
+        <li><a href="#footer">Global footer</a></li>
+        <li><a href="#breadcrumb">Breadcrumb</a></li>
+        <li><a href="#listing">Listing</a></li>
+      </ol>
+      <p class="sg-nav__title u-mt-8">Also see</p>
+      <ol>
+        <li><a href="styleguide.html">Design system</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+
+      <div class="sg-section__head">
+        <span class="sg-section__number">Component library</span>
+        <h1>Components</h1>
+        <p>
+          Each component is documented with its behaviour, its keyboard contract and
+          the WordPress template part it becomes. The header above is live — resize
+          the window, tab through it, and try it with a screen reader.
+        </p>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- GLOBAL HEADER                                                  -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="header" aria-labelledby="header-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">01</span>
+          <h2 id="header-h">Global header</h2>
+          <p>
+            The header is the component the brief singles out. On the current site every
+            dropdown parent is <code>javascript: void(0);</code> — it has no destination,
+            cannot be reached by keyboard, and announces no state. This replaces it with
+            the WAI-ARIA disclosure navigation pattern.
+          </p>
+        </div>
+
+        <h3 class="sg-sub">The structural fix</h3>
+        <div class="sg-rules">
+          <div class="sg-rule sg-rule--dont">
+            <b>Current site</b>
+            <code>&lt;a href="javascript: void(0);"&gt;Events&lt;/a&gt;</code>
+            — one element tries to be both a label and a trigger. It is not focusable in a
+            useful way, has no <code>aria-expanded</code>, and there is no page behind
+            &ldquo;Events&rdquo; at all.
+          </div>
+          <div class="sg-rule sg-rule--do">
+            <b>New header</b>
+            A real link to a real section landing page, plus a separate sibling button that
+            owns <code>aria-expanded</code> and <code>aria-controls</code>. Pointer users
+            still get hover; keyboard and screen-reader users get an announced, operable
+            control.
+          </div>
+        </div>
+
+        <h3 class="sg-sub" id="signed-in">Signed-in state</h3>
+        <p class="tc-prose">
+          Requirement §3 makes member self-service a core journey &mdash; log in, update
+          personal details, update payment method, view membership status, reach the video
+          library and the journal. Signing in swaps <b>Log in</b> and <b>Join</b> for an
+          account menu; Donate stays, because a member may still give. It reuses the same
+          panel component as the main navigation, so there is one dropdown to maintain and
+          one keyboard contract to test.
+        </p>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Signed out</span>
+          <div class="tc-nav__actions">
+            <a class="tc-btn tc-btn--tertiary tc-btn--sm" href="members/login.html">Log in</a>
+            <a class="tc-btn tc-btn--primary tc-btn--sm" href="membership-join.html">Join</a>
+            <a class="tc-btn tc-btn--donate tc-btn--sm" href="donate.html">Donate</a>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Signed in &mdash; open the menu</span>
+          <div class="tc-nav__actions">
+            <div class="tc-account">
+              <button class="tc-btn tc-btn--tertiary tc-btn--sm" type="button"
+                      aria-expanded="false" aria-controls="panel-account" data-disclosure-toggle>
+                My account
+                <svg class="tc-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+              </button>
+              <div class="tc-nav__panel" id="panel-account" hidden>
+                <ul class="tc-nav__panel-list">
+                  <li><a class="tc-nav__sublink" href="members/dashboard.html">My membership<span>Tier, status and renewal date</span></a></li>
+                  <li><a class="tc-nav__sublink" href="members/my-details.html">My details<span>Name, address and contact preferences</span></a></li>
+                  <li><a class="tc-nav__sublink" href="members/payment-method.html">Payment method<span>Card or Direct Debit</span></a></li>
+                  <li><a class="tc-nav__sublink" href="members/my-bookings.html">My bookings<span>Events and webinars you have registered for</span></a></li>
+                  <li><a class="tc-nav__sublink" href="video-library.html">Video library<span>Everything unlocked while you are signed in</span></a></li>
+                  <li><a class="tc-nav__sublink" href="journal.html">TRAUMA journal<span>Read the current issue on SAGE</span></a></li>
+                  <li><a class="tc-nav__sublink" href="index.html">Log out</a></li>
+                </ul>
+              </div>
+            </div>
+            <a class="tc-btn tc-btn--donate tc-btn--sm" href="donate.html">Donate</a>
+          </div>
+        </div>
+
+        <p class="sg-note">
+          Static in the prototype. In WordPress the two states are an
+          <code>is_user_logged_in()</code> branch in the header template part, and the
+          membership status shown in the menu comes from Beacon.
+        </p>
+
+        <h3 class="sg-sub">Keyboard contract</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Keyboard behaviour of the global header</caption>
+            <thead><tr><th scope="col">Key</th><th scope="col">Where</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Tab</th><td>Anywhere</td><td>Skip link first, then logo, then each top-level link and its chevron button in reading order.</td></tr>
+              <tr><th scope="row">Enter</th><td>Top-level link</td><td>Goes to the section landing page. The parent is never a dead end.</td></tr>
+              <tr><th scope="row">Enter / Space</th><td>Chevron button</td><td>Opens the submenu and sets <code>aria-expanded="true"</code>. Any other open submenu closes.</td></tr>
+              <tr><th scope="row">Tab</th><td>Inside an open submenu</td><td>Moves through the submenu links, then leaves and closes the panel behind you.</td></tr>
+              <tr><th scope="row">Escape</th><td>Anywhere in the nav</td><td>Closes the open submenu and returns focus to its button. With nothing open on mobile, closes the drawer.</td></tr>
+              <tr><th scope="row">Escape</th><td>Search panel</td><td>Closes the panel and returns focus to the search button.</td></tr>
+              <tr><th scope="row">Click outside</th><td>Anywhere</td><td>Dismisses any open panel.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sg-sub">Responsive behaviour</h3>
+        <div class="tc-grid tc-grid--3">
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">Mobile &amp; tablet · under 1280px</h4>
+              <p class="tc-card__text">Utility bar hidden. A labelled <b>Menu</b> button opens a
+                full-width drawer; submenus expand inline as accordions. Log in, Join and Donate
+                stack full width at the bottom. Body scroll locks while the drawer is open.</p>
+            </div>
+          </div>
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">Desktop · 1280px and up</h4>
+              <p class="tc-card__text">Utility bar appears. Six top-level items sit on one row with
+                hover and click both opening panels. Panels for the right-hand items anchor to their
+                right edge so a wide panel cannot run off screen.</p>
+            </div>
+          </div>
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">On scroll</h4>
+              <p class="tc-card__text">The header is sticky at every width. Past 8px of scroll a
+                shadow replaces the hairline rule, so the bar reads as floating above the page
+                rather than sitting on it. Nothing resizes or collapses.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-sub">Without JavaScript</h3>
+        <p class="tc-prose">
+          An inline script in <code>&lt;head&gt;</code> adds a <code>js</code> class before first
+          paint. If scripting is unavailable the chevron buttons and the Menu button are hidden
+          rather than left as dead controls. On desktop the six top-level links remain, each
+          leading to a landing page that lists the same children. On mobile the whole navigation
+          renders in the document flow with every submenu expanded, so nothing is unreachable.
+        </p>
+
+        <h3 class="sg-sub">Anatomy</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Header regions and their purpose</caption>
+            <thead><tr><th scope="col">Region</th><th scope="col">Class</th><th scope="col">Notes</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Utility bar</th><td><code>.tc-utility-bar</code></td><td>Charity number, phone, journal and contact. Desktop only.</td></tr>
+              <tr><th scope="row">Logo</th><td><code>.tc-logo</code></td><td>Links home. SVG mark carrying the accessible name &ldquo;Trauma Care — home&rdquo;.</td></tr>
+              <tr><th scope="row">Primary nav</th><td><code>.tc-nav</code></td><td><code>aria-label="Primary"</code>. Contains the list and the action buttons, so the drawer needs no duplicate markup.</td></tr>
+              <tr><th scope="row">Submenu panel</th><td><code>.tc-nav__panel</code></td><td>Add <code>--wide</code> for the two-column layout with a featured block.</td></tr>
+              <tr><th scope="row">Featured block</th><td><code>.tc-nav__feature</code></td><td>Optional promo per section. An ACF group, editable without a developer.</td></tr>
+              <tr><th scope="row">Actions</th><td><code>.tc-nav__actions</code></td><td>Log in, Join, Donate. Donate keeps its reserved red everywhere.</td></tr>
+              <tr><th scope="row">Search</th><td><code>.tc-search-panel</code></td><td>A disclosure, not a modal, so it needs no focus trap. Submits to the search page.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sg-sub">WordPress mapping</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">How the header converts to WordPress</caption>
+            <thead><tr><th scope="col">Prototype</th><th scope="col">WordPress</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Whole header block</th><td><code>template-parts/header.php</code>, called from <code>header.php</code></td></tr>
+              <tr><th scope="row">Nav list</th><td><code>wp_nav_menu()</code> at the <code>primary</code> location with a custom walker that emits the link + button pair</td></tr>
+              <tr><th scope="row"><code>aria-current</code></th><td>Set from the <code>current-menu-item</code> body class WordPress already adds</td></tr>
+              <tr><th scope="row">Featured block</th><td>ACF group on an options page, keyed by menu item</td></tr>
+              <tr><th scope="row">Utility bar</th><td>ACF options page: phone, charity number, utility links repeater</td></tr>
+              <tr><th scope="row">Log in / Join</th><td>Beacon CRM later; today they are plain links to the prototype pages</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tc-alert u-mt-8" role="note">
+          <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>
+          <div>
+            <p class="tc-alert__title">Try it</p>
+            <p>Press <kbd>Tab</kbd> from the top of this page. The skip link appears first, then the
+              header. Open a submenu with <kbd>Enter</kbd>, close it with <kbd>Escape</kbd>, and note
+              that focus returns to the button you opened it from.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- GLOBAL FOOTER                                                  -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="footer" aria-labelledby="footer-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">02</span>
+          <h2 id="footer-h">Global footer</h2>
+          <p>
+            The footer does three jobs at once: it is the site&rsquo;s second navigation for
+            people who scrolled rather than searched, it carries the trust signals a charity
+            is judged on, and it is where the regulatory obligations live. It is built as
+            three stacked bands so a page can drop any one of them.
+          </p>
+        </div>
+
+        <h3 class="sg-sub">Bands</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">The bands that make up the footer region</caption>
+            <thead><tr><th scope="col">Band</th><th scope="col">Class</th><th scope="col">When it appears</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Sponsor strip</th><td><code>.tc-sponsors__grid</code></td><td>Most pages. Optional per page, since it is a component rather than part of the footer proper.</td></tr>
+              <tr><th scope="row">Newsletter</th><td><code>.tc-newsletter</code></td><td>Most pages. Suppressed on the signup confirmation and inside the member area.</td></tr>
+              <tr><th scope="row">Footer main</th><td><code>.tc-site-footer__main</code></td><td>Every page. Brand, mission, contact and four link columns.</td></tr>
+              <tr><th scope="row">Legal band</th><td><code>.tc-site-footer__legal</code></td><td>Every page. Charity registration, policy links, social, back to top.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sg-sub">Consent, not assumption</h3>
+        <p class="tc-prose">
+          The newsletter signup uses an explicit, unticked consent checkbox with the purpose
+          written next to it, and names the unsubscribe route up front. The current site
+          collects subscribers through a bare &ldquo;Subscribe&rdquo; button with no consent
+          statement, and its cookie notice links to <i>Kartra&rsquo;s</i> policies rather than
+          the charity&rsquo;s — both are UK GDPR and PECR exposures the rebuild has to close.
+        </p>
+
+        <h3 class="sg-sub">Accessibility decisions</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Accessibility decisions in the footer</caption>
+            <thead><tr><th scope="col">Decision</th><th scope="col">Why</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">One <code>nav</code> landmark, four headings</th><td>Five separate navigation landmarks would clutter a screen reader&rsquo;s landmark list. One labelled <code>nav</code> with a heading per column reads better.</td></tr>
+              <tr><th scope="row">Contact as a description list</th><td>Address, phone and opening hours are label/value pairs, so <code>dl</code> conveys the relationship that a stack of paragraphs loses.</td></tr>
+              <tr><th scope="row">Social links are 44&nbsp;×&nbsp;44px</th><td>Icon-only targets, each with visually hidden text naming the network. The icon alone is never the accessible name.</td></tr>
+              <tr><th scope="row">Every colour measured</th><td>The lowest-contrast text in the footer is the legal line at <strong>6.35:1</strong> on the navy ground; body text sits at <strong>10.7:1</strong>. Both clear AA.</td></tr>
+              <tr><th scope="row">Back to top is a link, not a button</th><td>It moves to a document fragment, so it belongs in the same category as any other in-page link and works without JavaScript.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sg-sub">WordPress mapping</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">How the footer converts to WordPress</caption>
+            <thead><tr><th scope="col">Prototype</th><th scope="col">WordPress</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Whole footer</th><td><code>footer.php</code> → <code>template-parts/footer.php</code></td></tr>
+              <tr><th scope="row">Four link columns</th><td>Four registered menu locations: <code>footer-about</code>, <code>footer-education</code>, <code>footer-membership</code>, <code>footer-support</code></td></tr>
+              <tr><th scope="row">Mission, contact, charity number</th><td>ACF options page — one field group shared with the utility bar</td></tr>
+              <tr><th scope="row">Sponsor strip</th><td>ACF repeater on the options page: logo, name, tier, URL. Per-page toggle to hide it.</td></tr>
+              <tr><th scope="row">Newsletter form</th><td>Beacon CRM later; today it posts nowhere</td></tr>
+              <tr><th scope="row">Social links</th><td>ACF repeater: network and URL, icon chosen from the sprite by network name</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tc-alert tc-alert--warning u-mt-8" role="note">
+          <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2Zm1 14h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg>
+          <div>
+            <p class="tc-alert__title">Two things to confirm</p>
+            <p>The footer reads <strong>&copy; 1996&ndash;2026</strong>, matching the About copy.
+              The live site&rsquo;s footer says &copy; 1994. And the sponsor tiles are text
+              placeholders until logo files arrive — the component contains and never crops them,
+              so mixed aspect ratios are safe.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- BREADCRUMB                                                     -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="breadcrumb" aria-labelledby="breadcrumb-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">03</span>
+          <h2 id="breadcrumb-h">Breadcrumb</h2>
+          <p>
+            Appears on every page except the homepage. It matters more here than on most
+            sites: the current Kartra URLs are opaque strings like
+            <code>?asset=page&amp;id=HFkV8bxegqrK</code>, so visitors have no way of knowing
+            where they are. The breadcrumb restores that, and it feeds the structured data
+            that puts a readable path in search results.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Standard, three levels</span>
+          <nav class="tc-breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="webinars.html" aria-current="page">CPD webinars</a></li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Deep, with a long final title — wraps rather than scrolls</span>
+          <nav class="tc-breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="webinars.html">Webinars</a></li>
+              <li><a href="webinars-recordings.html">Recorded library</a></li>
+              <li><a href="#breadcrumb" aria-current="page">Health in Motorsport: medical lessons from the Isle of Man TT</a></li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="sg-demo sg-demo--dark">
+          <span class="sg-demo__label">On a dark hero</span>
+          <div class="tc-on-dark">
+            <nav class="tc-breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="#breadcrumb" aria-current="page">The Annual Conference</a></li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+        <div class="sg-rules u-mt-8">
+          <div class="sg-rule sg-rule--do">
+            <b>Do</b>
+            Keep the last item a link carrying <code>aria-current="page"</code>, as the ARIA
+            Authoring Practices recommend. It announces position without making the trail
+            inconsistent.
+          </div>
+          <div class="sg-rule sg-rule--dont">
+            <b>Don't</b>
+            Type <code>&gt;</code> or <code>/</code> between items. Separators are drawn in
+            CSS, so a screen reader is not made to read &ldquo;greater-than&rdquo; five times
+            before reaching the page title.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- LISTING                                                        -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="listing" aria-labelledby="listing-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">04</span>
+          <h2 id="listing-h">Listing</h2>
+          <p>
+            One component serves six templates: news, events, webinars, the recorded
+            library, the resource library and search results. Only the filter groups and
+            the card type change. Below is a working example — resize the window to see
+            the sidebar collapse into a disclosure.
+          </p>
+        </div>
+
+        <div class="tc-alert tc-alert--warning u-mb-6" role="note">
+          <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2Zm1 14h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg>
+          <div>
+            <p class="tc-alert__title">The data below is invented</p>
+            <p>The four webinar titles, the filter counts, &ldquo;214 webinars&rdquo; and
+              &ldquo;page 1 of 54&rdquo; were written to demonstrate the component. They are
+              <strong>not</strong> real Trauma Care sessions. Named facts elsewhere in the
+              prototype &mdash; conference pricing, the CPD poster edition, membership prices
+              &mdash; are taken from the live site. <code>docs/content-sources.md</code>
+              records the origin of every string.</p>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--subtle">
+          <span class="sg-demo__label">Webinar archive — filters, results bar, chips, cards, pagination</span>
+
+          <div class="tc-listing">
+
+            <!-- Filters ------------------------------------------------ -->
+            <div>
+              <button class="tc-filters-toggle" type="button"
+                      aria-expanded="false" aria-controls="demo-filters"
+                      data-disclosure-toggle data-disclosure-open-above="900">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.25A.75.75 0 0 1 3.75 4.5h16.5a.75.75 0 0 1 .58 1.23l-6.33 7.6V19a.75.75 0 0 1-1.09.67l-3-1.5a.75.75 0 0 1-.41-.67v-4.17l-6.33-7.6A.75.75 0 0 1 3 5.25Z"/></svg>
+                Filters
+                <span class="tc-filters-toggle__count">2</span>
+              </button>
+
+              <form class="tc-filters" id="demo-filters" action="webinars.html" method="get">
+                <div class="tc-filters__head">
+                  <h3 class="tc-filters__title">Filter</h3>
+                  <button class="tc-filters__clear" type="reset">Clear all</button>
+                </div>
+
+                <fieldset class="tc-fieldset">
+                  <legend class="tc-legend">Topic</legend>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="topic" value="prehospital" checked>
+                    <span class="tc-choice__label">Pre-hospital <span class="tc-filters__count">(48)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="topic" value="critical-care">
+                    <span class="tc-choice__label">Critical care <span class="tc-filters__count">(31)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="topic" value="nursing">
+                    <span class="tc-choice__label">Nursing <span class="tc-filters__count">(27)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="topic" value="military">
+                    <span class="tc-choice__label">Military &amp; austere <span class="tc-filters__count">(19)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="topic" value="paediatrics">
+                    <span class="tc-choice__label">Paediatrics <span class="tc-filters__count">(14)</span></span>
+                  </label>
+                </fieldset>
+
+                <fieldset class="tc-fieldset">
+                  <legend class="tc-legend">Format</legend>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="format" value="live">
+                    <span class="tc-choice__label">Upcoming live <span class="tc-filters__count">(3)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="format" value="recording" checked>
+                    <span class="tc-choice__label">Recording <span class="tc-filters__count">(211)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="format" value="hot-off-press">
+                    <span class="tc-choice__label">Hot Off The Press <span class="tc-filters__count">(22)</span></span>
+                  </label>
+                </fieldset>
+
+                <fieldset class="tc-fieldset">
+                  <legend class="tc-legend">Access</legend>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="access" value="open">
+                    <span class="tc-choice__label">Open to all <span class="tc-filters__count">(96)</span></span>
+                  </label>
+                  <label class="tc-choice">
+                    <input type="checkbox" name="access" value="members">
+                    <span class="tc-choice__label">Members only <span class="tc-filters__count">(118)</span></span>
+                  </label>
+                </fieldset>
+
+                <div class="tc-filters__apply">
+                  <button class="tc-btn tc-btn--primary tc-btn--full" type="submit">Apply filters</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Results ------------------------------------------------ -->
+            <div>
+              <div class="tc-listing-bar">
+                <p class="tc-listing-count" role="status">Showing <b>1&ndash;4</b> of <b>214</b> webinars</p>
+                <div class="tc-field tc-listing-sort">
+                  <label class="tc-label" for="demo-sort">Sort by</label>
+                  <select class="tc-select" id="demo-sort" name="sort">
+                    <option>Most recent</option>
+                    <option>Most watched</option>
+                    <option>A&ndash;Z</option>
+                  </select>
+                </div>
+              </div>
+
+              <ul class="tc-chips">
+                <li class="tc-chips__label">Filtered by:</li>
+                <li><a class="tc-chip" href="#listing">Pre-hospital<span class="tc-visually-hidden">, remove this filter</span></a></li>
+                <li><a class="tc-chip" href="#listing">Recording<span class="tc-visually-hidden">, remove this filter</span></a></li>
+              </ul>
+
+              <div class="tc-grid tc-grid--3">
+
+                <article class="tc-card tc-card--link">
+                  <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#04773a,#0b1622)"></div>
+                  <div class="tc-card__body">
+                    <ul class="tc-card__meta"><li>Recording</li><li>58 min</li></ul>
+                    <h4 class="tc-card__title"><a href="#listing">Pre-hospital blood transfusion: what the evidence now says</a></h4>
+                    <div class="tc-card__footer"><span class="tc-badge tc-badge--brand">Open to all</span></div>
+                  </div>
+                </article>
+
+                <article class="tc-card tc-card--link">
+                  <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#03b732,#04773a)"></div>
+                  <div class="tc-card__body">
+                    <ul class="tc-card__meta"><li>Recording</li><li>42 min</li></ul>
+                    <h4 class="tc-card__title"><a href="#listing">Roadside amputation: decision-making under pressure</a></h4>
+                    <div class="tc-card__footer">
+                      <span class="tc-badge tc-badge--members">
+                        <svg class="tc-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A4.5 4.5 0 0 0 7.5 6v3H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-.5V6A4.5 4.5 0 0 0 12 1.5Zm2.5 7.5h-5V6a2.5 2.5 0 0 1 5 0v3Z"/></svg>
+                        Members only
+                      </span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="tc-card tc-card--link">
+                  <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#24354d,#5f7189)"></div>
+                  <div class="tc-card__body">
+                    <ul class="tc-card__meta"><li>Recording</li><li>65 min</li></ul>
+                    <h4 class="tc-card__title"><a href="#listing">HEMS tasking: getting the right team to the right patient</a></h4>
+                    <div class="tc-card__footer"><span class="tc-badge tc-badge--brand">Open to all</span></div>
+                  </div>
+                </article>
+
+                <article class="tc-card tc-card--link">
+                  <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#05602f,#03b732)"></div>
+                  <div class="tc-card__body">
+                    <ul class="tc-card__meta"><li>Recording</li><li>51 min</li></ul>
+                    <h4 class="tc-card__title"><a href="#listing">Triage at a mass casualty incident: lessons from the front line</a></h4>
+                    <div class="tc-card__footer">
+                      <span class="tc-badge tc-badge--members">
+                        <svg class="tc-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A4.5 4.5 0 0 0 7.5 6v3H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-.5V6A4.5 4.5 0 0 0 12 1.5Zm2.5 7.5h-5V6a2.5 2.5 0 0 1 5 0v3Z"/></svg>
+                        Members only
+                      </span>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+
+              <nav class="tc-pagination" aria-label="Webinar archive pagination">
+                <ol>
+                  <li>
+                    <span class="tc-pagination__step tc-pagination__step--off">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.28 4.72a.75.75 0 0 1 0 1.06L9.06 12l6.22 6.22a.75.75 0 1 1-1.06 1.06l-6.75-6.75a.75.75 0 0 1 0-1.06l6.75-6.75a.75.75 0 0 1 1.06 0Z"/></svg>
+                      <span class="tc-pagination__step-label">Previous</span>
+                    </span>
+                  </li>
+                  <li><a href="#listing" aria-current="page">1</a></li>
+                  <li><a href="#listing"><span class="tc-visually-hidden">Page </span>2</a></li>
+                  <li><a href="#listing"><span class="tc-visually-hidden">Page </span>3</a></li>
+                  <li><span class="tc-pagination__gap" aria-hidden="true">&hellip;</span></li>
+                  <li><a href="#listing"><span class="tc-visually-hidden">Page </span>54</a></li>
+                  <li>
+                    <a class="tc-pagination__step" href="#listing" rel="next">
+                      <span class="tc-pagination__step-label">Next</span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 4.72a.75.75 0 0 1 1.06 0l6.75 6.75a.75.75 0 0 1 0 1.06l-6.75 6.75a.75.75 0 1 1-1.06-1.06L14.94 12 8.72 5.78a.75.75 0 0 1 0-1.06Z"/></svg>
+                    </a>
+                  </li>
+                </ol>
+                <p class="tc-pagination__summary">Page 1 of 54</p>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Empty state — every listing needs one</span>
+          <div class="tc-empty">
+            <svg class="tc-empty__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 0 4.62 13.4l4.24 4.25a1 1 0 0 0 1.42-1.42l-4.25-4.24A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/></svg>
+            <h3 class="tc-empty__title">No webinars match those filters</h3>
+            <p>Try removing a filter, or browse the full recorded library. If you were looking
+              for something specific, our team is happy to point you to it.</p>
+            <div class="tc-btn-group">
+              <a class="tc-btn tc-btn--primary" href="#listing">Clear all filters</a>
+              <a class="tc-btn tc-btn--tertiary" href="contact.html">Ask us</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-sub">How it behaves</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Listing behaviour and rationale</caption>
+            <thead><tr><th scope="col">Decision</th><th scope="col">Why</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Filters are a <code>form</code> that submits by GET</th><td>Filtering works with JavaScript off, and every filtered view has a shareable URL. Updating results without a reload is an enhancement layered on later.</td></tr>
+              <tr><th scope="row">Sidebar collapses below 900px</th><td>It becomes a disclosure with a count badge. Above 900px the panel is pinned open and the button is removed, so the state can never be left wrong.</td></tr>
+              <tr><th scope="row">Result count is <code>role="status"</code></th><td>When results change, the new count is announced without stealing focus.</td></tr>
+              <tr><th scope="row">Active filters shown as chips</th><td>Removing a filter takes one click from the results, not a return trip to the sidebar. Each chip's hidden text reads &ldquo;remove this filter&rdquo;.</td></tr>
+              <tr><th scope="row">Option counts beside each filter</th><td>Nobody should apply a filter to discover it returns nothing.</td></tr>
+              <tr><th scope="row">Every page has its own URL</th><td>Pagination is real links, not scripted. That is what the SEO requirement and the Kartra redirect map depend on.</td></tr>
+              <tr><th scope="row">Previous/Next carry words</th><td>Below 520px the label is clipped, not deleted, so the control keeps its accessible name.</td></tr>
+              <tr><th scope="row">Members-only badge on the card</th><td>Restriction is visible before the click, with a padlock <em>and</em> the words — never colour alone.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sg-sub">WordPress mapping</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">How the listing converts to WordPress</caption>
+            <thead><tr><th scope="col">Prototype</th><th scope="col">WordPress</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Listing shell</th><td><code>archive-{post_type}.php</code> — one shared <code>template-parts/listing.php</code></td></tr>
+              <tr><th scope="row">Filter groups</th><td>Custom taxonomies per post type; the panel is generated from the registered taxonomies rather than hard-coded</td></tr>
+              <tr><th scope="row">Cards</th><td><code>template-parts/card-{post_type}.php</code>, all sharing the card shell</td></tr>
+              <tr><th scope="row">Pagination</th><td><code>the_posts_pagination()</code> with markup filtered to match these classes</td></tr>
+              <tr><th scope="row">Members-only badge</th><td>Driven by the same access field that gates the content, so the badge and the gate can never disagree</td></tr>
+              <tr><th scope="row">Breadcrumb</th><td>Template part reading the post type archive and taxonomy, plus JSON-LD <code>BreadcrumbList</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="sg-footer">
+        <p><strong>Trauma Care component library</strong> — prototype for UI approval.
+          More components follow: hero variants, accordion, tabs, event and course detail
+          blocks, and the member-area shell.</p>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+
+<!-- ==================================================================== -->
+<!-- template-part: sponsors                                              -->
+<!-- ACF repeater on the options page: logo, name, tier, URL.             -->
+<!-- ==================================================================== -->
+<section class="tc-section tc-section--tight" aria-labelledby="sponsors-h">
+  <div class="tc-container">
+    <div class="tc-section-head tc-section-head--center">
+      <p class="tc-eyebrow">With thanks to</p>
+      <h2 id="sponsors-h" class="tc-h3">Our sponsors and partners</h2>
+      <p class="tc-text-small tc-text-muted u-mx-auto" style="max-width:56ch">
+        Without the support of our sponsors, corporate partners and academic partners we
+        could not keep our education affordable.
+      </p>
+    </div>
+
+    <ul class="tc-sponsors__grid">
+      <li><a class="tc-sponsor" href="about-partners.html"><span class="tc-sponsor__placeholder">Slater&nbsp;+&nbsp;Gordon<span class="tc-sponsor__tier">Platinum partner</span></span></a></li>
+      <li><a class="tc-sponsor" href="about-partners.html"><span class="tc-sponsor__placeholder">Galen<span class="tc-sponsor__tier">Corporate partner</span></span></a></li>
+      <li><a class="tc-sponsor" href="about-partners.html"><span class="tc-sponsor__placeholder">Academic partners</span></a></li>
+      <li><a class="tc-sponsor" href="about-partners.html"><span class="tc-sponsor__placeholder">Partner logo</span></a></li>
+      <li><a class="tc-sponsor" href="about-partners.html"><span class="tc-sponsor__placeholder">Partner logo</span></a></li>
+    </ul>
+
+    <p class="u-text-center u-mt-8"><a class="tc-link-arrow" href="about-partners.html">Become a partner</a></p>
+  </div>
+</section>
+<!-- /template-part: sponsors -->
+
+
+<!-- ==================================================================== -->
+<!-- template-part: newsletter                                            -->
+<!-- Beacon CRM later. Consent is explicit and unticked.                  -->
+<!-- ==================================================================== -->
+<section class="tc-newsletter tc-section" aria-labelledby="newsletter-h">
+  <div class="tc-container tc-newsletter__inner">
+
+    <div>
+      <p class="tc-eyebrow">Newsletter</p>
+      <h2 class="tc-newsletter__title" id="newsletter-h">Never miss a CPD webinar</h2>
+      <p class="tc-newsletter__text">
+        You will get our event announcements, new webinar
+        dates and the latest CPD poster, and nothing else.
+      </p>
+    </div>
+
+    <form class="tc-newsletter__form" action="#" method="post">
+      <div class="tc-newsletter__row">
+        <div class="tc-field">
+          <label class="tc-label" for="newsletter-email">Email address <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
+          <input class="tc-input" type="email" id="newsletter-email" name="email" autocomplete="email" required>
+        </div>
+        <button class="tc-btn tc-btn--primary" type="submit">Subscribe</button>
+      </div>
+
+      <label class="tc-choice tc-newsletter__consent">
+        <input type="checkbox" name="consent" required>
+        <span class="tc-choice__label">
+          Yes, email me Trauma Care news, events and CPD announcements.
+          You can unsubscribe from any email, or by contacting us. See our
+          <a href="privacy.html">privacy policy</a>.
+        </span>
+      </label>
+    </form>
+
+  </div>
+</section>
+<!-- /template-part: newsletter -->
+
+
+<!-- ==================================================================== -->
+<!-- template-part: footer                                                -->
+<!-- WordPress: footer.php. Link columns are four registered menu         -->
+<!-- locations; mission, contact and social come from an ACF options page.-->
+<!-- ==================================================================== -->
+<footer class="tc-site-footer">
+
+  <div class="tc-site-footer__main">
+    <div class="tc-container tc-footer-top">
+
+      <div class="tc-footer-brand">
+        <a class="tc-footer-brand__logo" href="index.html">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Trauma Care — home">
+            <rect x="2" y="2" width="60" height="60" rx="16" fill="#03b732"/>
+            <circle cx="18" cy="23" r="5.5" fill="#ffffff"/>
+            <circle cx="32" cy="21" r="6"   fill="#df0000"/>
+            <circle cx="46" cy="23" r="5.5" fill="#ffffff"/>
+            <rect x="8"    y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+            <rect x="33"   y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+            <rect x="20.5" y="34" width="23" height="16" rx="8" fill="none" stroke="#df0000" stroke-width="5"/>
+          </svg>
+          <span>Trauma Care</span>
+        </a>
+
+        <p class="tc-footer-brand__mission">
+          Founded in 1996 to establish commonly agreed standards of best clinical practice
+          in the management of trauma — improving the outcome of the trauma victim
+          throughout the whole chain of care.
+        </p>
+
+        <dl class="tc-footer-contact">
+          <div>
+            <dt>Get in touch</dt>
+            <dd>
+              <a href="mailto:admin@traumacare.org.uk">admin@traumacare.org.uk</a><br>
+              <a href="tel:+441212710380">0121 271 0380</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Office hours</dt>
+            <dd>
+              Monday &amp; Tuesday, 09:00&ndash;17:00<br>
+              Thursday &amp; Friday, 09:00&ndash;17:00<br>
+              <span class="tc-footer-contact__closed">Closed Wednesday</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Address</dt>
+            <dd>
+              <address style="font-style:normal;margin:0">
+                Trauma Care UK, Office 5:19<br>
+                156 Great Charles Street Queensway<br>
+                Birmingham B3 3HN
+              </address>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <nav class="tc-footer-nav" aria-label="Footer">
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-about">About</h2>
+          <ul aria-labelledby="footer-about">
+            <li><a href="about.html">Who we are</a></li>
+            <li><a href="about-team.html">Our people</a></li>
+            <li><a href="about-fellowship.html">Fellowship</a></li>
+            <li><a href="about-ryan-lecture.html">The Ryan Lecture</a></li>
+            <li><a href="about-impact.html">Annual reports</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-education">Education &amp; events</h2>
+          <ul aria-labelledby="footer-education">
+            <li><a href="webinars.html">CPD webinars</a></li>
+            <li><a href="video-library.html">Video library</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="cpd.html">CPD certificates</a></li>
+            <li><a href="resources.html">Resource library</a></li>
+            <li><a href="conference.html">Annual Conference</a></li>
+            <li><a href="events.html">All events</a></li>
+          </ul>
+        </div>
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-membership">Membership</h2>
+          <ul aria-labelledby="footer-membership">
+            <li><a href="membership.html">Why join</a></li>
+            <li><a href="membership-tiers.html">Tiers &amp; pricing</a></li>
+            <li><a href="membership-join.html">Join today</a></li>
+            <li><a href="journal.html">TRAUMA journal</a></li>
+            <li><a href="members/login.html">Member log in</a></li>
+          </ul>
+        </div>
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-support">Support us</h2>
+          <ul aria-labelledby="footer-support">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="fundraise.html">Fundraise for us</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Corporate partners</a></li>
+            <li><a href="exhibit-sponsor.html">Exhibit &amp; sponsor</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+
+  <div class="tc-site-footer__legal">
+    <div class="tc-container tc-footer-legal">
+
+      <div>
+        <ul class="tc-footer-legal__links">
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="cookies.html">Cookie policy</a></li>
+          <!-- Requirements §12 'preference management' and §13 cookie consent: a
+               visitor who has accepted or declined must be able to change it. In
+               WordPress this becomes the consent plugin's re-open trigger; it is a
+               link to a real page here so the prototype has no dead controls. -->
+          <li><a href="cookies.html#settings">Cookie settings</a></li>
+          <li><a href="terms.html">Terms of use</a></li>
+          <li><a href="cancellation.html">Cancellation policy</a></li>
+          <li><a href="accessibility.html">Accessibility statement</a></li>
+        </ul>
+        <!-- Founding year follows the About copy (1996). The live site's
+             footer says 1994 — awaiting the client's ruling. -->
+        <p>&copy; 1996&ndash;2026 Trauma Care. Registered charity in England and Wales no.&nbsp;1078780.</p>
+      </div>
+
+      <div class="tc-cluster tc-cluster--sm">
+        <ul class="tc-footer-social">
+          <li><a href="https://www.facebook.com/trauma.careuk/"><span class="tc-visually-hidden">Trauma Care on Facebook</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a></li>
+          <li><a href="https://x.com/TRAUMACAREUK"><span class="tc-visually-hidden">Trauma Care on X</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3h3.06l-6.69 7.64L21.75 21h-5.98l-4.68-6.12L5.72 21H2.66l7.15-8.17L2.25 3h6.13l4.23 5.59L17.53 3Zm-1.07 16.2h1.7L7.6 4.71H5.78l10.68 14.49Z"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/company/trauma-care-uk/"><span class="tc-visually-hidden">Trauma Care on LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.2 8.4h3.5V21H3.2V8.4Zm5.9 0h3.35v1.72h.05c.47-.85 1.6-1.75 3.3-1.75 3.53 0 4.18 2.2 4.18 5.06V21h-3.5v-6.1c0-1.45-.03-3.32-2.05-3.32-2.05 0-2.37 1.58-2.37 3.21V21H9.1V8.4Z"/></svg></a></li>
+          <li><a href="https://www.instagram.com/traumacareuk/"><span class="tc-visually-hidden">Trauma Care on Instagram</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07Zm0 5.68a4.16 4.16 0 1 0 0 8.32 4.16 4.16 0 0 0 0-8.32Zm0 6.86a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Zm5.3-7.03a.97.97 0 1 1-1.94 0 .97.97 0 0 1 1.94 0Z"/></svg></a></li>
+        </ul>
+
+        <a class="tc-back-to-top" href="#top">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a.75.75 0 0 1 .53.22l6 6a.75.75 0 1 1-1.06 1.06l-4.72-4.72V19a.75.75 0 0 1-1.5 0V7.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06l6-6A.75.75 0 0 1 12 4.5Z"/></svg>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<!-- /template-part: footer -->
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

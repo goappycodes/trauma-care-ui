@@ -1,0 +1,86 @@
+/* ==========================================================================
+   BASE — ACCESSIBILITY PRIMITIVES
+   These are load-bearing. The current site fails WCAG on focus visibility
+   and on keyboard operability; nothing here is optional.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Focus ring
+   A yellow inner ring with a dark outer ring. The pairing stays visible on
+   white, on brand green, on photography and on the dark navy ground, so one
+   focus treatment serves the whole site.
+   :focus-visible keeps it off mouse clicks; the :focus fallback covers
+   browsers without support.
+   -------------------------------------------------------------------------- */
+
+:where(a, button, input, select, textarea, [tabindex]):focus {
+  outline: 3px solid var(--tc-focus-inner);
+  outline-offset: 2px;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--tc-focus-inner);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--tc-focus-outer);
+  border-radius: var(--tc-radius-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Skip link — first focusable element on every page.
+   -------------------------------------------------------------------------- */
+
+.tc-skip-link {
+  position: absolute;
+  top: var(--tc-space-2);
+  left: var(--tc-space-2);
+  z-index: var(--tc-z-skiplink);
+  transform: translateY(-200%);
+  padding: var(--tc-space-3) var(--tc-space-5);
+  background-color: var(--tc-ink-900);
+  color: var(--tc-white);
+  font-weight: var(--tc-fw-semibold);
+  text-decoration: none;
+  border-radius: var(--tc-radius-sm);
+  transition: transform var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-skip-link:focus {
+  transform: translateY(0);
+  color: var(--tc-white);
+}
+
+/* --------------------------------------------------------------------------
+   Visually hidden — available to screen readers, removed from view.
+   -------------------------------------------------------------------------- */
+
+.tc-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Windows High Contrast / forced-colors mode.
+   Borders replace backgrounds so components keep their shape.
+   -------------------------------------------------------------------------- */
+
+@media (forced-colors: active) {
+  .tc-btn {
+    border: 1px solid ButtonText;
+  }
+
+  :focus-visible {
+    outline: 3px solid Highlight;
+  }
+}

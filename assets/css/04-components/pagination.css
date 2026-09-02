@@ -1,0 +1,110 @@
+/* ==========================================================================
+   COMPONENT — PAGINATION
+   --------------------------------------------------------------------------
+   A labelled nav wrapping an ordered list of real links, so every page of
+   an archive has its own URL — which is also what the SEO requirement and
+   the redirect map depend on.
+
+   The current page is a link with aria-current="page". The ellipsis is
+   decorative and hidden from assistive technology.
+   ========================================================================== */
+
+.tc-pagination {
+  margin-block-start: var(--tc-space-9);
+  padding-block-start: var(--tc-space-7);
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+.tc-pagination ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tc-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-pagination a,
+.tc-pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: var(--tc-space-3);
+  border-radius: var(--tc-radius-sm);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  font-variant-numeric: tabular-nums;
+  color: var(--tc-ink-800);
+  text-decoration: none;
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              color var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-pagination a:hover {
+  background-color: var(--tc-green-50);
+  color: var(--tc-color-brand-deep);
+}
+
+.tc-pagination [aria-current="page"] {
+  background-color: var(--tc-color-brand-strong);
+  color: var(--tc-white);
+}
+
+.tc-pagination [aria-current="page"]:hover {
+  background-color: var(--tc-color-brand-deep);
+  color: var(--tc-white);
+}
+
+/* Ellipsis — decorative, so it is removed from the accessibility tree. */
+.tc-pagination__gap {
+  color: var(--tc-color-text-muted);
+  min-width: 32px;
+  padding-inline: 0;
+}
+
+/* Previous / next carry words, not just arrows. */
+.tc-pagination__step {
+  gap: var(--tc-space-2);
+}
+
+.tc-pagination__step svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+  flex: none;
+}
+
+/* Disabled at the ends of the range: rendered as a span, never a link. */
+.tc-pagination__step--off {
+  color: var(--tc-ink-400);
+  cursor: not-allowed;
+}
+
+/* Below 520px the step labels are clipped rather than removed, so the
+   buttons keep their accessible names. */
+@media (max-width: 519px) {
+  .tc-pagination__step-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .tc-pagination__step { padding-inline: var(--tc-space-2); }
+}
+
+/* Summary line beneath, for people who want position rather than links. */
+.tc-pagination__summary {
+  margin: var(--tc-space-4) 0 0;
+  text-align: center;
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+}

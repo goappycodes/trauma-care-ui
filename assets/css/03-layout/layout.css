@@ -1,0 +1,103 @@
+/* ==========================================================================
+   LAYOUT
+   Structural primitives only. Layout classes carry no colour or typography.
+   Add a variant when a page needs it, not before.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+
+.tc-container {
+  width: 100%;
+  max-width: calc(var(--tc-container) + (var(--tc-gutter) * 2));
+  margin-inline: auto;
+  padding-inline: var(--tc-gutter);
+}
+
+.tc-container--narrow { max-width: calc(var(--tc-container-narrow) + (var(--tc-gutter) * 2)); }
+.tc-container--prose  { max-width: calc(var(--tc-container-prose) + (var(--tc-gutter) * 2)); }
+
+/* --------------------------------------------------------------------------
+   Section — the vertical rhythm unit. One section per band of content.
+   In WordPress each becomes one ACF flexible-content layout.
+   -------------------------------------------------------------------------- */
+
+.tc-section {
+  padding-block: var(--tc-section-y);
+}
+
+.tc-section--tight { padding-block: var(--tc-section-y-tight); }
+
+.tc-section--subtle { background-color: var(--tc-color-bg-subtle); }
+.tc-section--brand  { background-color: var(--tc-color-bg-brand-subtle); }
+.tc-section--dark   { background-color: var(--tc-color-bg-inverse); }
+
+/* Use when a dark band would otherwise sit directly against another dark
+   ground — the footer, or a dark hero. Pair with .tc-on-dark as normal. */
+.tc-section--dark-alt { background-color: var(--tc-color-bg-inverse-alt); }
+
+/* Section header — eyebrow, heading and optional intro. */
+.tc-section-head {
+  max-width: var(--tc-measure);
+  margin-block-end: var(--tc-space-8);
+}
+
+.tc-section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.tc-section-head > * + * { margin-block-start: var(--tc-space-4); }
+
+/* --------------------------------------------------------------------------
+   Stack — vertical flow spacing.
+   -------------------------------------------------------------------------- */
+
+.tc-stack > * + * { margin-block-start: var(--tc-space-5); }
+
+/* --------------------------------------------------------------------------
+   Cluster — horizontal group that wraps. Buttons, tags, meta lists.
+   -------------------------------------------------------------------------- */
+
+.tc-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tc-space-4);
+}
+
+.tc-cluster--sm { gap: var(--tc-space-2); }
+
+/* --------------------------------------------------------------------------
+   Grid — auto-responsive card grids. Columns collapse when the minimum
+   track width can no longer be honoured, so no breakpoints are needed.
+   -------------------------------------------------------------------------- */
+
+.tc-grid {
+  display: grid;
+  gap: var(--tc-space-6);
+}
+
+.tc-grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.tc-grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.tc-grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 232px), 1fr)); }
+
+/* --------------------------------------------------------------------------
+   Media — a fixed-ratio image frame. Add a ratio modifier when a page needs
+   one; only the ratios in use are defined.
+   -------------------------------------------------------------------------- */
+
+.tc-media {
+  overflow: hidden;
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-ink-100);
+}
+
+.tc-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tc-media--16x9 { aspect-ratio: 16 / 9; }

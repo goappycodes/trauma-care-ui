@@ -1,0 +1,83 @@
+/* ==========================================================================
+   TEMPLATE — HOMEPAGE
+   --------------------------------------------------------------------------
+   Loaded by index.html only, after main.css.
+
+   WordPress: wp_enqueue_style('tc-home', …) guarded by is_front_page(),
+   with 'tc-main' as its dependency so this order is preserved.
+
+   Anything here that a second template later needs gets promoted to
+   04-components/ rather than copied.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero
+   Content left, supporting image right, stacking below 900px. Text sits on a
+   solid dark ground rather than over the image, so contrast is fixed rather
+   than dependent on the photograph.
+
+   ACF: eyebrow, heading, intro, two CTAs, image, trust-line repeater.
+   -------------------------------------------------------------------------- */
+
+.tc-hero {
+  background-color: var(--tc-color-bg-inverse);
+  padding-block: clamp(3rem, 2rem + 6vw, 5rem);
+}
+
+.tc-hero__inner {
+  display: grid;
+  gap: var(--tc-space-9);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .tc-hero__inner {
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--tc-space-10);
+  }
+}
+
+/* Vertical rhythm ascends with the weight of the break between blocks:
+   16 → 24 → 40 → 48. The eyebrow sits closer to the heading it labels than
+   the heading does to the paragraph it introduces. */
+
+.tc-hero .tc-eyebrow {
+  margin-block-end: var(--tc-space-4);
+}
+
+.tc-hero h1 {
+  max-width: 15ch;
+}
+
+.tc-hero__lead {
+  margin-block-start: var(--tc-space-6);
+}
+
+.tc-hero__actions {
+  margin-block-start: var(--tc-space-8);
+}
+
+/* Credentials strip under a hairline — set small and tracked so it reads as
+   fine print rather than body copy. */
+.tc-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tc-space-2) var(--tc-space-6);
+  margin-block-start: var(--tc-space-9);
+  padding-block-start: var(--tc-space-6);
+  border-block-start: 1px solid var(--tc-color-border-inverse);
+  font-size: var(--tc-fs-xs);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-inverse-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Membership price
+   .tc-stat__label caps at 22ch, which suits a stat grid. Here it carries a
+   full sentence beside the figure, so it needs the extra width.
+   -------------------------------------------------------------------------- */
+
+.tc-membership-price .tc-stat__label {
+  max-width: 36ch;
+}

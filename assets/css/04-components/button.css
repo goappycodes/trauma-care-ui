@@ -1,0 +1,194 @@
+/* ==========================================================================
+   COMPONENT — BUTTON
+   One base class plus a variant. Works on <a>, <button> and <input>.
+   Hit area is never smaller than 44px tall (WCAG 2.5.8).
+   ========================================================================== */
+
+.tc-btn {
+  --_bg: transparent;
+  --_bg-hover: transparent;
+  --_fg: var(--tc-color-text);
+  --_border: transparent;
+  --_border-hover: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tc-space-2);
+
+  min-height: 44px;
+  padding: var(--tc-space-3) var(--tc-space-6);
+
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-base);
+  font-weight: var(--tc-fw-semibold);
+  line-height: 1.2;
+  letter-spacing: var(--tc-tracking-snug);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  color: var(--_fg);
+  background-color: var(--_bg);
+  border: 2px solid var(--_border);
+  border-radius: var(--tc-radius-full);
+  cursor: pointer;
+
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              border-color var(--tc-duration-fast) var(--tc-ease),
+              color var(--tc-duration-fast) var(--tc-ease),
+              transform var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-btn:hover {
+  background-color: var(--_bg-hover);
+  border-color: var(--_border-hover);
+  color: var(--_fg);
+  text-decoration: none;
+}
+
+.tc-btn:active {
+  transform: translateY(1px);
+}
+
+.tc-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Variants
+   -------------------------------------------------------------------------- */
+
+/* Primary — the single most important action on a page. */
+.tc-btn--primary {
+  --_bg: var(--tc-color-brand-strong);
+  --_bg-hover: var(--tc-color-brand-deep);
+  --_fg: var(--tc-color-text-on-brand);
+  --_border: var(--tc-color-brand-strong);
+  --_border-hover: var(--tc-color-brand-deep);
+}
+
+/* Secondary — equal weight, lower emphasis. Sits next to primary. */
+.tc-btn--secondary {
+  --_bg: transparent;
+  --_bg-hover: var(--tc-green-50);
+  --_fg: var(--tc-color-brand-deep);
+  --_border: var(--tc-color-brand-strong);
+  --_border-hover: var(--tc-color-brand-deep);
+}
+
+/* Tertiary — neutral outline, for cancel / back / low-stakes actions. */
+.tc-btn--tertiary {
+  --_bg: transparent;
+  --_bg-hover: var(--tc-ink-100);
+  --_fg: var(--tc-ink-800);
+  --_border: var(--tc-color-border-strong);
+  --_border-hover: var(--tc-ink-400);
+}
+
+/* Ghost — text-only action inside dense UI. */
+.tc-btn--ghost {
+  --_bg: transparent;
+  --_bg-hover: var(--tc-ink-100);
+  --_fg: var(--tc-color-brand-deep);
+  padding-inline: var(--tc-space-4);
+}
+
+/* Donate — reserved. Only ever used for giving. Never for a generic CTA. */
+.tc-btn--donate {
+  --_bg: var(--tc-color-donate);
+  --_bg-hover: var(--tc-color-donate-hover);
+  --_fg: var(--tc-white);
+  --_border: var(--tc-color-donate);
+  --_border-hover: var(--tc-color-donate-hover);
+}
+
+/* Inverse — for use on the dark navy ground or over photography. */
+.tc-btn--inverse {
+  --_bg: var(--tc-white);
+  --_bg-hover: var(--tc-green-50);
+  --_fg: var(--tc-ink-900);
+  --_border: var(--tc-white);
+  --_border-hover: var(--tc-green-50);
+}
+
+.tc-btn--inverse-outline {
+  --_bg: transparent;
+  --_bg-hover: rgba(255, 255, 255, 0.12);
+  --_fg: var(--tc-white);
+  --_border: rgba(255, 255, 255, 0.5);
+  --_border-hover: var(--tc-white);
+}
+
+/* --------------------------------------------------------------------------
+   Sizes
+   -------------------------------------------------------------------------- */
+
+.tc-btn--sm {
+  min-height: 36px;
+  padding: var(--tc-space-2) var(--tc-space-4);
+  font-size: var(--tc-fs-sm);
+}
+
+.tc-btn--lg {
+  min-height: 56px;
+  padding: var(--tc-space-4) var(--tc-space-8);
+  font-size: var(--tc-fs-md);
+}
+
+/* --------------------------------------------------------------------------
+   Modifiers
+   -------------------------------------------------------------------------- */
+
+.tc-btn--full { width: 100%; }
+
+/* Buttons that wrap onto multiple lines on very small screens. */
+@media (max-width: 380px) {
+  .tc-btn { white-space: normal; }
+}
+
+/* --------------------------------------------------------------------------
+   Button group — a row of actions with consistent spacing.
+   -------------------------------------------------------------------------- */
+
+.tc-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tc-space-3);
+}
+
+/* --------------------------------------------------------------------------
+   Text link with a trailing arrow — used in cards and section headers.
+   -------------------------------------------------------------------------- */
+
+.tc-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  font-weight: var(--tc-fw-semibold);
+  text-decoration: none;
+  color: var(--tc-color-link);
+}
+
+.tc-link-arrow::after {
+  content: "";
+  width: 1.1em;
+  height: 1.1em;
+  background-color: currentColor;
+  -webkit-mask: var(--tc-icon-arrow) center / contain no-repeat;
+  mask: var(--tc-icon-arrow) center / contain no-repeat;
+  transition: transform var(--tc-duration-base) var(--tc-ease);
+}
+
+.tc-link-arrow:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tc-link-arrow:hover::after { transform: translateX(3px); }
+
+:root {
+  --tc-icon-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13.47 4.47a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06l5.22-5.22H3.25a.75.75 0 0 1 0-1.5h15.44l-5.22-5.22a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
+}

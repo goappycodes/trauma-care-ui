@@ -1,0 +1,270 @@
+/* ==========================================================================
+   COMPONENT — LISTING
+   --------------------------------------------------------------------------
+   Everything an archive page needs around its card grid: the filter panel,
+   the active-filter chips, the results bar and the empty state.
+
+   Used by news, events, webinars, the recorded library, the resource
+   library and search results — one component, six templates.
+
+   The filter panel is a real <form> that submits by GET. Filtering works
+   with JavaScript off; the enhancement is only the mobile disclosure and,
+   later, updating results without a reload.
+   ========================================================================== */
+
+.tc-listing {
+  display: grid;
+  gap: var(--tc-space-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .tc-listing {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: var(--tc-space-10);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Filter panel
+   -------------------------------------------------------------------------- */
+
+.tc-filters {
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-color-surface);
+  padding: var(--tc-space-6);
+}
+
+.tc-filters__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--tc-space-4);
+  margin-block-end: var(--tc-space-5);
+}
+
+.tc-filters__title {
+  font-size: var(--tc-fs-lg);
+  margin: 0;
+}
+
+.tc-filters__clear {
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-link);
+  background: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  padding: var(--tc-space-1) 0;
+}
+
+.tc-filters__clear:hover { color: var(--tc-color-link-hover); }
+
+.tc-filters .tc-fieldset + .tc-fieldset {
+  margin-block-start: var(--tc-space-6);
+  padding-block-start: var(--tc-space-6);
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+.tc-filters .tc-legend {
+  font-size: var(--tc-fs-sm);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-muted);
+  margin-block-end: var(--tc-space-2);
+}
+
+.tc-filters .tc-choice { padding-block: var(--tc-space-2); }
+.tc-filters .tc-choice__label { font-size: var(--tc-fs-sm); }
+
+/* The count of matching items beside each option. */
+.tc-filters__count {
+  color: var(--tc-color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.tc-filters__apply { margin-block-start: var(--tc-space-6); }
+
+/* Mobile disclosure ------------------------------------------------------ */
+
+.tc-filters-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  min-height: 44px;
+  width: 100%;
+  justify-content: center;
+  padding-inline: var(--tc-space-5);
+  border: 2px solid var(--tc-color-border-strong);
+  border-radius: var(--tc-radius-full);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-ink-800);
+  background-color: var(--tc-color-surface);
+}
+
+.tc-filters-toggle svg { width: 1.2rem; height: 1.2rem; fill: currentColor; }
+
+.tc-filters-toggle__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding-inline: 6px;
+  border-radius: var(--tc-radius-full);
+  background-color: var(--tc-color-brand-strong);
+  color: var(--tc-white);
+  font-size: var(--tc-fs-2xs);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Visibility is owned by CSS, not by a `hidden` attribute, so the panel is
+   correct at every width even if no resize or matchMedia event ever fires.
+   JavaScript only adds or removes .is-open below the breakpoint. */
+
+@media (max-width: 899px) {
+  .tc-filters {
+    display: none;
+    margin-block-start: var(--tc-space-4);
+  }
+
+  .tc-filters.is-open { display: block; }
+
+  /* Without JavaScript the class is never applied, so show the panel. */
+  html:not(.js) .tc-filters { display: block; }
+}
+
+@media (min-width: 900px) {
+  .tc-filters-toggle { display: none; }
+
+  /* Always present above the breakpoint, whatever state the disclosure was
+     left in on a narrower screen. */
+  .tc-filters { display: block; }
+}
+
+/* --------------------------------------------------------------------------
+   Results bar — count and sort
+   -------------------------------------------------------------------------- */
+
+.tc-listing-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tc-space-4);
+  padding-block-end: var(--tc-space-5);
+  margin-block-end: var(--tc-space-6);
+  border-block-end: 1px solid var(--tc-color-border);
+}
+
+.tc-listing-count {
+  margin: 0;
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+}
+
+.tc-listing-count b {
+  color: var(--tc-color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.tc-listing-sort {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--tc-space-3);
+}
+
+.tc-listing-sort .tc-label { white-space: nowrap; margin: 0; }
+
+.tc-listing-sort .tc-select {
+  width: auto;
+  min-height: 44px;
+  padding-block: var(--tc-space-2);
+  font-size: var(--tc-fs-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Active filter chips
+   -------------------------------------------------------------------------- */
+
+.tc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tc-space-2);
+  margin: 0 0 var(--tc-space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.tc-chips__label {
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+  margin-inline-end: var(--tc-space-1);
+}
+
+.tc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  min-height: 36px;
+  padding: var(--tc-space-1) var(--tc-space-2) var(--tc-space-1) var(--tc-space-4);
+  border-radius: var(--tc-radius-full);
+  background-color: var(--tc-green-50);
+  border: 1px solid var(--tc-green-200);
+  color: var(--tc-green-800);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  text-decoration: none;
+}
+
+.tc-chip::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border-radius: var(--tc-radius-full);
+  background-color: currentColor;
+  -webkit-mask: var(--tc-icon-close) center / 12px no-repeat;
+  mask: var(--tc-icon-close) center / 12px no-repeat;
+}
+
+.tc-chip:hover {
+  background-color: var(--tc-green-100);
+  color: var(--tc-green-900);
+  border-color: var(--tc-green-300);
+}
+
+/* --------------------------------------------------------------------------
+   Empty state
+   -------------------------------------------------------------------------- */
+
+.tc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--tc-space-4);
+  padding: var(--tc-space-11) var(--tc-space-6);
+  background-color: var(--tc-color-bg-subtle);
+  border-radius: var(--tc-radius-lg);
+}
+
+.tc-empty__icon {
+  width: 48px;
+  height: 48px;
+  fill: var(--tc-ink-400);
+}
+
+.tc-empty__title {
+  font-size: var(--tc-fs-xl);
+  margin: 0;
+}
+
+.tc-empty p {
+  margin: 0;
+  max-width: 48ch;
+  color: var(--tc-color-text-muted);
+  font-size: var(--tc-fs-sm);
+}

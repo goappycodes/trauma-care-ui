@@ -1,0 +1,300 @@
+/* ==========================================================================
+   COMPONENT — FORMS
+   Every field is label + control + optional hint + optional error, in that
+   order. Errors are announced with an icon and text, never colour alone.
+   Markup pattern:
+     <div class="tc-field">
+       <label class="tc-label" for="x">Label <span class="tc-required">*</span></label>
+       <p class="tc-hint" id="x-hint">Helper text</p>
+       <input class="tc-input" id="x" aria-describedby="x-hint">
+     </div>
+   ========================================================================== */
+
+.tc-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-2);
+}
+
+.tc-field + .tc-field { margin-block-start: var(--tc-space-6); }
+
+.tc-label {
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text);
+  line-height: var(--tc-lh-snug);
+}
+
+.tc-required {
+  color: var(--tc-color-danger);
+  font-weight: var(--tc-fw-bold);
+}
+
+.tc-hint {
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+  line-height: var(--tc-lh-normal);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Text inputs, textareas, selects
+   -------------------------------------------------------------------------- */
+
+.tc-input,
+.tc-textarea,
+.tc-select {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--tc-space-3) var(--tc-space-4);
+  font-size: var(--tc-fs-base);
+  font-family: var(--tc-font-body);
+  color: var(--tc-color-text);
+  background-color: var(--tc-color-surface);
+  border: 1px solid var(--tc-color-border-strong);
+  border-radius: var(--tc-radius-md);
+  transition: border-color var(--tc-duration-fast) var(--tc-ease),
+              box-shadow var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-textarea {
+  min-height: 140px;
+  line-height: var(--tc-lh-normal);
+  padding-block: var(--tc-space-3);
+}
+
+.tc-input::placeholder,
+.tc-textarea::placeholder {
+  color: var(--tc-ink-400);
+  /* Placeholders are never a substitute for a label. */
+}
+
+.tc-input:hover,
+.tc-textarea:hover,
+.tc-select:hover {
+  border-color: var(--tc-ink-400);
+}
+
+.tc-input:disabled,
+.tc-textarea:disabled,
+.tc-select:disabled {
+  background-color: var(--tc-ink-100);
+  color: var(--tc-color-text-muted);
+  cursor: not-allowed;
+}
+
+.tc-input[readonly] {
+  background-color: var(--tc-ink-50);
+}
+
+/* Select needs its own chevron once appearance is reset. */
+.tc-select {
+  appearance: none;
+  padding-inline-end: var(--tc-space-9);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f7189'%3E%3Cpath d='M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--tc-space-4) center;
+  background-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Validation states
+   -------------------------------------------------------------------------- */
+
+.tc-input[aria-invalid="true"] {
+  border-color: var(--tc-color-danger);
+  border-width: 2px;
+  background-color: var(--tc-color-danger-bg);
+}
+
+.tc-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tc-space-2);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-medium);
+  color: var(--tc-color-danger);
+  margin: 0;
+}
+
+.tc-error::before {
+  content: "";
+  flex: none;
+  width: 1.15em;
+  height: 1.15em;
+  margin-block-start: 0.1em;
+  background-color: currentColor;
+  -webkit-mask: var(--tc-icon-alert) center / contain no-repeat;
+  mask: var(--tc-icon-alert) center / contain no-repeat;
+}
+
+/* --------------------------------------------------------------------------
+   Checkbox and radio
+   Custom control drawn on a real input so keyboard and AT behaviour is
+   native. The input stays in the accessibility tree.
+   -------------------------------------------------------------------------- */
+
+.tc-choice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--tc-space-3);
+  align-items: start;
+  padding: var(--tc-space-3) 0;
+  cursor: pointer;
+}
+
+.tc-choice input[type="checkbox"],
+.tc-choice input[type="radio"] {
+  appearance: none;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  background-color: var(--tc-color-surface);
+  border: 2px solid var(--tc-ink-400);
+  cursor: pointer;
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              border-color var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-choice input[type="checkbox"] { border-radius: var(--tc-radius-xs); }
+.tc-choice input[type="radio"]    { border-radius: var(--tc-radius-full); }
+
+.tc-choice input:hover { border-color: var(--tc-color-brand-strong); }
+
+.tc-choice input:checked {
+  background-color: var(--tc-color-brand-strong);
+  border-color: var(--tc-color-brand-strong);
+}
+
+.tc-choice input[type="checkbox"]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M20.28 6.22a.75.75 0 0 1 0 1.06l-9.5 9.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.97 3.97 8.97-8.97a.75.75 0 0 1 1.06 0Z'/%3E%3C/svg%3E");
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tc-choice input[type="radio"]:checked {
+  background-image: radial-gradient(circle, var(--tc-white) 0 4px, transparent 5px);
+}
+
+.tc-choice input:disabled {
+  background-color: var(--tc-ink-200);
+  border-color: var(--tc-ink-300);
+  cursor: not-allowed;
+}
+
+.tc-choice__label {
+  font-size: var(--tc-fs-base);
+  line-height: var(--tc-lh-normal);
+  color: var(--tc-color-text-body);
+}
+
+.tc-choice__label b {
+  display: block;
+  color: var(--tc-color-text);
+  font-weight: var(--tc-fw-semibold);
+}
+
+/* Boxed choice — for membership tier and donation amount selection. */
+.tc-choice--boxed {
+  padding: var(--tc-space-4) var(--tc-space-5);
+  border: 2px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-color-surface);
+  transition: border-color var(--tc-duration-fast) var(--tc-ease),
+              background-color var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-choice--boxed:hover { border-color: var(--tc-color-brand-strong); }
+
+.tc-choice--boxed:has(input:checked) {
+  border-color: var(--tc-color-brand-strong);
+  background-color: var(--tc-green-50);
+}
+
+/* --------------------------------------------------------------------------
+   Fieldset — groups related controls. Legend is the group's accessible name.
+   -------------------------------------------------------------------------- */
+
+.tc-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.tc-fieldset + .tc-fieldset { margin-block-start: var(--tc-space-8); }
+
+.tc-legend {
+  padding: 0;
+  margin-block-end: var(--tc-space-3);
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  color: var(--tc-color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Input with a leading unit (£) or trailing affix.
+   -------------------------------------------------------------------------- */
+
+.tc-input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.tc-input-group__affix {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--tc-space-4);
+  background-color: var(--tc-ink-100);
+  border: 1px solid var(--tc-color-border-strong);
+  border-inline-end: 0;
+  border-start-start-radius: var(--tc-radius-md);
+  border-end-start-radius: var(--tc-radius-md);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text-body);
+}
+
+.tc-input-group .tc-input {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Error summary — placed at the top of a failed form, focused on submit.
+   This is the pattern assistive-technology users rely on.
+   -------------------------------------------------------------------------- */
+
+.tc-error-summary {
+  padding: var(--tc-space-5) var(--tc-space-6);
+  border: 2px solid var(--tc-color-danger);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-color-danger-bg);
+  margin-block-end: var(--tc-space-7);
+}
+
+/* Class rather than element, so the page can pick the heading level that
+   fits its outline (usually h2 on a form page). */
+.tc-error-summary__title {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  line-height: var(--tc-lh-snug);
+  color: var(--tc-color-danger);
+  margin: 0 0 var(--tc-space-3);
+}
+
+.tc-error-summary ul {
+  margin: 0;
+  padding-inline-start: var(--tc-space-5);
+}
+
+.tc-error-summary a {
+  color: var(--tc-color-danger);
+  font-weight: var(--tc-fw-semibold);
+}
+
+:root {
+  --tc-icon-alert: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 5a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Zm0 9.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z'/%3E%3C/svg%3E");
+}

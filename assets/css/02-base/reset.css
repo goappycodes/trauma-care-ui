@@ -1,0 +1,99 @@
+/* ==========================================================================
+   BASE — RESET
+   A light, opinionated reset. Preserves useful defaults (list semantics in
+   prose, form element inheritance) rather than flattening everything.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* The [hidden] rule lives in 06-utilities, not here — see the note there. */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Offset for the sticky header when jumping to an in-page anchor. */
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--tc-color-bg);
+  color: var(--tc-color-text-body);
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-base);
+  line-height: var(--tc-lh-relaxed);
+  font-weight: var(--tc-fw-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4,
+p, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Wrapped in :where() so it carries zero specificity. As a bare `ul[class]`
+   it outranked every single-class component rule, which silently killed the
+   margin on any styled list. */
+:where(ul[class]) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* img is kept although no page carries a real image yet: supplying realistic
+   imagery is an outstanding requirement, and max-width is the one reset whose
+   absence causes overflow bugs rather than cosmetic ones. */
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Honour the user's OS-level motion preference. Required for WCAG 2.3.3. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

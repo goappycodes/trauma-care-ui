@@ -1,0 +1,131 @@
+/* ==========================================================================
+   BASE — TYPOGRAPHY
+   Headings carry the display face; everything else reads in the body face.
+   Sizes descend monotonically h1 → h6 (the current site inverts this).
+   ========================================================================== */
+
+h1, h2, h3, h4 {
+  font-family: var(--tc-font-display);
+  color: var(--tc-color-text);
+  font-weight: var(--tc-fw-bold);
+  line-height: var(--tc-lh-tight);
+  letter-spacing: var(--tc-tracking-tight);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--tc-fs-5xl); font-weight: var(--tc-fw-extrabold); }
+h2 { font-size: var(--tc-fs-4xl); font-weight: var(--tc-fw-bold); }
+h3 { font-size: var(--tc-fs-2xl); }
+h4 { font-size: var(--tc-fs-xl);  line-height: var(--tc-lh-snug); }
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--tc-color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color var(--tc-duration-fast) var(--tc-ease),
+              text-decoration-color var(--tc-duration-fast) var(--tc-ease);
+}
+
+a:hover {
+  color: var(--tc-color-link-hover);
+  text-decoration-thickness: 2px;
+}
+
+strong, b { font-weight: var(--tc-fw-semibold); }
+
+code, kbd {
+  font-family: var(--tc-font-mono);
+  font-size: 0.9em;
+  /* Code tokens have no natural break opportunities; without this a single
+     long one sets the min-content width of its container and pushes the
+     whole page into horizontal scroll on a phone. */
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   Display utilities — for hero and section headings that need a size other
+   than their semantic level. Never change a heading level for visual reasons.
+   -------------------------------------------------------------------------- */
+
+.tc-display-1 { font-family: var(--tc-font-display); font-size: var(--tc-fs-6xl); font-weight: var(--tc-fw-extrabold); line-height: var(--tc-lh-none); letter-spacing: var(--tc-tracking-tight); }
+/* Heading appearance without heading semantics. Use these when an element
+   must look like a heading but must not enter the document outline. */
+.tc-h1, .tc-h2, .tc-h3, .tc-h4 {
+  font-family: var(--tc-font-display);
+  color: var(--tc-color-text);
+  font-weight: var(--tc-fw-bold);
+  line-height: var(--tc-lh-tight);
+  letter-spacing: var(--tc-tracking-tight);
+}
+
+.tc-h1 { font-size: var(--tc-fs-5xl); font-weight: var(--tc-fw-extrabold); }
+.tc-h2 { font-size: var(--tc-fs-4xl); }
+.tc-h3 { font-size: var(--tc-fs-2xl); }
+.tc-h4 { font-size: var(--tc-fs-xl); line-height: var(--tc-lh-snug); }
+
+/* Eyebrow — the small uppercase label that sits above a section heading. */
+.tc-eyebrow {
+  display: block;
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-brand-strong);
+  margin-bottom: var(--tc-space-3);
+}
+
+.tc-lead {
+  font-size: var(--tc-fs-lg);
+  line-height: var(--tc-lh-relaxed);
+  color: var(--tc-color-text-body);
+  max-width: var(--tc-measure);
+}
+
+.tc-text-muted { color: var(--tc-color-text-muted); }
+.tc-text-small { font-size: var(--tc-fs-sm); }
+
+/* --------------------------------------------------------------------------
+   Prose — the wrapper for editor-managed content (the WYSIWYG field).
+   Everything a content editor can produce must look right inside .tc-prose.
+   -------------------------------------------------------------------------- */
+
+.tc-prose {
+  max-width: var(--tc-measure);
+}
+
+.tc-prose > * + * { margin-block-start: var(--tc-space-5); }
+
+/* Headings, lists, blockquotes, figures and rules inside .tc-prose are styled
+   when the first editor-content page is built, not before. */
+
+/* --------------------------------------------------------------------------
+   Inverse context — any block sitting on a dark ground.
+   -------------------------------------------------------------------------- */
+
+.tc-on-dark {
+  color: var(--tc-color-text-inverse-muted);
+}
+
+.tc-on-dark h1,
+.tc-on-dark h2,
+.tc-on-dark h3 { color: var(--tc-color-text-inverse); }
+
+/* The default eyebrow green is a text colour for light grounds; on the dark
+   ground it measures 3.22:1, so it steps up to Green 300 at 9.97:1. */
+.tc-on-dark .tc-eyebrow { color: var(--tc-green-300); }
+
+.tc-on-dark .tc-lead { color: var(--tc-color-text-inverse-muted); }
+
+/* :where() holds the `a` at zero specificity, so this context rule sets the
+   colour of plain links on a dark ground without overriding a component that
+   owns its own colour. Written as `.tc-on-dark a` it was (0,1,1) and beat
+   `.tc-btn` (0,1,0) — which turned every button inside a dark section green,
+   including white-background CTAs. */
+.tc-on-dark :where(a) { color: var(--tc-color-link-inverse); }
+.tc-on-dark :where(a):hover { color: var(--tc-white); }

@@ -1,0 +1,243 @@
+/* ==========================================================================
+   LAYOUT — SITE FOOTER
+   --------------------------------------------------------------------------
+   Two bands on the dark ink ground:
+     .tc-site-footer__main   brand + contact + link columns
+     .tc-site-footer__legal  charity line, legal links, social, back to top
+
+   The footer is a top-level <footer>, so it exposes the contentinfo
+   landmark. Link columns sit inside one <nav aria-label="Footer">, with a
+   heading per column, rather than five separate navigation landmarks.
+   ========================================================================== */
+
+.tc-site-footer {
+  background-color: var(--tc-color-bg-inverse);
+  color: var(--tc-color-text-inverse-muted);
+  font-size: var(--tc-fs-sm);
+}
+
+.tc-site-footer__main {
+  padding-block: var(--tc-section-y);
+}
+
+/* --------------------------------------------------------------------------
+   Top grid — brand block beside the link columns
+   -------------------------------------------------------------------------- */
+
+.tc-footer-top {
+  display: grid;
+  gap: var(--tc-space-9);
+}
+
+@media (min-width: 1024px) {
+  .tc-footer-top {
+    grid-template-columns: minmax(280px, 1fr) 2fr;
+    gap: var(--tc-space-10);
+  }
+}
+
+/* Brand block ------------------------------------------------------------ */
+
+.tc-footer-brand__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-3);
+  text-decoration: none;
+}
+
+.tc-footer-brand__logo svg { width: 48px; height: 48px; flex: none; }
+
+.tc-footer-brand__logo span {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-extrabold);
+  letter-spacing: var(--tc-tracking-tight);
+  color: var(--tc-white);
+}
+
+.tc-footer-brand__mission {
+  margin: var(--tc-space-5) 0 0;
+  line-height: var(--tc-lh-relaxed);
+  max-width: 42ch;
+}
+
+/* Contact ---------------------------------------------------------------- */
+
+.tc-footer-contact {
+  margin-block-start: var(--tc-space-7);
+  display: grid;
+  gap: var(--tc-space-4);
+}
+
+.tc-footer-contact dt {
+  font-size: var(--tc-fs-2xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-green-300);
+  margin-block-end: var(--tc-space-1);
+}
+
+.tc-footer-contact dd {
+  margin: 0;
+  line-height: var(--tc-lh-relaxed);
+}
+
+.tc-footer-contact a {
+  color: var(--tc-color-text-inverse-muted);
+  text-decoration: none;
+}
+
+.tc-footer-contact a:hover {
+  color: var(--tc-white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tc-footer-contact__closed {
+  color: var(--tc-ink-400);
+}
+
+/* Link columns ----------------------------------------------------------- */
+
+.tc-footer-nav {
+  display: grid;
+  gap: var(--tc-space-8) var(--tc-space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+}
+
+.tc-footer-col__title {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-bold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-white);
+  margin: 0 0 var(--tc-space-4);
+}
+
+.tc-footer-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--tc-space-1);
+}
+
+.tc-footer-col a {
+  display: inline-block;
+  padding-block: var(--tc-space-2);
+  color: var(--tc-color-text-inverse-muted);
+  text-decoration: none;
+  line-height: var(--tc-lh-snug);
+}
+
+.tc-footer-col a:hover {
+  color: var(--tc-white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* --------------------------------------------------------------------------
+   Legal band
+   -------------------------------------------------------------------------- */
+
+.tc-site-footer__legal {
+  border-block-start: 1px solid var(--tc-color-border-inverse);
+  padding-block: var(--tc-space-7);
+}
+
+.tc-footer-legal {
+  display: grid;
+  gap: var(--tc-space-6);
+}
+
+@media (min-width: 900px) {
+  .tc-footer-legal {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+}
+
+.tc-footer-legal p {
+  margin: 0;
+  font-size: var(--tc-fs-xs);
+  line-height: var(--tc-lh-relaxed);
+  color: var(--tc-ink-400);
+}
+
+.tc-footer-legal__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tc-space-2) var(--tc-space-5);
+  margin: 0 0 var(--tc-space-3);
+  padding: 0;
+  list-style: none;
+  font-size: var(--tc-fs-xs);
+}
+
+.tc-footer-legal__links a {
+  color: var(--tc-color-text-inverse-muted);
+  text-decoration: none;
+  display: inline-block;
+  padding-block: var(--tc-space-1);
+}
+
+.tc-footer-legal__links a:hover {
+  color: var(--tc-white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Social ------------------------------------------------------------------ */
+
+.tc-footer-social {
+  display: flex;
+  gap: var(--tc-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--tc-radius-full);
+  border: 1px solid var(--tc-color-border-inverse);
+  color: var(--tc-white);
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              border-color var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-footer-social svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
+
+.tc-footer-social a:hover {
+  background-color: var(--tc-color-brand-strong);
+  border-color: var(--tc-color-brand-strong);
+}
+
+/* Back to top ------------------------------------------------------------- */
+
+.tc-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  min-height: 44px;
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text-inverse-muted);
+  text-decoration: none;
+}
+
+.tc-back-to-top svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  transition: transform var(--tc-duration-base) var(--tc-ease);
+}
+
+.tc-back-to-top:hover { color: var(--tc-white); }
+.tc-back-to-top:hover svg { transform: translateY(-2px); }

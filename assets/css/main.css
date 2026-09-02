@@ -1,0 +1,36 @@
+/* ==========================================================================
+   TRAUMA CARE — MAIN STYLESHEET
+   --------------------------------------------------------------------------
+   Layers load in ascending specificity (ITCSS order). Never reorder these:
+     01 settings    tokens only, no output
+     02 base        element defaults
+     03 layout      structural primitives
+     04 components  discrete UI pieces
+     05 templates   page-type specifics
+     06 utilities   single-purpose overrides, loaded last so they win
+
+   In the WordPress theme each file becomes its own wp_enqueue_style() handle
+   with the same dependency order, or is concatenated by the build step.
+   ========================================================================== */
+
+@import url("01-settings/tokens.css");
+
+@import url("02-base/reset.css");
+@import url("02-base/typography.css");
+@import url("02-base/a11y.css");
+
+@import url("03-layout/layout.css");
+@import url("03-layout/header.css");
+@import url("03-layout/footer.css");
+
+@import url("04-components/button.css");
+@import url("04-components/form.css");
+@import url("04-components/card.css");
+@import url("04-components/badge.css");
+@import url("04-components/breadcrumb.css");
+@import url("04-components/listing.css");
+@import url("04-components/pagination.css");
+@import url("04-components/newsletter.css");
+@import url("04-components/sponsors.css");
+
+@import url("06-utilities/utilities.css");

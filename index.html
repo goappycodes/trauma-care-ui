@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trauma Care — improving the outcome of the trauma victim</title>
+<meta name="description" content="Trauma Care is the UK's largest trauma network. CPD webinars, an annual multidisciplinary conference, the TRAUMA journal and membership from £3 a month.">
+
+<!-- Sets the `js` class before first paint so the no-JavaScript fallback
+     styles never flash. Must stay inline and must stay in the head. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/05-templates/home.css">
+</head>
+
+<body>
+
+<a class="tc-skip-link" href="#main">Skip to main content</a>
+
+<!-- ==================================================================== -->
+<!-- template-part: header                                                -->
+<!-- WordPress: header.php → get_template_part('template-parts/header')   -->
+<!-- Menu items come from the 'primary' nav menu location; the featured   -->
+<!-- block in each panel is an ACF options-page field group.              -->
+<!-- Logged-out state. The signed-in variant swaps .tc-nav__actions for   -->
+<!-- the account menu — see components.html.                              -->
+<!-- ==================================================================== -->
+<header class="tc-site-header" id="top" data-site-header>
+
+  <!-- Utility bar ---------------------------------------------------- -->
+  <div class="tc-utility-bar">
+    <div class="tc-container tc-utility-bar__inner">
+      <p>Improving the outcome of the trauma victim since 1996 · Registered charity 1078780</p>
+      <ul>
+        <li>
+          <a href="contact.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1l-2.22 2.2Z"/></svg>
+            0121 271 0380
+          </a>
+        </li>
+        <li><a href="journal.html">TRAUMA Journal</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li>
+          <a href="members/login.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A4.5 4.5 0 0 0 7.5 6v3H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-.5V6A4.5 4.5 0 0 0 12 1.5Zm2.5 7.5h-5V6a2.5 2.5 0 0 1 5 0v3Z"/></svg>
+            Member log in
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main bar ------------------------------------------------------- -->
+  <div class="tc-header-bar">
+    <div class="tc-container tc-header-bar__inner">
+
+      <a class="tc-logo" href="index.html">
+        <svg viewBox="0 0 64 64" role="img" aria-label="Trauma Care — home">
+          <rect x="2" y="2" width="60" height="60" rx="16" fill="#03b732"/>
+          <circle cx="18" cy="23" r="5.5" fill="#ffffff"/>
+          <circle cx="32" cy="21" r="6"   fill="#df0000"/>
+          <circle cx="46" cy="23" r="5.5" fill="#ffffff"/>
+          <rect x="8"    y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+          <rect x="33"   y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+          <rect x="20.5" y="34" width="23" height="16" rx="8" fill="none" stroke="#df0000" stroke-width="5"/>
+        </svg>
+        <span class="tc-logo__wordmark">Trauma Care</span>
+      </a>
+
+      <nav class="tc-nav" id="primary-nav" aria-label="Primary" data-nav>
+        <ul class="tc-nav__list">
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="about.html">About</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-about" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for About</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-about" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="about-team.html">Our people<span>Patrons, council, trustees and the support team</span></a></li>
+                <li><a class="tc-nav__sublink" href="about-fellowship.html">Trauma Care Fellowship<span>Recognising a lifetime contribution to trauma care</span></a></li>
+                <li><a class="tc-nav__sublink" href="about-ryan-lecture.html">The Ryan Lecture<span>Delivered annually at the conference</span></a></li>
+                <li><a class="tc-nav__sublink" href="contact.html">Contact us<span>Office hours, address and enquiry form</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">Accountability</span>
+                <p class="tc-nav__feature-title">Annual report 2023/24</p>
+                <p>How the charity spent its income and what it delivered for members.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="about-impact.html">Read the report</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="education.html">Education</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-education" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Education</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-education" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="webinars.html">CPD webinars<span>Upcoming live sessions</span></a></li>
+                <li><a class="tc-nav__sublink" href="video-library.html">Video library<span>Public recordings, with the full library for members</span></a></li>
+                <li><a class="tc-nav__sublink" href="courses.html">Courses<span>Practical training, including Foundations in Trauma</span></a></li>
+                <li><a class="tc-nav__sublink" href="cpd.html">CPD certificates<span>Issued automatically within 24 hours</span></a></li>
+                <li><a class="tc-nav__sublink" href="resources.html">Resource library<span>Posters, guidelines and downloads</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">Download</span>
+                <p class="tc-nav__feature-title">CPD Poster — Edition 30</p>
+                <p>Every upcoming presentation on one page. Print it for the mess room.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="resource.html">Download</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="events.html">Events</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-events" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Events</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-events" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="conference.html">The Annual Conference<span>Four days at Yarnfield Park</span></a></li>
+                <li><a class="tc-nav__sublink" href="exhibit-sponsor.html">Exhibit &amp; sponsor<span>Reach the trauma community at our events</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">Booking open</span>
+                <p class="tc-nav__feature-title">The 29th Annual Conference</p>
+                <p>Day tickets £115. Members save £25, and discounts combine from £60.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="event-register.html">Book your place</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="membership.html">Membership</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-membership" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Membership</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel tc-nav__panel--wide" id="panel-membership" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="membership-tiers.html">Tiers &amp; pricing<span>Compare registered and non-registered membership</span></a></li>
+                <li><a class="tc-nav__sublink" href="journal.html">TRAUMA journal<span>Our peer-reviewed quarterly, published with SAGE</span></a></li>
+              </ul>
+              <div class="tc-nav__feature">
+                <span class="tc-nav__feature-label">From £3 a month</span>
+                <p class="tc-nav__feature-title">Join the UK&rsquo;s largest trauma network</p>
+                <p>The journal, the video library and automated CPD certificates.</p>
+                <a class="tc-btn tc-btn--inverse tc-btn--sm" href="membership-join.html">Join today</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="tc-nav__item">
+            <a class="tc-nav__link" href="news.html">News</a>
+          </li>
+
+          <li class="tc-nav__item tc-nav__item--has-children">
+            <a class="tc-nav__link" href="support-us.html">Support us</a>
+            <button class="tc-nav__toggle" type="button" aria-expanded="false" aria-controls="panel-support" data-submenu-toggle hidden>
+              <span class="tc-visually-hidden">Show submenu for Support us</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.72a.75.75 0 0 1 1.06 0L12 14.44l5.72-5.72a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L5.22 9.78a.75.75 0 0 1 0-1.06Z"/></svg>
+            </button>
+            <div class="tc-nav__panel" id="panel-support" hidden>
+              <ul class="tc-nav__panel-list">
+                <li><a class="tc-nav__sublink" href="donate.html">Donate<span>One-off or monthly, with Gift Aid</span></a></li>
+                <li><a class="tc-nav__sublink" href="fundraise.html">Fundraise for us<span>Including our London Marathon places</span></a></li>
+                <li><a class="tc-nav__sublink" href="volunteer.html">Volunteer<span>Give your time and expertise</span></a></li>
+                <li><a class="tc-nav__sublink" href="partners.html">Corporate partners<span>Partner with the charity</span></a></li>
+                <li><a class="tc-nav__sublink" href="shop.html">Shop<span>Books, clothing and merchandise</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Actions live inside the nav so the mobile drawer needs no
+             duplicate markup. -->
+        <div class="tc-nav__actions">
+          <a class="tc-btn tc-btn--tertiary tc-btn--sm tc-nav__login" href="members/login.html">Log in</a>
+          <a class="tc-btn tc-btn--primary tc-btn--sm" href="membership-join.html">Join</a>
+          <a class="tc-btn tc-btn--donate tc-btn--sm" href="donate.html">Donate</a>
+        </div>
+      </nav>
+
+      <button class="tc-icon-btn" type="button" aria-expanded="false" aria-controls="site-search" data-disclosure-toggle data-disclosure-focus>
+        <span class="tc-visually-hidden">Search this site</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 0 4.62 13.4l4.24 4.25a1 1 0 0 0 1.42-1.42l-4.25-4.24A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/></svg>
+      </button>
+
+      <button class="tc-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+        <svg class="tc-nav-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v2H3v-2Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
+        <svg class="tc-nav-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 5 5 6.4l5.6 5.6L5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6 6.4 5Z"/></svg>
+        <span class="tc-nav-toggle__label">Menu</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Search disclosure ---------------------------------------------- -->
+  <div class="tc-search-panel" id="site-search" hidden>
+    <div class="tc-container">
+      <form class="tc-search-panel__inner" action="search.html" method="get" role="search">
+        <div class="tc-field">
+          <label class="tc-label" for="site-search-input">Search Trauma Care</label>
+          <p class="tc-hint" id="site-search-hint">Searches pages, news and the resource library.</p>
+          <input class="tc-input" type="search" id="site-search-input" name="s" aria-describedby="site-search-hint">
+        </div>
+        <button class="tc-btn tc-btn--primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+</header>
+<!-- /template-part: header -->
+
+
+<main id="main">
+
+  <!-- ================================================================== -->
+  <!-- SECTION: hero                                                      -->
+  <!-- ACF: eyebrow, heading, intro, primary CTA, secondary CTA, image,   -->
+  <!-- trust-line repeater.                                               -->
+  <!-- ================================================================== -->
+  <section class="tc-hero tc-on-dark" aria-labelledby="hero-h">
+    <div class="tc-container tc-hero__inner">
+
+      <div>
+        <p class="tc-eyebrow">The UK&rsquo;s largest trauma network</p>
+        <h1 id="hero-h">Improving the outcome of the trauma victim</h1>
+        <p class="tc-lead tc-hero__lead">
+          From the roadside to rehabilitation, we bring together every profession in
+          the chain of care &mdash; improving outcomes through education, research and
+          publishing since 1996.
+        </p>
+
+        <div class="tc-btn-group tc-hero__actions">
+          <a class="tc-btn tc-btn--primary tc-btn--lg" href="membership-join.html">Join Trauma Care</a>
+          <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="webinars.html">Watch CPD webinars</a>
+        </div>
+
+        <ul class="tc-hero__trust">
+          <li>Registered charity 1078780</li>
+          <li>Founded 1996</li>
+          <li>200+ CPD recordings</li>
+        </ul>
+      </div>
+
+      <!-- Trauma Care's own photograph, taken from the live site. It is the
+           only genuine photography they currently publish; a commissioned
+           library is still needed. -->
+      <div class="tc-media tc-media--16x9">
+        <img src="assets/img/hero-trauma-care-team.jpg"
+             alt="Trauma Care faculty and delegates at a training event, wearing Trauma Care lanyards, with a search and rescue dog."
+             width="1420" height="640" fetchpriority="high">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: where to start                                            -->
+  <!-- The four routes in. Covers three of the four landing pages named   -->
+  <!-- in requirements §1 (Membership, Courses, Donations) and puts the   -->
+  <!-- donation route high, per §2 "a clearer donation experience".       -->
+  <!-- ACF: flexible-content layout "routes", repeater of icon/title/     -->
+  <!-- text/link. Uses only existing components — no template CSS.        -->
+  <!-- ================================================================== -->
+  <section class="tc-section" aria-labelledby="routes-h">
+    <div class="tc-container">
+
+      <div class="tc-section-head tc-section-head--center">
+        <p class="tc-eyebrow">Where to start</p>
+        <h2 id="routes-h">Education, membership and support</h2>
+      </div>
+
+      <div class="tc-grid tc-grid--4">
+
+        <article class="tc-card tc-card--flat tc-card--link">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5c0-3-4-5.5-9-5.5Z"/></svg>
+            </span>
+            <h3 class="tc-card__title"><a href="membership.html">Membership</a></h3>
+            <p class="tc-card__text">From £3 a month: the <i>TRAUMA</i> journal, the video
+              library, discounted tickets and automated CPD certificates.</p>
+            <p class="tc-card__footer"><span class="tc-link-arrow">Explore membership</span></p>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat tc-card--link">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3ZM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+            </span>
+            <h3 class="tc-card__title"><a href="courses.html">Courses</a></h3>
+            <p class="tc-card__text">Practical, multidisciplinary training. Foundations in
+              Trauma follows the patient from the scene of a major incident to rehabilitation.</p>
+            <p class="tc-card__footer"><span class="tc-link-arrow">See our courses</span></p>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat tc-card--link">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8v10H5V10h14Z"/></svg>
+            </span>
+            <h3 class="tc-card__title"><a href="events.html">Events &amp; webinars</a></h3>
+            <p class="tc-card__text">Four days of education at the annual conference, plus CPD
+              webinars across the trauma pathway.</p>
+            <p class="tc-card__footer"><span class="tc-link-arrow">Browse events</span></p>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat tc-card--link">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg>
+            </span>
+            <h3 class="tc-card__title"><a href="donate.html">Donate</a></h3>
+            <p class="tc-card__text">Every donation funds education for the people who
+              treat trauma patients. Give once or monthly, and add Gift Aid.</p>
+            <p class="tc-card__footer"><span class="tc-link-arrow">Support our work</span></p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: annual conference                                         -->
+  <!-- The flagship event (requirements §6). Every figure here is from    -->
+  <!-- the live conference page. Dates are deliberately omitted until the -->
+  <!-- client resolves the 28th/2026 vs 29th/2027 contradiction.          -->
+  <!-- ACF: flexible-content layout "featured event" — eyebrow, heading,  -->
+  <!-- intro, pricing line, two CTAs, stream repeater.                    -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--dark-alt tc-on-dark" aria-labelledby="conference-h">
+    <div class="tc-container">
+      <div class="tc-grid tc-grid--2">
+
+        <div class="tc-stack">
+          <p class="tc-eyebrow">8&ndash;11 March 2027 &middot; Yarnfield Park</p>
+          <h2 id="conference-h">The 29th Annual Trauma Care Conference</h2>
+          <p class="tc-lead">Four days at Yarnfield Park bringing together experts and
+            clinicians from across the entire trauma pathway &mdash; from the point of
+            injury and pre-hospital care through emergency medicine, critical care and
+            definitive treatment, to rehabilitation.</p>
+          <p>Day tickets are £115. Members save £25, early bird saves £15, and students,
+            unpaid responders and volunteers save £15. Discounts combine, so places start
+            at £60.</p>
+          <div class="tc-btn-group u-mt-8">
+            <a class="tc-btn tc-btn--inverse tc-btn--lg" href="event-register.html">Book your place</a>
+            <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="conference.html">See the programme</a>
+          </div>
+        </div>
+
+        <div class="tc-stack">
+          <h3>Eleven specialist streams</h3>
+          <ul class="tc-cluster tc-cluster--sm">
+            <li><span class="tc-tag">Pre-hospital emergency medicine</span></li>
+            <li><span class="tc-tag">HEMS</span></li>
+            <li><span class="tc-tag">Paramedic practice</span></li>
+            <li><span class="tc-tag">Critical care</span></li>
+            <li><span class="tc-tag">Nursing</span></li>
+            <li><span class="tc-tag">Military &amp; austere medicine</span></li>
+            <li><span class="tc-tag">Paediatrics</span></li>
+            <li><span class="tc-tag">Older people &amp; trauma</span></li>
+            <li><span class="tc-tag">Allied health professionals</span></li>
+            <li><span class="tc-tag">Community first responders</span></li>
+            <li><span class="tc-tag">Major trauma</span></li>
+          </ul>
+          <p>Every ticket includes lunch and refreshments, full exhibition access, time
+            between sessions to meet colleagues, free onsite parking and a CPD certificate
+            of attendance.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: membership                                                -->
+  <!-- Requirements §5. Sells, rather than signposting — the route card    -->
+  <!-- above already links here. The full pricing table stays on           -->
+  <!-- membership-tiers.html; repeating it here would duplicate that page. -->
+  <!-- ACF: flexible-content layout "membership", with a checklist         -->
+  <!-- repeater, a stat pair and a quote group.                            -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--subtle" aria-labelledby="membership-h">
+    <div class="tc-container">
+      <div class="tc-grid tc-grid--2">
+
+        <div class="tc-stack">
+          <p class="tc-eyebrow">Membership</p>
+          <h2 id="membership-h">Our members are the backbone of Trauma Care</h2>
+          <p class="tc-lead">By joining you receive some genuinely useful benefits &mdash;
+            and you actively contribute to our mission of providing affordable education to
+            all healthcare professionals.</p>
+
+          <ul class="tc-checklist">
+            <li>Our entire catalogue of videos from past webinars and events</li>
+            <li>Exclusive discounts on all Trauma Care events and in the shop</li>
+            <li>CPD certificates, stored for every live and recorded webinar</li>
+            <li>Our quarterly journal <i>TRAUMA</i>, delivered electronically or printed</li>
+          </ul>
+
+          <div class="tc-btn-group u-mt-8">
+            <a class="tc-btn tc-btn--primary tc-btn--lg" href="membership-tiers.html">Compare membership</a>
+            <a class="tc-btn tc-btn--secondary tc-btn--lg" href="membership-join.html">Join today</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="tc-stat tc-membership-price">
+            <span class="tc-stat__value">£3</span>
+            <span class="tc-stat__label">a month for non-registered healthcare
+              professionals, £8 for registered. Pay monthly or annually.</span>
+          </div>
+
+          <blockquote class="tc-quote u-mt-8">
+            <p class="tc-quote__text">Trauma Care is unique. No other organisation brings
+              together such a wide range of professionals.</p>
+            <cite class="tc-quote__cite"><b>Professor Colonel Ian Greaves</b>Trauma Care Chairman</cite>
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ==================================================================== -->
+<!-- template-part: footer                                                -->
+<!-- WordPress: footer.php. Link columns are four registered menu         -->
+<!-- locations; mission, contact and social come from an ACF options page.-->
+<!-- ==================================================================== -->
+<footer class="tc-site-footer">
+
+  <div class="tc-site-footer__main">
+    <div class="tc-container tc-footer-top">
+
+      <div class="tc-footer-brand">
+        <a class="tc-footer-brand__logo" href="index.html">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Trauma Care — home">
+            <rect x="2" y="2" width="60" height="60" rx="16" fill="#03b732"/>
+            <circle cx="18" cy="23" r="5.5" fill="#ffffff"/>
+            <circle cx="32" cy="21" r="6"   fill="#df0000"/>
+            <circle cx="46" cy="23" r="5.5" fill="#ffffff"/>
+            <rect x="8"    y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+            <rect x="33"   y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+            <rect x="20.5" y="34" width="23" height="16" rx="8" fill="none" stroke="#df0000" stroke-width="5"/>
+          </svg>
+          <span>Trauma Care</span>
+        </a>
+
+        <p class="tc-footer-brand__mission">
+          Founded in 1996 to establish commonly agreed standards of best clinical practice
+          in the management of trauma — improving the outcome of the trauma victim
+          throughout the whole chain of care.
+        </p>
+
+        <dl class="tc-footer-contact">
+          <div>
+            <dt>Get in touch</dt>
+            <dd>
+              <a href="mailto:admin@traumacare.org.uk">admin@traumacare.org.uk</a><br>
+              <a href="tel:+441212710380">0121 271 0380</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Office hours</dt>
+            <dd>
+              Monday &amp; Tuesday, 09:00&ndash;17:00<br>
+              Thursday &amp; Friday, 09:00&ndash;17:00<br>
+              <span class="tc-footer-contact__closed">Closed Wednesday</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Address</dt>
+            <dd>
+              <address style="font-style:normal;margin:0">
+                Trauma Care UK, Office 5:19<br>
+                156 Great Charles Street Queensway<br>
+                Birmingham B3 3HN
+              </address>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <nav class="tc-footer-nav" aria-label="Footer">
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-about">About</h2>
+          <ul aria-labelledby="footer-about">
+            <li><a href="about.html">Who we are</a></li>
+            <li><a href="about-team.html">Our people</a></li>
+            <li><a href="about-fellowship.html">Fellowship</a></li>
+            <li><a href="about-ryan-lecture.html">The Ryan Lecture</a></li>
+            <li><a href="about-impact.html">Annual reports</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-education">Education &amp; events</h2>
+          <ul aria-labelledby="footer-education">
+            <li><a href="webinars.html">CPD webinars</a></li>
+            <li><a href="video-library.html">Video library</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="cpd.html">CPD certificates</a></li>
+            <li><a href="resources.html">Resource library</a></li>
+            <li><a href="conference.html">Annual Conference</a></li>
+            <li><a href="events.html">All events</a></li>
+          </ul>
+        </div>
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-membership">Membership</h2>
+          <ul aria-labelledby="footer-membership">
+            <li><a href="membership.html">Why join</a></li>
+            <li><a href="membership-tiers.html">Tiers &amp; pricing</a></li>
+            <li><a href="membership-join.html">Join today</a></li>
+            <li><a href="journal.html">TRAUMA journal</a></li>
+            <li><a href="members/login.html">Member log in</a></li>
+          </ul>
+        </div>
+
+        <div class="tc-footer-col">
+          <h2 class="tc-footer-col__title" id="footer-support">Support us</h2>
+          <ul aria-labelledby="footer-support">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="fundraise.html">Fundraise for us</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Corporate partners</a></li>
+            <li><a href="exhibit-sponsor.html">Exhibit &amp; sponsor</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+
+  <div class="tc-site-footer__legal">
+    <div class="tc-container tc-footer-legal">
+
+      <div>
+        <ul class="tc-footer-legal__links">
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="cookies.html">Cookie policy</a></li>
+          <!-- Requirements §12 'preference management' and §13 cookie consent: a
+               visitor who has accepted or declined must be able to change it. In
+               WordPress this becomes the consent plugin's re-open trigger; it is a
+               link to a real page here so the prototype has no dead controls. -->
+          <li><a href="cookies.html#settings">Cookie settings</a></li>
+          <li><a href="terms.html">Terms of use</a></li>
+          <li><a href="cancellation.html">Cancellation policy</a></li>
+          <li><a href="accessibility.html">Accessibility statement</a></li>
+        </ul>
+        <!-- Founding year follows the About copy (1996). The live site's
+             footer says 1994 — awaiting the client's ruling. -->
+        <p>&copy; 1996&ndash;2026 Trauma Care. Registered charity in England and Wales no.&nbsp;1078780.</p>
+      </div>
+
+      <div class="tc-cluster tc-cluster--sm">
+        <ul class="tc-footer-social">
+          <li><a href="https://www.facebook.com/trauma.careuk/"><span class="tc-visually-hidden">Trauma Care on Facebook</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a></li>
+          <li><a href="https://x.com/TRAUMACAREUK"><span class="tc-visually-hidden">Trauma Care on X</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3h3.06l-6.69 7.64L21.75 21h-5.98l-4.68-6.12L5.72 21H2.66l7.15-8.17L2.25 3h6.13l4.23 5.59L17.53 3Zm-1.07 16.2h1.7L7.6 4.71H5.78l10.68 14.49Z"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/company/trauma-care-uk/"><span class="tc-visually-hidden">Trauma Care on LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.2 8.4h3.5V21H3.2V8.4Zm5.9 0h3.35v1.72h.05c.47-.85 1.6-1.75 3.3-1.75 3.53 0 4.18 2.2 4.18 5.06V21h-3.5v-6.1c0-1.45-.03-3.32-2.05-3.32-2.05 0-2.37 1.58-2.37 3.21V21H9.1V8.4Z"/></svg></a></li>
+          <li><a href="https://www.instagram.com/traumacareuk/"><span class="tc-visually-hidden">Trauma Care on Instagram</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07Zm0 5.68a4.16 4.16 0 1 0 0 8.32 4.16 4.16 0 0 0 0-8.32Zm0 6.86a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Zm5.3-7.03a.97.97 0 1 1-1.94 0 .97.97 0 0 1 1.94 0Z"/></svg></a></li>
+        </ul>
+
+        <a class="tc-back-to-top" href="#top">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a.75.75 0 0 1 .53.22l6 6a.75.75 0 1 1-1.06 1.06l-4.72-4.72V19a.75.75 0 0 1-1.5 0V7.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06l6-6A.75.75 0 0 1 12 4.5Z"/></svg>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<!-- /template-part: footer -->
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

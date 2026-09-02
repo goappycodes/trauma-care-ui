@@ -1,0 +1,82 @@
+/* ==========================================================================
+   COMPONENT — BREADCRUMB
+   --------------------------------------------------------------------------
+   An ordered list inside a labelled nav. The last item is a link carrying
+   aria-current="page" (WAI-ARIA APG) rather than plain text, so the trail
+   stays consistent and the current position is announced.
+
+   Separators are drawn in CSS, never typed as characters — a screen reader
+   should not read "greater-than" between every level.
+   ========================================================================== */
+
+.tc-breadcrumb {
+  padding-block: var(--tc-space-5);
+}
+
+.tc-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tc-space-1) var(--tc-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--tc-fs-sm);
+}
+
+.tc-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  min-width: 0;
+}
+
+.tc-breadcrumb li + li::before {
+  content: "";
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--tc-ink-400);
+  -webkit-mask: var(--tc-icon-chevron-right) center / contain no-repeat;
+  mask: var(--tc-icon-chevron-right) center / contain no-repeat;
+}
+
+.tc-breadcrumb a {
+  display: inline-block;
+  padding-block: var(--tc-space-2);
+  color: var(--tc-color-text-muted);
+  text-decoration: none;
+  font-weight: var(--tc-fw-medium);
+}
+
+.tc-breadcrumb a:hover {
+  color: var(--tc-color-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Current page — not a destination, so it reads as text weight rather than
+   as an invitation, while remaining focusable and announced. */
+.tc-breadcrumb [aria-current="page"] {
+  color: var(--tc-color-text);
+  font-weight: var(--tc-fw-semibold);
+  cursor: default;
+  /* Long titles must not force the page into horizontal scroll. */
+  overflow-wrap: anywhere;
+}
+
+.tc-breadcrumb [aria-current="page"]:hover {
+  color: var(--tc-color-text);
+  text-decoration: none;
+}
+
+/* On a dark hero. */
+.tc-on-dark .tc-breadcrumb a { color: var(--tc-color-text-inverse-muted); }
+.tc-on-dark .tc-breadcrumb a:hover { color: var(--tc-white); }
+.tc-on-dark .tc-breadcrumb [aria-current="page"] { color: var(--tc-white); }
+.tc-on-dark .tc-breadcrumb li + li::before { background-color: rgba(255, 255, 255, 0.45); }
+
+:root {
+  --tc-icon-chevron-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.72 4.72a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 1 1-1.06-1.06L14.69 12 8.72 6.03a.75.75 0 0 1 0-1.31Z'/%3E%3C/svg%3E");
+  --tc-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.4 5 5 6.4l5.6 5.6L5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6 6.4 5Z'/%3E%3C/svg%3E");
+}

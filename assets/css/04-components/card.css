@@ -1,0 +1,333 @@
+/* ==========================================================================
+   COMPONENT — CARD
+   The workhorse. News, events, webinars, resources, people and courses all
+   use the same shell with different slots filled.
+
+   Whole-card links use the ::after overlay technique: only the heading link
+   is a real link, so screen readers announce one sensible target and the
+   whole card stays clickable for pointer users.
+   ========================================================================== */
+
+.tc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tc-color-surface);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-lg);
+  overflow: hidden;
+  transition: border-color var(--tc-duration-base) var(--tc-ease),
+              box-shadow var(--tc-duration-base) var(--tc-ease),
+              transform var(--tc-duration-base) var(--tc-ease);
+}
+
+.tc-card__media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background-color: var(--tc-ink-100);
+  overflow: hidden;
+}
+
+.tc-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-3);
+  padding: var(--tc-space-6);
+  flex: 1;
+}
+
+.tc-card__title {
+  font-size: var(--tc-fs-xl);
+  line-height: var(--tc-lh-snug);
+  color: var(--tc-color-text);
+  margin: 0;
+}
+
+.tc-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tc-card__title a::after {
+  /* Overlay makes the whole card clickable without nesting links. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--tc-z-base);
+}
+
+.tc-card__text {
+  color: var(--tc-color-text-muted);
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-relaxed);
+  margin: 0;
+}
+
+.tc-card__footer {
+  margin-block-start: auto;
+  padding-block-start: var(--tc-space-4);
+}
+
+/* Meta row — date, duration, category, location. */
+.tc-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tc-space-2) var(--tc-space-4);
+  font-size: var(--tc-fs-xs);
+  font-weight: var(--tc-fw-medium);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-muted);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Interactive state — applied when the card contains a link. */
+.tc-card--link:hover {
+  border-color: var(--tc-color-brand-strong);
+  box-shadow: var(--tc-shadow-lg);
+  transform: translateY(-3px);
+}
+
+.tc-card--link:hover .tc-card__title { color: var(--tc-color-brand-deep); }
+
+/* Keyboard focus must present on the card, not just the invisible link. */
+.tc-card--link:focus-within {
+  border-color: var(--tc-color-brand-strong);
+  box-shadow: 0 0 0 3px var(--tc-focus-inner), 0 0 0 6px var(--tc-focus-outer);
+}
+
+.tc-card--link:focus-within .tc-card__title a:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   Variants
+   -------------------------------------------------------------------------- */
+
+/* Flat — no border, for use on a subtle background. */
+.tc-card--flat {
+  border-color: transparent;
+  background-color: var(--tc-color-bg-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   Icon card — the "what we do" grid. Icon, heading, short text, link.
+   -------------------------------------------------------------------------- */
+
+.tc-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-green-50);
+  color: var(--tc-color-brand-deep);
+  margin-block-end: var(--tc-space-2);
+}
+
+.tc-card__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Person card — patrons, council, faculty, speakers.
+   -------------------------------------------------------------------------- */
+
+.tc-person {
+  text-align: left;
+}
+
+.tc-person__photo {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--tc-radius-lg);
+  overflow: hidden;
+  background-color: var(--tc-ink-100);
+  margin-block-end: var(--tc-space-4);
+}
+
+.tc-person__name {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  line-height: var(--tc-lh-snug);
+  color: var(--tc-color-text);
+  margin: 0;
+}
+
+.tc-person__role {
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-brand-strong);
+  margin: var(--tc-space-1) 0 var(--tc-space-3);
+}
+
+.tc-person__bio {
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-relaxed);
+  color: var(--tc-color-text-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Stat — impact numbers.
+   -------------------------------------------------------------------------- */
+
+.tc-stat__value {
+  display: block;
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-5xl);
+  font-weight: var(--tc-fw-extrabold);
+  line-height: var(--tc-lh-none);
+  letter-spacing: var(--tc-tracking-tight);
+  color: var(--tc-color-brand-deep);
+}
+
+.tc-stat__label {
+  display: block;
+  margin-block-start: var(--tc-space-3);
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-normal);
+  color: var(--tc-color-text-muted);
+  max-width: 22ch;
+}
+
+/* --------------------------------------------------------------------------
+   Pricing / membership tier card
+   -------------------------------------------------------------------------- */
+
+.tc-tier {
+  display: flex;
+  flex-direction: column;
+  padding: var(--tc-space-7);
+  background-color: var(--tc-color-surface);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-lg);
+}
+
+.tc-tier--featured {
+  border: 2px solid var(--tc-color-brand-strong);
+  box-shadow: var(--tc-shadow-lg);
+}
+
+.tc-tier__name {
+  font-size: var(--tc-fs-xl);
+  margin: 0;
+}
+
+.tc-tier__audience {
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+  margin: var(--tc-space-2) 0 var(--tc-space-6);
+  min-height: 3.2em;
+}
+
+.tc-tier__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--tc-space-2);
+  font-family: var(--tc-font-display);
+  margin-block-end: var(--tc-space-6);
+}
+
+.tc-tier__amount {
+  font-size: var(--tc-fs-4xl);
+  font-weight: var(--tc-fw-extrabold);
+  line-height: var(--tc-lh-none);
+  letter-spacing: var(--tc-tracking-tight);
+  color: var(--tc-color-text);
+}
+
+.tc-tier__period {
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-medium);
+  color: var(--tc-color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Checklist — a benefit list with brand check marks. Used by tier cards and
+   by content bands, so it is not named after either.
+   -------------------------------------------------------------------------- */
+
+.tc-checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-3);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-body);
+}
+
+/* The check is positioned rather than laid out as a grid or flex item. Those
+   promote every element child to an item of their own, so a single <i> or <b>
+   in the text broke onto its own row. Absolute keeps the text in normal
+   inline flow, whatever markup an editor puts in it. */
+.tc-checklist li {
+  position: relative;
+  padding-inline-start: calc(1.15em + var(--tc-space-3));
+}
+
+.tc-checklist li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.15em;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: var(--tc-color-brand-strong);
+  -webkit-mask: var(--tc-icon-check) center / contain no-repeat;
+  mask: var(--tc-icon-check) center / contain no-repeat;
+}
+
+/* Inside a tier card the CTA is pushed to the bottom, but the list still needs
+   breathing room when the card is only as tall as its own content. */
+.tc-tier .tc-checklist { margin-block-end: var(--tc-space-7); }
+
+.tc-tier__cta { margin-block-start: auto; }
+
+/* --------------------------------------------------------------------------
+   Quote card
+   -------------------------------------------------------------------------- */
+
+.tc-quote {
+  padding: var(--tc-space-8);
+  background-color: var(--tc-color-bg-brand-subtle);
+  border-radius: var(--tc-radius-lg);
+  border-inline-start: 5px solid var(--tc-color-brand);
+}
+
+.tc-quote__text {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-xl);
+  font-weight: var(--tc-fw-medium);
+  line-height: var(--tc-lh-snug);
+  color: var(--tc-color-text);
+  margin: 0;
+}
+
+.tc-quote__cite {
+  display: block;
+  margin-block-start: var(--tc-space-5);
+  font-size: var(--tc-fs-sm);
+  font-style: normal;
+  color: var(--tc-color-text-muted);
+}
+
+.tc-quote__cite b {
+  display: block;
+  color: var(--tc-color-text);
+  font-weight: var(--tc-fw-semibold);
+}
+
+:root {
+  --tc-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.28 6.22a.75.75 0 0 1 0 1.06l-9.5 9.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.97 3.97 8.97-8.97a.75.75 0 0 1 1.06 0Z'/%3E%3C/svg%3E");
+}

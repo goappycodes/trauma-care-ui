@@ -1,0 +1,40 @@
+/* ==========================================================================
+   UTILITIES
+   Loaded last so they win. Add one only when a component genuinely cannot
+   own the rule — a growing utility file means a component is missing.
+   ========================================================================== */
+
+/* The browser's own [hidden] rule has almost no specificity, so any author
+   `display` declaration silently beats it — which left every mega-menu panel
+   carrying hidden="" but rendering anyway.
+
+   It lives here rather than in the reset so that loading last is what wins,
+   rather than !important. That matters: the no-JavaScript fallbacks
+   (html:not(.js) .tc-nav__panel[hidden]) deliberately override it, and an
+   !important here would make them impossible. */
+[hidden] { display: none; }
+
+.u-text-center { text-align: center; }
+.u-mx-auto     { margin-inline: auto; }
+
+.u-mt-4 { margin-block-start: var(--tc-space-4); }
+.u-mt-8 { margin-block-start: var(--tc-space-8); }
+.u-mb-4 { margin-block-end: var(--tc-space-4); }
+.u-mb-6 { margin-block-end: var(--tc-space-6); }
+
+/* Horizontal scroll container for wide tables.
+   tabindex="0" on the element makes it keyboard scrollable. */
+.u-scroll-x { overflow-x: auto; }
+
+@media print {
+  .tc-site-header,
+  .tc-site-footer,
+  .tc-skip-link { display: none !important; }
+
+  body { color: #000; background: #fff; }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+}

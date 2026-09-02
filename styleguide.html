@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System — Trauma Care</title>
+<meta name="description" content="The Trauma Care design system: colour, typography, spacing, components and accessibility standards for the redesigned website.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/05-templates/styleguide.css">
+</head>
+
+<body class="sg-body">
+
+<a class="tc-skip-link" href="#main">Skip to main content</a>
+
+<!-- ==================================================================== -->
+<!-- MASTHEAD                                                             -->
+<!-- ==================================================================== -->
+<header class="sg-masthead">
+  <div class="tc-container">
+
+    <div class="sg-masthead__logo">
+      <!-- Placeholder mark. The supplied logo is a 2200px PNG; a vector
+           original is still needed from the client. -->
+      <svg viewBox="0 0 64 64" role="img" aria-label="Trauma Care">
+        <rect x="2" y="2" width="60" height="60" rx="16" fill="#03b732"/>
+        <circle cx="18" cy="23" r="5.5" fill="#ffffff"/>
+        <circle cx="32" cy="21" r="6"   fill="#df0000"/>
+        <circle cx="46" cy="23" r="5.5" fill="#ffffff"/>
+        <rect x="8"    y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+        <rect x="33"   y="34" width="23" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="5"/>
+        <rect x="20.5" y="34" width="23" height="16" rx="8" fill="none" stroke="#df0000" stroke-width="5"/>
+      </svg>
+      <span class="sg-masthead__wordmark">Trauma<br>Care</span>
+    </div>
+
+    <p class="tc-eyebrow">Design system · v0.1</p>
+    <h1>The building blocks of the new Trauma Care website</h1>
+    <p class="sg-masthead__intro">
+      Every colour, type size, space value and component used across the site is defined here.
+      Approve this page and the rest of the prototype is assembly rather than invention.
+    </p>
+
+    <div class="sg-masthead__meta">
+      <div><b>Status</b>For UI review</div>
+      <div><b>Standard</b>WCAG 2.1 AA</div>
+      <div><b>Build</b>Plain HTML &amp; CSS</div>
+      <div><b>Target</b>WordPress custom theme</div>
+    </div>
+
+  </div>
+</header>
+
+<div class="tc-container">
+  <div class="sg-layout">
+
+    <!-- ================================================================ -->
+    <!-- CONTENTS                                                         -->
+    <!-- ================================================================ -->
+    <nav class="sg-nav" aria-label="Design system contents">
+      <p class="sg-nav__title" id="sg-contents">Contents</p>
+      <ol aria-labelledby="sg-contents">
+        <li><a href="#direction">Visual direction</a></li>
+        <li><a href="#colour">Colour</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#spacing">Spacing &amp; layout</a></li>
+        <li><a href="#surfaces">Surfaces &amp; motion</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#status">Status &amp; gating</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+
+      <!-- ============================================================== -->
+      <!-- 01 VISUAL DIRECTION                                            -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="direction" aria-labelledby="direction-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">01</span>
+          <h2 id="direction-h">Visual direction</h2>
+          <p>
+            Trauma Care sits between three worlds: a registered charity, a professional
+            membership body, and a clinical education provider. The design has to earn
+            trust from a consultant surgeon and a first-year student paramedic on the
+            same page.
+          </p>
+        </div>
+
+        <h3 class="sg-sub">The organising idea: the chain of care</h3>
+        <p class="tc-prose">
+          The logo shows three figures whose linked arms form chain links. That metaphor
+          already runs through the charity's language — "best practice throughout the whole
+          chain of care", and "from the moment of injury, to the return to active life".
+          It becomes the visual system: connected shapes, continuous rules, cards that link
+          into grids, and a single unbroken green thread running through every page.
+        </p>
+
+        <h3 class="sg-sub">Four principles</h3>
+        <div class="tc-grid tc-grid--2">
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">Clinical, not corporate</h4>
+              <p class="tc-card__text">Generous whitespace, a restrained palette and a clear
+                hierarchy. Information is scannable under time pressure. Nothing decorative
+                competes with content.</p>
+            </div>
+          </div>
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">Human at the centre</h4>
+              <p class="tc-card__text">Real photography of practitioners, real names, real
+                outcomes. The red figure at the heart of the logo is the patient — people
+                lead, systems follow.</p>
+            </div>
+          </div>
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">Accessible by construction</h4>
+              <p class="tc-card__text">AA contrast is designed in, not retrofitted. Keyboard
+                operation, visible focus and semantic structure are properties of the
+                components, so no page can regress.</p>
+            </div>
+          </div>
+          <div class="tc-card tc-card--flat">
+            <div class="tc-card__body">
+              <h4 class="tc-card__title">One system, two audiences</h4>
+              <p class="tc-card__text">The public site and the member area share every token
+                and component. The member area is the same design at a higher density,
+                not a separate product.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-sub">What changes from the current site</h3>
+        <div class="sg-rules">
+          <div class="sg-rule sg-rule--dont">
+            <b>Today</b>
+            Six typefaces on one page, headings that get smaller as they go up the hierarchy,
+            brand green used for small text at 2.68:1, dropdown menus that cannot be reached
+            by keyboard, and no clean URLs.
+          </div>
+          <div class="sg-rule sg-rule--do">
+            <b>Proposed</b>
+            Two typefaces, one descending type scale, a green ramp with defined text-safe
+            steps, navigation that works without JavaScript, and a component set built for
+            editors to reuse.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 02 COLOUR                                                      -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="colour" aria-labelledby="colour-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">02</span>
+          <h2 id="colour-h">Colour</h2>
+          <p>
+            The brand green is kept — it is the charity's strongest asset — but it is
+            given a proper ramp. Every ratio below is measured against white and is
+            stated so the palette can be audited rather than trusted.
+          </p>
+        </div>
+
+        <h3 class="sg-sub">Green — brand</h3>
+        <div class="sg-swatches">
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#edf9f0;color:#05602f">50</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 50</span>
+              <span class="sg-swatch__hex">#EDF9F0</span>
+              <span class="sg-swatch__ratio">Surface tint</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#d5f2dd;color:#05602f">100</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 100</span>
+              <span class="sg-swatch__hex">#D5F2DD</span>
+              <span class="sg-swatch__ratio">Surface tint</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#6ed491;color:#063f21">300</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 300</span>
+              <span class="sg-swatch__hex">#6ED491</span>
+              <span class="sg-swatch__ratio">Links on dark</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#03b732;color:#ffffff">500 · Brand</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 500 — brand</span>
+              <span class="sg-swatch__hex">#03B732</span>
+              <span class="sg-swatch__ratio sg-fail">2.68:1 · graphics only</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#05913c;color:#ffffff">600</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 600</span>
+              <span class="sg-swatch__hex">#05913C</span>
+              <span class="sg-swatch__ratio sg-fail">4.10:1 · large text only</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#04773a;color:#ffffff">700 · Action</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 700 — action</span>
+              <span class="sg-swatch__hex">#04773A</span>
+              <span class="sg-swatch__ratio sg-pass">5.67:1 · AA</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#05602f;color:#ffffff">800</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 800</span>
+              <span class="sg-swatch__hex">#05602F</span>
+              <span class="sg-swatch__ratio sg-pass">7.72:1 · AAA</span>
+            </div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#063f21;color:#ffffff">900</div>
+            <div class="sg-swatch__info">
+              <span class="sg-swatch__name">Green 900</span>
+              <span class="sg-swatch__hex">#063F21</span>
+              <span class="sg-swatch__ratio sg-pass">12.06:1 · AAA</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="sg-rules u-mt-8">
+          <div class="sg-rule sg-rule--do">
+            <b>Do</b>
+            Use Green&nbsp;500 for the logo, large graphic shapes, illustration and
+            decorative rules. Use Green&nbsp;700 for every link, button and piece of
+            interactive text.
+          </div>
+          <div class="sg-rule sg-rule--dont">
+            <b>Don't</b>
+            Set body copy, links, labels or small text in Green&nbsp;500. At 2.68:1 it
+            fails AA, and it is the single most common accessibility fault on the
+            current site.
+          </div>
+        </div>
+
+        <h3 class="sg-sub">Ink — neutrals</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#f7fafc;color:#24354d">50</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Ink 50</span><span class="sg-swatch__hex">#F7FAFC</span><span class="sg-swatch__ratio">Page tint</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#e1e7ee;color:#24354d">200</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Ink 200</span><span class="sg-swatch__hex">#E1E7EE</span><span class="sg-swatch__ratio">Borders</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#8a9aae;color:#0b1622">400</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Ink 400</span><span class="sg-swatch__hex">#8A9AAE</span><span class="sg-swatch__ratio sg-fail">2.87:1 · decorative</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#5f7189;color:#ffffff">500</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Ink 500 — muted text</span><span class="sg-swatch__hex">#5F7189</span><span class="sg-swatch__ratio sg-pass">4.99:1 · AA</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#24354d;color:#ffffff">700</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Ink 700 — body</span><span class="sg-swatch__hex">#24354D</span><span class="sg-swatch__ratio sg-pass">12.4:1 · AAA</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#0b1622;color:#ffffff">900</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Ink 900 — headings</span><span class="sg-swatch__hex">#0B1622</span><span class="sg-swatch__ratio sg-pass">18.2:1 · AAA</span></div>
+          </div>
+        </div>
+
+        <h3 class="sg-sub">Support colours</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#df0000;color:#ffffff">Identity red</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Red 500</span><span class="sg-swatch__hex">#DF0000</span><span class="sg-swatch__ratio">Logo only</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#c8102e;color:#ffffff">Donate / error</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Red 600</span><span class="sg-swatch__hex">#C8102E</span><span class="sg-swatch__ratio sg-pass">5.88:1 · AA</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#b45309;color:#ffffff">Warning</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Amber 600</span><span class="sg-swatch__hex">#B45309</span><span class="sg-swatch__ratio sg-pass">5.02:1 · AA</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch__chip" style="background:#0f5fa6;color:#ffffff">Information</div>
+            <div class="sg-swatch__info"><span class="sg-swatch__name">Blue 600</span><span class="sg-swatch__hex">#0F5FA6</span><span class="sg-swatch__ratio sg-pass">6.55:1 · AA</span></div>
+          </div>
+        </div>
+
+        <p class="sg-note">
+          Red carries two jobs — Donate and error. They never appear in the same context,
+          and errors are always accompanied by an icon and by wording, so colour is never
+          the only signal (WCAG 1.4.1 Use of Colour).
+        </p>
+
+        <h3 class="sg-sub">Semantic tokens</h3>
+        <p class="sg-note u-mb-6">
+          Components reference these names, never a raw hex. Re-pointing a token re-themes
+          the site; in WordPress these become <code>theme.json</code> palette entries.
+        </p>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Semantic colour tokens and their values</caption>
+            <thead>
+              <tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Used for</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--tc-color-text</code></td><td>Ink 900</td><td>Headings</td></tr>
+              <tr><td><code>--tc-color-text-body</code></td><td>Ink 700</td><td>Body copy</td></tr>
+              <tr><td><code>--tc-color-text-muted</code></td><td>Ink 500</td><td>Metadata, captions, hints</td></tr>
+              <tr><td><code>--tc-color-link</code></td><td>Green 700</td><td>All inline links</td></tr>
+              <tr><td><code>--tc-color-brand</code></td><td>Green 500</td><td>Graphic devices only</td></tr>
+              <tr><td><code>--tc-color-brand-strong</code></td><td>Green 700</td><td>Primary buttons, active states</td></tr>
+              <tr><td><code>--tc-color-donate</code></td><td>Red 600</td><td>Donation calls to action</td></tr>
+              <tr><td><code>--tc-color-bg-inverse</code></td><td>Ink 900</td><td>Dark sections, footer</td></tr>
+              <tr><td><code>--tc-color-border</code></td><td>Ink 200</td><td>Card and input borders</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 03 TYPOGRAPHY                                                  -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="typography" aria-labelledby="type-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">03</span>
+          <h2 id="type-h">Typography</h2>
+          <p>
+            Two families replace the current six. Sizes are fluid — they interpolate
+            between a 360px and a 1280px viewport, so nothing needs a breakpoint to
+            stay readable.
+          </p>
+        </div>
+
+        <div class="tc-grid tc-grid--2">
+          <div class="sg-demo sg-demo--plain">
+            <span class="sg-demo__label">Display face</span>
+            <p style="font-family:var(--tc-font-display);font-weight:800;font-size:var(--tc-fs-4xl);line-height:1.05;letter-spacing:-0.02em;margin:0">Plus Jakarta Sans</p>
+            <p class="tc-card__text u-mt-4">Headings, numerals and the wordmark. Geometric with
+              humanist detail — it carries the weight of the logo without feeling like a tech
+              start-up. Weights 500, 600, 700, 800.</p>
+          </div>
+          <div class="sg-demo sg-demo--plain">
+            <span class="sg-demo__label">Body face</span>
+            <p style="font-family:var(--tc-font-body);font-weight:600;font-size:var(--tc-fs-4xl);line-height:1.05;letter-spacing:-0.02em;margin:0">Inter</p>
+            <p class="tc-card__text u-mt-4">Body copy, UI, forms and tables. A tall x-height and
+              open apertures keep dense clinical text legible on a phone in poor light.
+              Weights 400, 500, 600, 700.</p>
+          </div>
+        </div>
+
+        <h3 class="sg-sub">Scale</h3>
+
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>Display 1</b>44 → 72px<br>800 · 1.0</div>
+          <div class="sg-specimen__sample"><span class="tc-display-1">The chain of care</span></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>H1</b>38 → 56px<br>800 · 1.15</div>
+          <div class="sg-specimen__sample"><p class="tc-h1" style="margin:0">Improving the outcome of the trauma victim</p></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>H2</b>32 → 44px<br>700 · 1.15</div>
+          <div class="sg-specimen__sample"><p class="tc-h2" style="margin:0">Membership that supports your practice</p></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>H3</b>24 → 30px<br>700 · 1.15</div>
+          <div class="sg-specimen__sample"><p class="tc-h3" style="margin:0">The 29th Annual Trauma Care Conference</p></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>H4</b>20 → 24px<br>700 · 1.25</div>
+          <div class="sg-specimen__sample"><p class="tc-h4" style="margin:0">Pre-hospital emergency medicine</p></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>Eyebrow</b>14px<br>600 · uppercase</div>
+          <div class="sg-specimen__sample"><span class="tc-eyebrow" style="margin:0">Hot off the press</span></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>Lead</b>18 → 20px<br>400 · 1.65</div>
+          <div class="sg-specimen__sample"><p class="tc-lead" style="margin:0">Our CPD webinars run throughout the year, and members receive a CPD certificate automatically.</p></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>Body</b>17px<br>400 · 1.65</div>
+          <div class="sg-specimen__sample"><p style="margin:0;max-width:var(--tc-measure)">Trauma Care was founded in 1996 to address the need for commonly agreed standards of the best clinical practice in the management of trauma. No other organisation encompasses the diverse specialties involved in the care of trauma victims from the moment of injury to the return to active life.</p></div>
+        </div>
+        <div class="sg-specimen">
+          <div class="sg-specimen__spec"><b>Small</b>14px<br>400 · 1.5</div>
+          <div class="sg-specimen__sample"><p class="tc-text-small tc-text-muted" style="margin:0">Registered UK charity no. 1078780</p></div>
+        </div>
+
+        <p class="sg-note">
+          Line length is capped at <code>66ch</code> for body copy. Headings use
+          <code>text-wrap: balance</code> so they break evenly rather than leaving a single
+          orphaned word.
+        </p>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 04 SPACING & LAYOUT                                            -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="spacing" aria-labelledby="spacing-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">04</span>
+          <h2 id="spacing-h">Spacing &amp; layout</h2>
+          <p>
+            A 4px base grid. Only these steps are used, which is what keeps forty pages
+            looking like one site.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <div class="sg-space-row"><span class="sg-space-row__label">1 · 4px</span><span class="sg-space-row__bar" style="width:4px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">2 · 8px</span><span class="sg-space-row__bar" style="width:8px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">3 · 12px</span><span class="sg-space-row__bar" style="width:12px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">4 · 16px</span><span class="sg-space-row__bar" style="width:16px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">5 · 20px</span><span class="sg-space-row__bar" style="width:20px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">6 · 24px</span><span class="sg-space-row__bar" style="width:24px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">7 · 32px</span><span class="sg-space-row__bar" style="width:32px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">8 · 40px</span><span class="sg-space-row__bar" style="width:40px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">9 · 48px</span><span class="sg-space-row__bar" style="width:48px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">10 · 64px</span><span class="sg-space-row__bar" style="width:64px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">11 · 80px</span><span class="sg-space-row__bar" style="width:80px"></span></div>
+          <div class="sg-space-row"><span class="sg-space-row__label">12 · 96px</span><span class="sg-space-row__bar" style="width:96px"></span></div>
+        </div>
+
+        <h3 class="sg-sub">Containers &amp; breakpoints</h3>
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Container widths and breakpoints</caption>
+            <thead><tr><th scope="col">Name</th><th scope="col">Width</th><th scope="col">Used for</th></tr></thead>
+            <tbody>
+              <tr><td><code>.tc-container</code></td><td>1240px</td><td>Default page width</td></tr>
+              <tr><td><code>.tc-container--narrow</code></td><td>960px</td><td>Forms, single-column pages</td></tr>
+              <tr><td><code>.tc-container--prose</code></td><td>760px</td><td>Articles, policy pages</td></tr>
+              <tr><td>Gutter</td><td>16 → 40px fluid</td><td>Side padding at every width</td></tr>
+              <tr><td>Card grid</td><td>auto-fit</td><td>Columns collapse on available width, not on breakpoints</td></tr>
+              <tr><td>Layout shift</td><td>640 · 900 · 1024px</td><td>Field rows · split layouts · desktop navigation</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sg-sub">Section rhythm</h3>
+        <p class="sg-note u-mb-6">
+          Vertical space between bands is fluid: 48px on a phone, 96px on a desktop. Editors
+          choose a background tint per band; the padding is automatic.
+        </p>
+        <div class="sg-demo sg-demo--plain" style="padding:0;overflow:hidden">
+          <div class="tc-section tc-section--tight" style="text-align:center"><p class="tc-text-small tc-text-muted" style="margin:0">Default section on white</p></div>
+          <div class="tc-section tc-section--tight tc-section--subtle" style="text-align:center"><p class="tc-text-small tc-text-muted" style="margin:0">.tc-section--subtle</p></div>
+          <div class="tc-section tc-section--tight tc-section--brand" style="text-align:center"><p class="tc-text-small" style="margin:0;color:var(--tc-green-800)">.tc-section--brand</p></div>
+          <div class="tc-section tc-section--tight tc-section--dark tc-on-dark" style="text-align:center"><p class="tc-text-small" style="margin:0">.tc-section--dark</p></div>
+          <div class="tc-section tc-section--tight tc-section--dark-alt tc-on-dark" style="text-align:center"><p class="tc-text-small" style="margin:0">.tc-section--dark-alt</p></div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 05 SURFACES & MOTION                                           -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="surfaces" aria-labelledby="surfaces-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">05</span>
+          <h2 id="surfaces-h">Surfaces &amp; motion</h2>
+          <p>
+            Corner radius echoes the rounded square of the logo. Elevation signals that
+            something is interactive — it is never applied for decoration.
+          </p>
+        </div>
+
+        <div class="tc-grid tc-grid--4">
+          <div class="sg-demo sg-demo--plain u-text-center"><div style="height:64px;background:var(--tc-green-100);border-radius:var(--tc-radius-sm)"></div><p class="tc-text-small tc-text-muted u-mt-4" style="margin-block-end:0">sm · 6px<br>Inputs, tags</p></div>
+          <div class="sg-demo sg-demo--plain u-text-center"><div style="height:64px;background:var(--tc-green-100);border-radius:var(--tc-radius-md)"></div><p class="tc-text-small tc-text-muted u-mt-4" style="margin-block-end:0">md · 10px<br>Fields, alerts</p></div>
+          <div class="sg-demo sg-demo--plain u-text-center"><div style="height:64px;background:var(--tc-green-100);border-radius:var(--tc-radius-lg)"></div><p class="tc-text-small tc-text-muted u-mt-4" style="margin-block-end:0">lg · 16px<br>Cards, media</p></div>
+          <div class="sg-demo sg-demo--plain u-text-center"><div style="height:64px;background:var(--tc-green-100);border-radius:var(--tc-radius-full)"></div><p class="tc-text-small tc-text-muted u-mt-4" style="margin-block-end:0">full<br>Buttons, pills</p></div>
+        </div>
+
+        <h3 class="sg-sub">Elevation</h3>
+        <div class="tc-grid tc-grid--4">
+          <div style="height:96px;border-radius:var(--tc-radius-lg);background:#fff;box-shadow:var(--tc-shadow-xs);display:grid;place-items:center;font-size:var(--tc-fs-sm);color:var(--tc-color-text-muted)">xs</div>
+          <div style="height:96px;border-radius:var(--tc-radius-lg);background:#fff;box-shadow:var(--tc-shadow-sm);display:grid;place-items:center;font-size:var(--tc-fs-sm);color:var(--tc-color-text-muted)">sm</div>
+          <div style="height:96px;border-radius:var(--tc-radius-lg);background:#fff;box-shadow:var(--tc-shadow-md);display:grid;place-items:center;font-size:var(--tc-fs-sm);color:var(--tc-color-text-muted)">md</div>
+          <div style="height:96px;border-radius:var(--tc-radius-lg);background:#fff;box-shadow:var(--tc-shadow-lg);display:grid;place-items:center;font-size:var(--tc-fs-sm);color:var(--tc-color-text-muted)">lg · hover</div>
+        </div>
+
+        <p class="sg-note">
+          Motion is short and functional: 120ms for state changes, 200ms for hover,
+          320ms for anything that moves a distance. All of it is disabled automatically
+          when the visitor has asked their operating system to reduce motion.
+        </p>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 06 BUTTONS                                                     -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="buttons" aria-labelledby="buttons-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">06</span>
+          <h2 id="buttons-h">Buttons</h2>
+          <p>
+            One primary action per view. Every button is at least 44px tall, which
+            satisfies target-size guidance and suits gloved or one-handed use.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Variants</span>
+          <div class="tc-cluster">
+            <a href="#buttons" class="tc-btn tc-btn--primary">Join Trauma Care</a>
+            <a href="#buttons" class="tc-btn tc-btn--secondary">Explore membership</a>
+            <a href="#buttons" class="tc-btn tc-btn--tertiary">Back</a>
+            <a href="#buttons" class="tc-btn tc-btn--ghost">View all events</a>
+            <a href="#buttons" class="tc-btn tc-btn--donate">Donate</a>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--dark">
+          <span class="sg-demo__label">On the dark ground</span>
+          <div class="tc-cluster">
+            <a href="#buttons" class="tc-btn tc-btn--inverse">Book your place</a>
+            <a href="#buttons" class="tc-btn tc-btn--inverse-outline">See the programme</a>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Sizes</span>
+          <div class="tc-cluster">
+            <button type="button" class="tc-btn tc-btn--primary tc-btn--sm">Small · 36px</button>
+            <button type="button" class="tc-btn tc-btn--primary">Default · 44px</button>
+            <button type="button" class="tc-btn tc-btn--primary tc-btn--lg">Large · 56px</button>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">States — hover and focus each button to compare</span>
+          <div class="tc-cluster">
+            <button type="button" class="tc-btn tc-btn--primary">Default</button>
+            <button type="button" class="tc-btn tc-btn--primary" style="background:var(--tc-green-800);border-color:var(--tc-green-800)">Hover</button>
+            <button type="button" class="tc-btn tc-btn--primary" style="outline:3px solid var(--tc-focus-inner);outline-offset:2px;box-shadow:0 0 0 6px var(--tc-focus-outer)">Focus</button>
+            <button type="button" class="tc-btn tc-btn--primary" disabled>Disabled</button>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Text link with direction</span>
+          <a href="#buttons" class="tc-link-arrow">Read the full programme</a>
+        </div>
+
+        <div class="sg-rules u-mt-8">
+          <div class="sg-rule sg-rule--do">
+            <b>Do</b>
+            Pair one primary with one secondary. Write the outcome — "Book your place",
+            "Download Edition 30" — rather than "Click here" or "Find Out More", which
+            appears four times on the current homepage.
+          </div>
+          <div class="sg-rule sg-rule--dont">
+            <b>Don't</b>
+            Use the Donate variant for anything other than giving. Its red is reserved so
+            that a donation ask is instantly recognisable anywhere on the site.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 07 FORMS                                                       -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="forms" aria-labelledby="forms-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">07</span>
+          <h2 id="forms-h">Forms</h2>
+          <p>
+            Forms carry the highest-value journeys on the site — joining, donating,
+            booking. Labels are always visible, hints sit above the control, and errors
+            are described in words.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Field anatomy</span>
+          <div style="max-width:520px">
+
+            <div class="tc-field">
+              <label class="tc-label" for="sg-name">Full name <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
+              <input class="tc-input" id="sg-name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="tc-field">
+              <label class="tc-label" for="sg-email">Email address <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
+              <p class="tc-hint" id="sg-email-hint">Use the address linked to your Trauma Care membership.</p>
+              <input class="tc-input" id="sg-email" name="email" type="email" autocomplete="email" aria-describedby="sg-email-hint" required>
+            </div>
+
+            <div class="tc-field">
+              <label class="tc-label" for="sg-role">Professional role</label>
+              <select class="tc-select" id="sg-role" name="role">
+                <option>Please select…</option>
+                <option>Doctor</option>
+                <option>Nurse</option>
+                <option>Paramedic</option>
+                <option>Allied health professional</option>
+                <option>Student</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="tc-field">
+              <label class="tc-label" for="sg-amount">Donation amount</label>
+              <div class="tc-input-group">
+                <span class="tc-input-group__affix" aria-hidden="true">£</span>
+                <input class="tc-input" id="sg-amount" name="amount" type="text" inputmode="decimal" aria-describedby="sg-amount-hint">
+              </div>
+              <p class="tc-hint" id="sg-amount-hint">£25 funds a CPD certificate for a student member.</p>
+            </div>
+
+            <div class="tc-field">
+              <label class="tc-label" for="sg-message">Your enquiry</label>
+              <textarea class="tc-textarea" id="sg-message" name="message"></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Error state</span>
+          <div style="max-width:520px">
+            <div class="tc-error-summary" role="alert">
+              <p class="tc-error-summary__title">There is a problem</p>
+              <ul>
+                <li><a href="#sg-email-bad">Enter an email address in the correct format</a></li>
+              </ul>
+            </div>
+            <div class="tc-field">
+              <label class="tc-label" for="sg-email-bad">Email address <span class="tc-required" aria-hidden="true">*</span></label>
+              <input class="tc-input" id="sg-email-bad" type="email" value="ian.greaves@" aria-invalid="true" aria-describedby="sg-email-bad-err">
+              <p class="tc-error" id="sg-email-bad-err">Enter an email address in the correct format, like name@example.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Choices — checkbox, radio and the boxed variant used for tiers</span>
+          <div style="max-width:560px">
+
+            <fieldset class="tc-fieldset">
+              <legend class="tc-legend">Keep in touch</legend>
+              <label class="tc-choice">
+                <input type="checkbox" checked>
+                <span class="tc-choice__label">Email me about upcoming CPD webinars</span>
+              </label>
+              <label class="tc-choice">
+                <input type="checkbox">
+                <span class="tc-choice__label">Send me the quarterly <i>TRAUMA</i> journal contents</span>
+              </label>
+            </fieldset>
+
+            <fieldset class="tc-fieldset">
+              <legend class="tc-legend">Choose your membership</legend>
+              <label class="tc-choice tc-choice--boxed">
+                <input type="radio" name="sg-tier" checked>
+                <span class="tc-choice__label"><b>Registered Healthcare Professional — £8 / month</b>
+                  Registered medical practitioners, nurses and paramedics. Full video library access.</span>
+              </label>
+              <label class="tc-choice tc-choice--boxed u-mt-4">
+                <input type="radio" name="sg-tier">
+                <span class="tc-choice__label"><b>Non-Registered Healthcare Professional — £3 / month</b>
+                  Non-registered practitioners, nurses and paramedics.</span>
+              </label>
+            </fieldset>
+
+          </div>
+        </div>
+
+        <p class="sg-note">
+          Every form on the prototype is real, accessible markup with <code>name</code>
+          attributes and no action. Connecting one to Beacon later is a single change per
+          form, not a rebuild.
+        </p>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 08 CARDS                                                       -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="cards" aria-labelledby="cards-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">08</span>
+          <h2 id="cards-h">Cards</h2>
+          <p>
+            News, events, webinars, resources, courses and people all share one card
+            shell. Only the slots change, which is what makes the WordPress template
+            work manageable.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--subtle">
+          <span class="sg-demo__label">Content card — the default</span>
+          <div class="tc-grid tc-grid--3">
+
+            <article class="tc-card tc-card--link">
+              <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#04773a,#0b1622)"></div>
+              <div class="tc-card__body">
+                <ul class="tc-card__meta">
+                  <li>Webinar</li>
+                  <li>16 July 2026</li>
+                </ul>
+                <h3 class="tc-card__title"><a href="#cards">Health in Motorsport: medical lessons from the Isle of Man TT</a></h3>
+                <p class="tc-card__text">Members receive a CPD certificate automatically within 24 hours.</p>
+                <div class="tc-card__footer"><span class="tc-badge tc-badge--brand">Open to all</span></div>
+              </div>
+            </article>
+
+            <article class="tc-card tc-card--link">
+              <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#03b732,#04773a)"></div>
+              <div class="tc-card__body">
+                <ul class="tc-card__meta">
+                  <li>Conference</li>
+                  <li>Yarnfield Park</li>
+                </ul>
+                <h3 class="tc-card__title"><a href="#cards">The Annual Trauma Care Conference</a></h3>
+                <p class="tc-card__text">Four days of multidisciplinary trauma education across eleven specialist streams.</p>
+                <div class="tc-card__footer"><span class="tc-badge">From £60</span></div>
+              </div>
+            </article>
+
+            <article class="tc-card tc-card--link">
+              <div class="tc-card__media" aria-hidden="true" style="background:linear-gradient(135deg,#24354d,#5f7189)"></div>
+              <div class="tc-card__body">
+                <ul class="tc-card__meta">
+                  <li>Resource</li>
+                  <li>PDF · 2.4MB</li>
+                </ul>
+                <h3 class="tc-card__title"><a href="#cards">CPD Poster — Edition 30</a></h3>
+                <p class="tc-card__text">Every upcoming CPD presentation on one page. Print it for the mess room.</p>
+                <div class="tc-card__footer"><span class="tc-badge tc-badge--members">Members only</span></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Icon card, person card and impact stat</span>
+          <div class="tc-grid tc-grid--3">
+
+            <div class="tc-card tc-card--flat">
+              <div class="tc-card__body">
+                <span class="tc-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4Zm1 6v3h3v2h-3v3h-2v-3H8v-2h3V8h2Z"/></svg>
+                </span>
+                <h3 class="tc-card__title">CPD webinars</h3>
+                <p class="tc-card__text">Over 200 recordings, with new live sessions every month. Open to all, certificated for members.</p>
+                <div class="tc-card__footer"><a class="tc-link-arrow" href="#cards">Browse webinars</a></div>
+              </div>
+            </div>
+
+            <div class="tc-card tc-card--flat">
+              <div class="tc-card__body">
+                <div class="tc-person">
+                  <div class="tc-person__photo" aria-hidden="true" style="background:linear-gradient(135deg,#e1e7ee,#c2ccd8)"></div>
+                  <h3 class="tc-person__name">Professor Jim Ryan OBE</h3>
+                  <p class="tc-person__role">Trauma Care Patron</p>
+                  <p class="tc-person__bio">Formerly Joint Professor of Military Surgery at the Royal Army Medical College, London.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tc-card tc-card--flat">
+              <div class="tc-card__body" style="justify-content:center">
+                <div class="tc-stat">
+                  <span class="tc-stat__value">200+</span>
+                  <span class="tc-stat__label">CPD webinar recordings in the member library</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Membership tier card</span>
+          <div class="tc-grid tc-grid--3">
+
+            <div class="tc-tier tc-tier--featured">
+              <div class="u-mb-4"><span class="tc-badge tc-badge--solid">Most popular</span></div>
+              <h3 class="tc-tier__name">Registered Healthcare Professional</h3>
+              <p class="tc-tier__audience">For registered medical practitioners, nurses and paramedics.</p>
+              <p class="tc-tier__price"><span class="tc-tier__amount">£8</span><span class="tc-tier__period">per month</span></p>
+              <ul class="tc-checklist">
+                <li><i>TRAUMA</i> journal, digital edition</li>
+                <li><b>Full</b> access to the video library</li>
+                <li>Discount on all tickets</li>
+                <li>Automated CPD certificates</li>
+              </ul>
+              <div class="tc-tier__cta"><a href="#cards" class="tc-btn tc-btn--primary tc-btn--full">Choose RHP</a></div>
+            </div>
+
+            <div class="tc-tier">
+              <h3 class="tc-tier__name">Non-Registered Healthcare Professional</h3>
+              <p class="tc-tier__audience">For non-registered practitioners, nurses and paramedics.</p>
+              <p class="tc-tier__price"><span class="tc-tier__amount">£3</span><span class="tc-tier__period">per month</span></p>
+              <ul class="tc-checklist">
+                <li><i>TRAUMA</i> journal, digital edition</li>
+                <li>Access to the video library</li>
+                <li>Discount on all tickets</li>
+                <li>Automated CPD certificates</li>
+              </ul>
+              <div class="tc-tier__cta"><a href="#cards" class="tc-btn tc-btn--secondary tc-btn--full">Choose NRHP</a></div>
+            </div>
+
+          </div>
+          <p class="sg-note">
+            Two tiers, per requirements §5. The live site currently also sells a Student
+            tier at £3 &mdash; it is not shown here because the requirements specify RHP
+            and NRHP only. Prices come from the live site; the requirements document
+            contains none. §5 also requires an <b>annual</b> option, which does not exist
+            yet, so the tiers page will need a monthly/annual toggle and annual prices
+            from the charity.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Quote</span>
+          <blockquote class="tc-quote">
+            <p class="tc-quote__text">Trauma Care is unique. No other organisation brings together such a wide range of professionals.</p>
+            <cite class="tc-quote__cite"><b>Professor Colonel Ian Greaves</b>Trauma Care Chairman</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 09 STATUS & GATING                                             -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="status" aria-labelledby="status-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">09</span>
+          <h2 id="status-h">Status &amp; gating</h2>
+          <p>
+            The member area needs a consistent vocabulary for what is open, what is
+            restricted and what has gone wrong. These components provide it.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Badges and tags</span>
+          <div class="tc-cluster tc-cluster--sm u-mb-6">
+            <span class="tc-badge">Default</span>
+            <span class="tc-badge tc-badge--brand">Open to all</span>
+            <span class="tc-badge tc-badge--info">Online</span>
+            <span class="tc-badge tc-badge--warning">Few places left</span>
+            <span class="tc-badge tc-badge--danger">Sold out</span>
+            <span class="tc-badge tc-badge--solid">Most popular</span>
+            <span class="tc-badge tc-badge--members">
+              <svg class="tc-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A4.5 4.5 0 0 0 7.5 6v3H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-.5V6A4.5 4.5 0 0 0 12 1.5Zm2.5 7.5h-5V6a2.5 2.5 0 0 1 5 0v3Z"/></svg>
+              Members only
+            </span>
+          </div>
+          <div class="tc-cluster tc-cluster--sm">
+            <a href="#status" class="tc-tag tc-tag--active">All</a>
+            <a href="#status" class="tc-tag">Pre-hospital</a>
+            <a href="#status" class="tc-tag">Critical care</a>
+            <a href="#status" class="tc-tag">Nursing</a>
+            <a href="#status" class="tc-tag">Military &amp; austere</a>
+            <a href="#status" class="tc-tag">Paediatrics</a>
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Alerts</span>
+          <div class="tc-stack">
+
+            <div class="tc-alert" role="status">
+              <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>
+              <div>
+                <p class="tc-alert__title">Your CPD certificate is on its way</p>
+                <p>Certificates are issued automatically within 24 hours of a webinar ending.</p>
+              </div>
+            </div>
+
+            <div class="tc-alert tc-alert--success" role="status">
+              <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.2-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7Z"/></svg>
+              <div>
+                <p class="tc-alert__title">Membership renewed</p>
+                <p>Your Registered Healthcare Professional membership runs until 2 September 2027.</p>
+              </div>
+            </div>
+
+            <div class="tc-alert tc-alert--warning" role="status">
+              <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2Zm1 14h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg>
+              <div>
+                <p class="tc-alert__title">We could not take your payment</p>
+                <p>Update your payment method to keep your membership benefits active.</p>
+              </div>
+            </div>
+
+            <div class="tc-alert tc-alert--danger" role="alert">
+              <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>
+              <div>
+                <p class="tc-alert__title">This event is fully booked</p>
+                <p>Join the waiting list and we will email you if a place becomes available.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Member gate — shown wherever restricted content would appear</span>
+          <div class="tc-gate">
+            <svg class="tc-gate__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A4.5 4.5 0 0 0 7.5 6v3H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-.5V6A4.5 4.5 0 0 0 12 1.5Zm2.5 7.5h-5V6a2.5 2.5 0 0 1 5 0v3Z"/></svg>
+            <h3 class="tc-gate__title">This recording is for members</h3>
+            <p>Members get the full video library, the <i>TRAUMA</i> journal and automated CPD certificates from £3 a month.</p>
+            <div class="tc-btn-group">
+              <a href="#status" class="tc-btn tc-btn--primary">Join Trauma Care</a>
+              <a href="#status" class="tc-btn tc-btn--tertiary">Log in</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 10 ACCESSIBILITY                                               -->
+      <!-- ============================================================== -->
+      <section class="sg-section" id="accessibility" aria-labelledby="a11y-h">
+        <div class="sg-section__head">
+          <span class="sg-section__number">10</span>
+          <h2 id="a11y-h">Accessibility</h2>
+          <p>
+            WCAG 2.1 AA is a contractual requirement covering the public site and the
+            member area. These decisions are built into the components so pages inherit
+            them rather than having to remember them.
+          </p>
+        </div>
+
+        <div class="sg-demo sg-demo--plain">
+          <span class="sg-demo__label">Focus — tab through these to see the ring on every ground</span>
+          <div class="tc-cluster">
+            <a href="#accessibility" class="tc-btn tc-btn--primary">Green button</a>
+            <a href="#accessibility" class="tc-btn tc-btn--tertiary">Neutral button</a>
+            <a href="#accessibility">An inline link</a>
+          </div>
+        </div>
+        <div class="sg-demo sg-demo--dark">
+          <span class="sg-demo__label">The same ring on the dark ground</span>
+          <div class="tc-cluster">
+            <a href="#accessibility" class="tc-btn tc-btn--inverse">Inverse button</a>
+            <a href="#accessibility" class="tc-btn tc-btn--inverse-outline">Outline button</a>
+          </div>
+        </div>
+
+        <p class="sg-note u-mb-6">
+          A yellow inner ring with a dark outer ring stays visible on white, on brand
+          green, on photography and on navy — one treatment for the whole site, rather
+          than the browser default that disappears against green.
+        </p>
+
+        <div class="u-scroll-x">
+          <table class="sg-table">
+            <caption class="tc-visually-hidden">Accessibility commitments and how each is met</caption>
+            <thead><tr><th scope="col">Criterion</th><th scope="col">How the system meets it</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1.4.3 Contrast</th><td>Every text token is measured and published above. Green 500 is barred from text use.</td></tr>
+              <tr><th scope="row">1.4.1 Use of colour</th><td>Errors, gating and status always carry an icon and words, never colour alone.</td></tr>
+              <tr><th scope="row">1.4.4 Resize text</th><td>Fluid <code>clamp()</code> sizing in rem; layouts reflow to 200% zoom without loss.</td></tr>
+              <tr><th scope="row">2.1.1 Keyboard</th><td>Navigation is real links and buttons. Nothing depends on hover or on JavaScript to be reachable.</td></tr>
+              <tr><th scope="row">2.4.1 Bypass blocks</th><td>A skip link is the first focusable element on every page.</td></tr>
+              <tr><th scope="row">2.4.7 Focus visible</th><td>The two-tone ring above, applied through <code>:focus-visible</code>.</td></tr>
+              <tr><th scope="row">2.5.8 Target size</th><td>Interactive controls are at least 44&nbsp;×&nbsp;44 CSS pixels.</td></tr>
+              <tr><th scope="row">2.3.3 Animation</th><td><code>prefers-reduced-motion</code> disables transitions and smooth scrolling.</td></tr>
+              <tr><th scope="row">3.3.1 Error identification</th><td>An error summary at the top of the form links to each failed field.</td></tr>
+              <tr><th scope="row">3.3.2 Labels</th><td>Visible labels on every control. Placeholders are never used as labels.</td></tr>
+              <tr><th scope="row">1.3.1 Info &amp; relationships</th><td>Landmarks, one h1 per page, a descending heading order, and fieldset/legend on grouped controls.</td></tr>
+              <tr><th scope="row">Forced colours</th><td>Components keep their shape in Windows High Contrast mode.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="sg-footer">
+        <p><strong>Trauma Care design system</strong> — prototype for UI approval. Plain HTML and CSS,
+          structured for conversion to a WordPress custom theme with ACF field groups.
+          No content on this page is live.</p>
+        <p class="u-mt-4">Placeholder logo mark shown; a vector original is still required from the client.</p>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

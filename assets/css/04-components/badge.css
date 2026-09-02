@@ -1,0 +1,153 @@
+/* ==========================================================================
+   COMPONENT — BADGE, TAG, ALERT
+   Small status and labelling components. Colour is always paired with text.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Badge — a status label. Not interactive.
+   -------------------------------------------------------------------------- */
+
+.tc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  padding: var(--tc-space-1) var(--tc-space-3);
+  font-size: var(--tc-fs-xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  line-height: 1.4;
+  border-radius: var(--tc-radius-xs);
+  background-color: var(--tc-ink-100);
+  color: var(--tc-ink-700);
+  white-space: nowrap;
+}
+
+.tc-badge--brand   { background-color: var(--tc-green-50);  color: var(--tc-green-800); }
+.tc-badge--info    { background-color: var(--tc-blue-50);   color: var(--tc-blue-600); }
+.tc-badge--warning { background-color: var(--tc-amber-50);  color: var(--tc-amber-600); }
+.tc-badge--danger  { background-color: var(--tc-red-50);    color: var(--tc-red-700); }
+.tc-badge--solid   { background-color: var(--tc-color-brand-strong); color: var(--tc-white); }
+
+.tc-badge__icon {
+  width: 0.95em;
+  height: 0.95em;
+  fill: currentColor;
+  flex: none;
+}
+
+/* Members-only marker. Always includes the padlock AND the word, so the
+   restriction is never communicated by colour or icon alone. */
+.tc-badge--members {
+  background-color: var(--tc-ink-900);
+  color: var(--tc-white);
+}
+
+/* --------------------------------------------------------------------------
+   Tag — a category label. Interactive when rendered as a link.
+   -------------------------------------------------------------------------- */
+
+.tc-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: var(--tc-space-1) var(--tc-space-4);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-medium);
+  color: var(--tc-ink-700);
+  background-color: var(--tc-ink-100);
+  border: 1px solid transparent;
+  border-radius: var(--tc-radius-full);
+  text-decoration: none;
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              color var(--tc-duration-fast) var(--tc-ease);
+}
+
+a.tc-tag:hover {
+  background-color: var(--tc-green-50);
+  border-color: var(--tc-color-brand-strong);
+  color: var(--tc-color-brand-deep);
+}
+
+.tc-tag--active {
+  background-color: var(--tc-color-brand-strong);
+  border-color: var(--tc-color-brand-strong);
+  color: var(--tc-white);
+}
+
+/* --------------------------------------------------------------------------
+   Alert / notice — page-level messages. role="status" or role="alert".
+   -------------------------------------------------------------------------- */
+
+.tc-alert {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--tc-space-4);
+  padding: var(--tc-space-5) var(--tc-space-6);
+  border-radius: var(--tc-radius-md);
+  border-inline-start: 4px solid var(--tc-color-info);
+  background-color: var(--tc-color-info-bg);
+  color: var(--tc-ink-800);
+}
+
+.tc-alert__icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--tc-color-info);
+  margin-block-start: 0.1rem;
+}
+
+.tc-alert__title {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-md);
+  font-weight: var(--tc-fw-bold);
+  color: var(--tc-color-text);
+  margin: 0 0 var(--tc-space-1);
+}
+
+.tc-alert p { margin: 0; font-size: var(--tc-fs-sm); line-height: var(--tc-lh-relaxed); }
+.tc-alert p + p { margin-block-start: var(--tc-space-2); }
+
+.tc-alert--success { border-color: var(--tc-color-success); background-color: var(--tc-color-success-bg); }
+.tc-alert--success .tc-alert__icon { fill: var(--tc-color-success); }
+
+.tc-alert--warning { border-color: var(--tc-color-warning); background-color: var(--tc-color-warning-bg); }
+.tc-alert--warning .tc-alert__icon { fill: var(--tc-color-warning); }
+
+.tc-alert--danger  { border-color: var(--tc-color-danger); background-color: var(--tc-color-danger-bg); }
+.tc-alert--danger .tc-alert__icon { fill: var(--tc-color-danger); }
+
+/* --------------------------------------------------------------------------
+   Gated notice — shown where member-only content would appear.
+   -------------------------------------------------------------------------- */
+
+.tc-gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--tc-space-4);
+  padding: var(--tc-space-9) var(--tc-space-6);
+  background-color: var(--tc-color-bg-subtle);
+  border: 1px dashed var(--tc-color-border-strong);
+  border-radius: var(--tc-radius-lg);
+}
+
+.tc-gate__icon {
+  width: 48px;
+  height: 48px;
+  fill: var(--tc-color-text-muted);
+}
+
+.tc-gate__title {
+  font-size: var(--tc-fs-xl);
+  margin: 0;
+}
+
+.tc-gate p {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--tc-color-text-muted);
+  font-size: var(--tc-fs-sm);
+}

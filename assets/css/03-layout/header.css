@@ -1,0 +1,585 @@
+/* ==========================================================================
+   LAYOUT — SITE HEADER & PRIMARY NAVIGATION
+   --------------------------------------------------------------------------
+   The current site's menu is the named accessibility failure in the brief:
+   every dropdown parent is `javascript: void(0);` — no href, no keyboard
+   access, no announced state. This replaces it with the WAI-ARIA disclosure
+   navigation pattern:
+
+     · every top-level item is a REAL link to a real section landing page
+     · a separate chevron button opens the submenu and owns aria-expanded
+     · with JavaScript off, the links still work and the landing pages carry
+       the same child links, so nothing becomes unreachable
+
+   Structure:
+     .tc-site-header
+       .tc-utility-bar        slim contact strip, desktop only
+       .tc-header-bar         logo · nav · actions · mobile toggle
+       .tc-search-panel       disclosure panel, collapsed by default
+   ========================================================================== */
+
+.tc-site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--tc-z-header);
+  background-color: var(--tc-color-surface);
+}
+
+.tc-site-header::after {
+  /* Separator that becomes a shadow once the page scrolls. */
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--tc-color-border);
+  transition: box-shadow var(--tc-duration-base) var(--tc-ease);
+}
+
+.tc-site-header.is-stuck { box-shadow: var(--tc-shadow-md); }
+
+/* --------------------------------------------------------------------------
+   Utility bar
+   -------------------------------------------------------------------------- */
+
+.tc-utility-bar {
+  display: none;
+  background-color: var(--tc-ink-900);
+  color: var(--tc-color-text-inverse-muted);
+  font-size: var(--tc-fs-sm);
+}
+
+@media (min-width: 1280px) {
+  .tc-utility-bar { display: block; }
+}
+
+.tc-utility-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tc-space-6);
+  min-height: 40px;
+}
+
+.tc-utility-bar p { margin: 0; }
+
+.tc-utility-bar ul {
+  display: flex;
+  align-items: center;
+  gap: var(--tc-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-utility-bar a {
+  color: var(--tc-color-text-inverse-muted);
+  text-decoration: none;
+  font-weight: var(--tc-fw-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  padding-block: var(--tc-space-2);
+}
+
+.tc-utility-bar a:hover {
+  color: var(--tc-white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tc-utility-bar svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  flex: none;
+}
+
+/* --------------------------------------------------------------------------
+   Header bar
+   -------------------------------------------------------------------------- */
+
+.tc-header-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--tc-space-3);
+  min-height: 72px;
+}
+
+@media (min-width: 1280px) {
+  .tc-header-bar__inner { min-height: 84px; }
+}
+
+/* Logo ------------------------------------------------------------------- */
+
+.tc-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-3);
+  text-decoration: none;
+  flex: none;
+  margin-inline-end: auto;
+}
+
+.tc-logo svg {
+  width: 42px;
+  height: 42px;
+  flex: none;
+}
+
+@media (min-width: 1280px) {
+  .tc-logo svg { width: 48px; height: 48px; }
+}
+
+.tc-logo__wordmark {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-extrabold);
+  letter-spacing: var(--tc-tracking-tight);
+  line-height: 1.05;
+  color: var(--tc-ink-900);
+}
+
+/* A strapline under the wordmark was tried and removed: it measured 256px
+   against the wordmark's 117px, taking 139px out of the bar to repeat a
+   line the utility bar already carries. */
+
+/* --------------------------------------------------------------------------
+   Navigation — shared
+   -------------------------------------------------------------------------- */
+
+.tc-nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-nav__item { position: relative; }
+
+.tc-nav__link {
+  display: flex;
+  align-items: center;
+  font-size: var(--tc-fs-base);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-ink-800);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tc-nav__link:hover { color: var(--tc-color-brand-deep); }
+
+.tc-nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: var(--tc-ink-600);
+  border-radius: var(--tc-radius-sm);
+}
+
+.tc-nav__toggle svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
+  transition: transform var(--tc-duration-base) var(--tc-ease);
+}
+
+.tc-nav__toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.tc-nav__toggle:hover { color: var(--tc-color-brand-deep); }
+
+/* Submenu contents ------------------------------------------------------- */
+
+.tc-nav__panel-list {
+  display: grid;
+  gap: var(--tc-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-nav__sublink {
+  display: block;
+  padding: var(--tc-space-3) var(--tc-space-4);
+  border-radius: var(--tc-radius-sm);
+  text-decoration: none;
+  color: var(--tc-ink-800);
+  font-weight: var(--tc-fw-semibold);
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-snug);
+}
+
+.tc-nav__sublink span {
+  display: block;
+  margin-block-start: 3px;
+  font-weight: var(--tc-fw-regular);
+  font-size: var(--tc-fs-xs);
+  color: var(--tc-color-text-muted);
+}
+
+.tc-nav__sublink:hover {
+  background-color: var(--tc-green-50);
+  color: var(--tc-color-brand-deep);
+}
+
+.tc-nav__sublink:hover span { color: var(--tc-green-800); }
+
+/* Featured block inside a panel ------------------------------------------ */
+
+.tc-nav__feature {
+  padding: var(--tc-space-5);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-ink-900);
+  color: var(--tc-color-text-inverse-muted);
+}
+
+.tc-nav__feature-label {
+  display: block;
+  font-size: var(--tc-fs-2xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-green-300);
+  margin-block-end: var(--tc-space-2);
+}
+
+.tc-nav__feature-title {
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-md);
+  font-weight: var(--tc-fw-bold);
+  line-height: var(--tc-lh-snug);
+  color: var(--tc-white);
+  margin: 0 0 var(--tc-space-2);
+}
+
+.tc-nav__feature p {
+  margin: 0 0 var(--tc-space-4);
+  font-size: var(--tc-fs-xs);
+  line-height: var(--tc-lh-relaxed);
+}
+
+/* Header actions --------------------------------------------------------- */
+
+.tc-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--tc-space-3);
+}
+
+/* Account menu — the signed-in state. Replaces Log in and Join; Donate
+   stays. Reuses the submenu panel so there is one dropdown to maintain. */
+.tc-account {
+  position: relative;
+}
+
+.tc-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: var(--tc-radius-full);
+  color: var(--tc-ink-700);
+  background-color: transparent;
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              color var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-icon-btn svg { width: 1.35rem; height: 1.35rem; fill: currentColor; }
+
+.tc-icon-btn:hover {
+  background-color: var(--tc-ink-100);
+  color: var(--tc-color-brand-deep);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile — up to 1023px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1279px) {
+
+  .tc-nav {
+    display: none;
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: var(--tc-color-surface);
+    border-block-start: 1px solid var(--tc-color-border);
+    box-shadow: var(--tc-shadow-lg);
+    padding: var(--tc-space-4) var(--tc-gutter) var(--tc-space-8);
+  }
+
+  .tc-nav.is-open { display: block; }
+
+  .tc-nav__list { flex-direction: column; }
+
+  .tc-nav__item {
+    border-block-end: 1px solid var(--tc-color-border);
+  }
+
+  /* Link and chevron share a row; each keeps its own 44px target. */
+  .tc-nav__item--has-children {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .tc-nav__link {
+    min-height: 56px;
+    font-size: var(--tc-fs-lg);
+  }
+
+  .tc-nav__toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tc-nav__panel {
+    grid-column: 1 / -1;
+    padding-block: var(--tc-space-2) var(--tc-space-5);
+  }
+
+  .tc-nav__sublink {
+    padding-block: var(--tc-space-3);
+    padding-inline-start: var(--tc-space-4);
+    border-inline-start: 2px solid var(--tc-color-border);
+    border-radius: 0;
+  }
+
+  .tc-nav__sublink:hover { border-inline-start-color: var(--tc-color-brand-strong); }
+
+  .tc-nav__feature { display: none; }
+
+  .tc-nav__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--tc-space-3);
+    margin-block-start: var(--tc-space-7);
+  }
+
+  .tc-nav__actions .tc-btn { width: 100%; }
+}
+
+/* Mobile menu button ------------------------------------------------------ */
+
+.tc-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tc-space-2);
+  min-height: 44px;
+  padding-inline: var(--tc-space-4);
+  border: 2px solid var(--tc-color-border-strong);
+  border-radius: var(--tc-radius-full);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-ink-800);
+  background-color: var(--tc-color-surface);
+}
+
+.tc-nav-toggle svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+
+/* Below 420px the visible word is clipped rather than deleted, so the
+   button keeps the accessible name "Menu" without eating the bar. */
+@media (max-width: 419px) {
+  .tc-nav-toggle {
+    width: 44px;
+    padding-inline: 0;
+    justify-content: center;
+  }
+
+  .tc-nav-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+.tc-nav-toggle__close { display: none; }
+.tc-nav-toggle[aria-expanded="true"] .tc-nav-toggle__open  { display: none; }
+.tc-nav-toggle[aria-expanded="true"] .tc-nav-toggle__close { display: block; }
+
+@media (min-width: 1280px) {
+  .tc-nav-toggle { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop — 1024px and up
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1280px) {
+
+  /* Gaps are tight by measurement, not by taste: six top-level items, their
+     chevrons, two action buttons and search have to share one row at 1280. */
+  .tc-header-bar__inner { gap: var(--tc-space-4); }
+
+  .tc-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--tc-space-4);
+  }
+
+  .tc-nav__actions { gap: var(--tc-space-2); }
+
+  .tc-nav__list {
+    align-items: center;
+    gap: var(--tc-space-1);
+  }
+
+  .tc-nav__item--has-children { display: flex; align-items: center; }
+
+  .tc-nav__link {
+    min-height: 44px;
+    padding-inline: var(--tc-space-2);
+    /* One step below body size. Six items plus their chevrons have to sit
+       on one row alongside the logo and the action buttons. */
+    font-size: 1rem;
+    border-radius: var(--tc-radius-sm);
+  }
+
+  .tc-nav__link:hover { background-color: var(--tc-ink-100); }
+
+  .tc-nav__item--has-children > .tc-nav__link { padding-inline-end: 2px; }
+
+  .tc-nav__toggle { width: 24px; height: 44px; }
+
+  /* Log in lives in the utility bar on desktop; this copy exists only so
+     the mobile drawer has it without duplicating the whole action group. */
+  .tc-nav__login { display: none; }
+
+  /* Current section marker. aria-current is the single source of truth —
+     a parallel --current class would be a second way to say the same thing. */
+  .tc-nav__link[aria-current="page"] {
+    color: var(--tc-color-brand-deep);
+  }
+
+  .tc-nav__link[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: var(--tc-space-2);
+    right: var(--tc-space-2);
+    bottom: -2px;
+    height: 3px;
+    border-radius: var(--tc-radius-full);
+    background-color: var(--tc-color-brand);
+  }
+
+  /* Panel */
+  .tc-nav__panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    z-index: var(--tc-z-dropdown);
+    min-width: 320px;
+    padding: var(--tc-space-4);
+    background-color: var(--tc-color-surface);
+    border: 1px solid var(--tc-color-border);
+    border-radius: var(--tc-radius-lg);
+    box-shadow: var(--tc-shadow-lg);
+    animation: tc-panel-in var(--tc-duration-base) var(--tc-ease-out);
+  }
+
+  /* Wider panel with a promo column. */
+  .tc-nav__panel--wide {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 260px;
+    gap: var(--tc-space-5);
+    width: max-content;
+    max-width: min(90vw, 720px);
+  }
+
+  /* Panels for items in the right half of the bar anchor to their right edge
+     so a wide panel cannot run off the viewport; earlier items anchor left.
+     The pivot is tied to the item count — with the six-item menu it sits at
+     the fourth. A WordPress editor adding a seventh item must move it. */
+  .tc-nav__item:nth-child(n+4) .tc-nav__panel { left: auto; right: 0; }
+
+  /* The account menu sits outside the list, so it needs its own anchor. */
+  .tc-account .tc-nav__panel { left: auto; right: 0; min-width: 260px; }
+
+  @keyframes tc-panel-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (min-width: 1280px) and (prefers-reduced-motion: reduce) {
+  .tc-nav__panel { animation: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Search panel — a disclosure, not a modal, so it needs no focus trap.
+   -------------------------------------------------------------------------- */
+
+.tc-search-panel {
+  border-block-start: 1px solid var(--tc-color-border);
+  background-color: var(--tc-color-bg-subtle);
+  padding-block: var(--tc-space-6);
+}
+
+.tc-search-panel__inner {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--tc-space-3);
+  max-width: 720px;
+}
+
+.tc-search-panel .tc-field { flex: 1; }
+
+/* --------------------------------------------------------------------------
+   Body lock while the mobile drawer is open.
+   -------------------------------------------------------------------------- */
+
+body.tc-nav-open { overflow: hidden; }
+
+@media (min-width: 1280px) {
+  body.tc-nav-open { overflow: visible; }
+}
+
+/* --------------------------------------------------------------------------
+   No JavaScript
+   The `js` class is added by an inline script in <head>, so these rules only
+   ever apply when scripting is genuinely unavailable.
+
+   Desktop: the six top-level links remain, each going to a section landing
+   page that lists the same children.
+   Mobile: there is no button to open a drawer, so the navigation is rendered
+   in full, in the document flow, with every submenu expanded.
+   -------------------------------------------------------------------------- */
+
+/* Controls that would do nothing are removed rather than left dead. */
+html:not(.js) .tc-nav-toggle,
+html:not(.js) .tc-nav__toggle,
+html:not(.js) [data-disclosure-toggle] { display: none; }
+
+/* Site search is a plain GET form, so it works inline. */
+html:not(.js) .tc-search-panel[hidden] { display: block; }
+
+@media (max-width: 1279px) {
+  html:not(.js) .tc-header-bar__inner { flex-wrap: wrap; }
+
+  html:not(.js) .tc-nav {
+    display: block;
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+    padding-inline: 0;
+  }
+
+  html:not(.js) .tc-nav__panel[hidden] { display: block; }
+}
+
+@media (min-width: 1280px) {
+  html:not(.js) .tc-nav__panel[hidden] { display: none; }
+}
