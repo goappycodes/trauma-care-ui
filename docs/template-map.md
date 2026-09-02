@@ -105,6 +105,30 @@ which is exactly what happened during the rebuild.
 A rule in a template stylesheet that a second template later needs gets
 promoted to `04-components/` rather than copied.
 
+## Links to unbuilt pages are stubbed
+
+166 links across the three pages point at pages that do not exist yet. They are
+set to `href="#"` so the prototype can be clicked through without 404s, with
+the intended URL kept in **`data-page`**:
+
+```html
+<a href="#" data-page="membership-tiers.html">Tiers &amp; pricing</a>
+```
+
+Nothing is lost — the IA stays readable in the markup, and restoring a link is
+a mechanical swap once its page exists. 39 distinct targets are recorded this
+way; they are the same list as *Pages this adds* above plus the legal pages.
+
+**This temporarily reintroduces the fault the header was built to fix.** Every
+top-level nav parent now goes to `#`, which is functionally what
+`javascript: void(0);` does on the live site. The disclosure buttons still work
+and the markup is still correct, but **restore the real `href`s before any
+accessibility audit or client accessibility claim** — a nav parent that goes
+nowhere fails the same test §4 calls out.
+
+Regenerating the header or footer reinstates real URLs, so re-run the stubbing
+pass afterwards.
+
 ## Still to build
 
 **`campaign.html`** — the fourth flexible landing page named in requirements
