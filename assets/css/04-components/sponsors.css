@@ -67,3 +67,42 @@ a.tc-sponsor:hover {
   box-shadow: var(--tc-shadow-sm);
 }
 
+
+/* --------------------------------------------------------------------------
+   Sponsor credit
+   The headline-sponsor lockup that sits at the foot of a page hero, under a
+   hairline so it reads as a credit rather than as part of the offer. Used by
+   the conference and events heroes; promoted here from 05-templates/ when the
+   second page needed it.
+
+   Assumes a dark ground — place it inside .tc-on-dark.
+   ACF: label, logo, sponsor name, URL.
+   -------------------------------------------------------------------------- */
+
+.tc-sponsor-credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tc-space-3) var(--tc-space-6);
+  margin: var(--tc-space-9) 0 0;
+  padding-block-start: var(--tc-space-6);
+  border-block-start: 1px solid var(--tc-color-border-inverse);
+}
+
+.tc-sponsor-credit__label {
+  font-size: var(--tc-fs-xs);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-inverse-muted);
+}
+
+/* The logo is supplied on white, so it gets a plate rather than being dropped
+   straight onto the dark ground. */
+.tc-sponsor-credit img {
+  display: block;
+  width: auto;
+  height: 48px;
+  padding: var(--tc-space-2) var(--tc-space-4);
+  border-radius: var(--tc-radius-sm);
+  background-color: var(--tc-white);
+}

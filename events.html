@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trauma Care — improving the outcome of the trauma victim</title>
-<meta name="description" content="Trauma Care is the UK's largest trauma network. CPD webinars, an annual multidisciplinary conference, the TRAUMA journal and membership from £3 a month.">
+<title>Events and conferences — Trauma Care</title>
+<meta name="description" content="The Annual Trauma Care Conference, the Trauma Care Fellowship, the Ryan Lecture and the Foundations in Trauma Course — every Trauma Care event in one place.">
 
 <!-- Sets the `js` class before first paint so the no-JavaScript fallback
      styles never flash. Must stay inline and must stay in the head. -->
@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/05-templates/home.css">
+<link rel="stylesheet" href="assets/css/05-templates/events.css">
 </head>
 
 <body>
@@ -226,284 +226,377 @@
 
 <main id="main">
 
-  <!-- ================================================================== -->
-  <!-- SECTION: hero                                                      -->
-  <!-- ACF: eyebrow, heading, intro, primary CTA, secondary CTA, image,   -->
-  <!-- trust-line repeater.                                               -->
-  <!-- ================================================================== -->
-  <section class="tc-hero tc-on-dark" aria-labelledby="hero-h">
-    <div class="tc-container tc-hero__inner">
+  <div class="tc-container">
+    <nav class="tc-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" aria-current="page">Events</a></li>
+      </ol>
+    </nav>
+  </div>
 
-      <div>
-        <p class="tc-eyebrow">The UK&rsquo;s largest trauma network</p>
-        <h1 id="hero-h">Improving the outcome of the trauma victim</h1>
-        <p class="tc-lead tc-hero__lead">
-          From the roadside to rehabilitation, we bring together every profession in
-          the chain of care &mdash; improving outcomes through education, research and
-          publishing since 1996.
-        </p>
+  <!-- ================================================================== -->
+  <!-- SECTION: events hero                                               -->
+  <!-- ACF: eyebrow, heading, intro, two CTAs.                            -->
+  <!-- ================================================================== -->
+  <section class="tc-page-hero tc-on-dark" aria-labelledby="events-h">
+    <div class="tc-container tc-page-hero__inner">
+      <p class="tc-eyebrow">Events</p>
+      <h1 id="events-h">Events and conferences</h1>
+      <p class="tc-lead">Learn more about our many CPD events &mdash; the annual
+        conference, the Fellowship, the Ryan Lecture and the Foundations in Trauma
+        Course.</p>
 
-        <div class="tc-btn-group tc-hero__actions">
-          <a class="tc-btn tc-btn--primary tc-btn--lg" href="#" data-page="membership-join.html">Join Trauma Care</a>
-          <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#" data-page="webinars.html">Watch CPD webinars</a>
+      <div class="tc-btn-group tc-page-hero__actions">
+        <a class="tc-btn tc-btn--primary tc-btn--lg" href="conference.html">The 29th Annual Conference</a>
+        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#subscribe">Subscribe for announcements</a>
+      </div>
+
+      <p class="tc-sponsor-credit">
+        <span class="tc-sponsor-credit__label">Proudly sponsored by</span>
+        <a href="https://www.slatergordon.co.uk">
+          <img src="assets/img/partners/slater-gordon.png" alt="Slater + Gordon" width="1590" height="780">
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================================== -->
+  <!-- Section jump nav. Mirrors the live page's secondary navigation,    -->
+  <!-- which mixes in-page anchors with two related pages.                -->
+  <!-- WordPress: an ACF repeater of label + link, not a generated ToC —  -->
+  <!-- the two page links cannot be derived from the headings.            -->
+  <!-- ================================================================== -->
+  <nav class="tc-jumpnav" aria-label="Events sections and related pages">
+    <ul class="tc-container tc-jumpnav__list">
+      <li><a href="#conference">Annual Conference</a></li>
+      <li><a href="#" data-page="webinars.html">Webinars</a></li>
+      <li><a href="#" data-page="membership.html">Membership</a></li>
+      <li><a href="#fellowship">Fellowship</a></li>
+      <li><a href="#ryan-lecture">Ryan Lecture</a></li>
+      <li><a href="#fit-course">FIT Course</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: what we run each year                                     -->
+  <!-- This section is switched off (display:none) on the live page, but  -->
+  <!-- the copy is written and current, so it is carried over here.       -->
+  <!-- The Foundations in Trauma card repeats the FIT section below word  -->
+  <!-- for word — that duplication is the live page's own; see            -->
+  <!-- content-sources.md.                                                -->
+  <!-- ================================================================== -->
+  <section class="tc-section" id="about-events" aria-labelledby="about-events-h">
+    <div class="tc-container">
+      <div class="tc-section-head">
+        <p class="tc-eyebrow">Every year</p>
+        <h2 id="about-events-h">Trauma Care events and conferences</h2>
+        <p class="tc-lead">Each year we are committed to delivering high-quality,
+          affordable learning events to support continuous professional development
+          for those supporting the care of trauma victims. Members of Trauma Care
+          receive CPD certificates and large discounts on ticket prices.</p>
+      </div>
+
+      <div class="tc-grid tc-grid--3">
+        <article class="tc-card tc-card--flat">
+          <div class="tc-card__body">
+            <h3 class="tc-h4">Trauma Care conferences</h3>
+            <p class="tc-card__text">Each year we hold two conferences: our Annual
+              International Conference and a Regional Event. This year we welcomed over
+              1,000 people to the 27th Annual Trauma Care Conference, and we are looking
+              forward to welcoming 200 people at The Leeds Trauma Care Conference, held
+              at Weetwood Hall in September.</p>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat">
+          <div class="tc-card__body">
+            <h3 class="tc-h4">Foundations in Trauma</h3>
+            <p class="tc-card__text">Although we have postponed the 2025 event so the
+              course can undergo a major revamp, the Foundations in Trauma Course is a
+              two-day practical event that follows trauma patients through each stage of
+              their journey, starting at the scene of a major incident and ending with
+              rehabilitation. It is perfect for medical students and recent graduates.</p>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat">
+          <div class="tc-card__body">
+            <h3 class="tc-h4">Promoting excellence</h3>
+            <p class="tc-card__text">At the Annual International Conference we host
+              special guest plenary talks at the end of Tuesday and Wednesday: The Ryan
+              Lecture and The Alexander Memorial Lecture. The Trauma Care Fellowship is
+              also given in recognition of an individual&rsquo;s lifetime commitment to
+              improving trauma care. This year&rsquo;s recipient was Dr Rod
+              MacKenzie.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="tc-prose u-mt-8">Subscribe to our mailing list to keep up to date on all
+        of our events and exclusive offers.</p>
+      <div class="tc-btn-group u-mt-4">
+        <a class="tc-btn tc-btn--secondary" href="#subscribe">Subscribe</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: the next conference                                       -->
+  <!-- The one event with tickets on sale, so it leads and is the only    -->
+  <!-- block on the page with a booking CTA.                              -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--subtle" id="conference" aria-labelledby="conference-h">
+    <div class="tc-container">
+      <article class="tc-featured-event">
+        <div class="tc-featured-event__body">
+          <p class="tc-badge tc-badge--solid">Booking open</p>
+          <h2 id="conference-h">The 29th Annual Trauma Care Conference</h2>
+          <p class="tc-lead">Four days of multidisciplinary trauma education at
+            Yarnfield Park, bringing together every profession in the chain of care
+            &mdash; from the point of injury through to rehabilitation.</p>
+
+          <dl class="tc-featured-event__meta">
+            <div>
+              <dt>When</dt>
+              <dd><time datetime="2027-03-08">Mon 8</time>&ndash;<time datetime="2027-03-11">Thu 11 March 2027</time></dd>
+            </div>
+            <div>
+              <dt>Where</dt>
+              <dd>Yarnfield Park, Staffordshire</dd>
+            </div>
+            <div>
+              <dt>Tickets</dt>
+              <dd>&pound;115 a day, or from &pound;60 with combined discounts</dd>
+            </div>
+          </dl>
+
+          <div class="tc-btn-group">
+            <a class="tc-btn tc-btn--primary" href="https://www.tickettailor.com/events/traumacarecharity/2363521">Buy tickets</a>
+            <a class="tc-btn tc-btn--secondary" href="conference.html">Full details and programme</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: Trauma Care Fellowship                                    -->
+  <!-- Media-and-text row. .tc-event-row--reverse puts the image first in -->
+  <!-- the source order but second on screen, so the three rows alternate -->
+  <!-- without the reading order ever leading with a picture.             -->
+  <!-- ================================================================== -->
+  <section class="tc-section" id="fellowship" aria-labelledby="fellowship-h">
+    <div class="tc-container tc-event-row">
+      <div class="tc-event-row__body">
+        <p class="tc-eyebrow">Awarded annually</p>
+        <h2 id="fellowship-h">Trauma Care Fellowship</h2>
+
+        <div class="tc-prose">
+          <p>Through conferences, webinars and publications, we seek to promote good
+            practice and encourage and support all those involved in the care of trauma
+            patients, whatever their background or specialty. However, as well as
+            promoting good practice, we believe it is important to recognise and honour
+            it, too.</p>
+          <p>Established in 2020, the Trauma Care Fellowship recognises an exceptional
+            lifetime contribution by an individual to improving trauma care, or a
+            singular act of significance within the same field. It is not limited by
+            borders; it is intended for those whose contribution to trauma care,
+            whether globally or nationally, has been outstanding.</p>
+          <p>Each fellow receives a bronze statuette of the Wound Man, cast for us by
+            the distinguished bronze foundry Louis Lejeune Ltd.</p>
+          <p><b>The Trauma Care Fellowship 2025 was awarded to Dr Roderick
+            MacKenzie.</b></p>
         </div>
 
-        <ul class="tc-hero__trust">
-          <li>Registered charity 1078780</li>
-          <li>Founded 1996</li>
-          <li>200+ CPD recordings</li>
+        <div class="tc-btn-group u-mt-8">
+          <a class="tc-btn tc-btn--secondary" href="about-fellowship.html">Learn more</a>
+        </div>
+      </div>
+
+      <figure class="tc-event-row__figure">
+        <img src="assets/img/wound-man-statuette.png"
+             alt="The Wound Man — a bronze statuette of a standing figure pierced by arrows and blades, mounted on a wooden base"
+             width="392" height="392" loading="lazy">
+        <figcaption>The Wound Man statuette, cast by Louis Lejeune Ltd</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: the Ryan Lecture                                          -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--subtle" id="ryan-lecture" aria-labelledby="ryan-h">
+    <div class="tc-container tc-event-row tc-event-row--reverse">
+      <div class="tc-event-row__body">
+        <p class="tc-eyebrow">Given at every conference</p>
+        <h2 id="ryan-h">The Ryan Lecture</h2>
+
+        <div class="tc-prose">
+          <p>The Ryan Lecture was established to mark the lifetime contribution to the
+            management of victims of trauma made by Professor James &ldquo;Jim&rdquo;
+            Ryan, the founding chairperson of Trauma Care. It is given annually at the
+            Trauma Care conference by a distinguished speaker invited by the Trauma
+            Care Council.</p>
+          <p>Professor Ryan&rsquo;s long and distinguished military career ended as
+            Colonel in the Royal Army Medical Corps, as Joint Professor of Military
+            Surgery at the Royal Army Medical College, London and the Royal College of
+            Surgeons of England. His military experience included service in Northern
+            Ireland, Cyprus, the Falkland Islands, Nepal, the Balkans, the Caucasus,
+            the Middle East and Central Asia.</p>
+          <p><b>The 2025 Ryan Lecture was delivered by Dr Stephen Hearns.</b></p>
+        </div>
+
+        <div class="tc-btn-group u-mt-8">
+          <a class="tc-btn tc-btn--secondary" href="#" data-page="about-ryan-lecture.html">Learn more</a>
+        </div>
+      </div>
+
+      <figure class="tc-event-row__figure">
+        <img src="assets/img/people/jim-ryan.jpg"
+             alt="Professor James &quot;Jim&quot; Ryan, founding chairperson of Trauma Care"
+             width="400" height="400" loading="lazy">
+        <figcaption>Professor James &ldquo;Jim&rdquo; Ryan, founding chairperson</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: Foundations in Trauma Course                              -->
+  <!-- No booking CTA: the course is postponed. The status is stated in   -->
+  <!-- a notice rather than implied by a disabled button.                 -->
+  <!-- ================================================================== -->
+  <section class="tc-section" id="fit-course" aria-labelledby="fit-h">
+    <div class="tc-container tc-event-row">
+      <div class="tc-event-row__body">
+        <p class="tc-eyebrow">Two days, practical</p>
+        <h2 id="fit-h">Foundations in Trauma Course</h2>
+
+        <div class="tc-alert tc-alert--warning" role="note">
+          <svg class="tc-alert__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>
+          <div>
+            <p class="tc-alert__title">Postponed for a revamp</p>
+            <p>The 2025 course was postponed so it can undergo a major revamp. Keep an
+              eye out for the return of the FIT Course in 2026.</p>
+          </div>
+        </div>
+
+        <div class="tc-prose u-mt-8">
+          <p>The Foundations in Trauma Course is a two-day practical event that follows
+            trauma patients through each stage of their journey, starting at the scene
+            of a major incident and ending with rehabilitation. It is perfect for
+            medical students and recent graduates.</p>
+          <p>Every aspect of the course is practical or quiz-based.</p>
+        </div>
+
+        <h3 class="tc-h4 u-mt-8">Topics</h3>
+        <ul class="tc-topics">
+          <li><span class="tc-tag">Scene safety</span></li>
+          <li><span class="tc-tag">Assessment &amp; triage</span></li>
+          <li><span class="tc-tag">Trauma resuscitation in ED</span></li>
+          <li><span class="tc-tag">Trauma imaging</span></li>
+          <li><span class="tc-tag">Critical care</span></li>
+          <li><span class="tc-tag">Trauma surgery by specialty</span></li>
+          <li><span class="tc-tag">Ballistics, burns, paediatrics &amp; silver trauma</span></li>
+          <li><span class="tc-tag">Hyperacute &amp; ongoing rehabilitation</span></li>
         </ul>
       </div>
 
-      <!-- Trauma Care's own photograph, taken from the live site. It is the
-           only genuine photography they currently publish; a commissioned
-           library is still needed. -->
-      <div class="tc-media tc-media--16x9">
+      <figure class="tc-event-row__figure tc-event-row__figure--wide">
         <img src="assets/img/fit-course-faculty-2024.jpg"
-             alt="Trauma Care faculty and delegates at a training event, wearing Trauma Care lanyards, with a search and rescue dog."
-             width="1420" height="640" fetchpriority="high">
-      </div>
-
+             alt="The 2024 Foundations in Trauma Course faculty, photographed together at the course"
+             width="1420" height="640" loading="lazy">
+        <figcaption>The 2024 faculty</figcaption>
+      </figure>
     </div>
   </section>
 
-
+<!-- ================================================================== -->
+  <!-- SECTION: subscribe                                                 -->
+  <!-- The live page collects subscribers through a modal behind its      -->
+  <!-- "Subscribe" buttons, and asks for more than the shared newsletter  -->
+  <!-- band does. This page therefore carries the full form and does not  -->
+  <!-- include the newsletter template part.                              -->
+  <!-- Beacon CRM later. Both consents are explicit and unticked.         -->
   <!-- ================================================================== -->
-  <!-- SECTION: welcome                                                   -->
-  <!-- Live homepage section 2, copy verbatim from traumacare.org.uk.      -->
-  <!-- ACF: eyebrow, heading, prose, signatory name and role.              -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="welcome-h">
-    <div class="tc-container tc-container--prose">
-
-      <div class="tc-section-head tc-section-head--center">
-        <p class="tc-eyebrow">Welcome</p>
-        <h2 id="welcome-h">Welcome to Trauma Care</h2>
-      </div>
-
-      <div class="tc-prose">
-        <p class="tc-lead">Here you will find lots of useful information about our CPD
-          webinars, conferences and merchandise.</p>
-        <p>There is an exclusive section for Trauma Care Members, and you can find out how
-          to become one and the benefits you&rsquo;ll receive by clicking on
-          &ldquo;Membership&rdquo; at the top of this page. We hope that you&rsquo;ll find
-          something that will interest you and that you consider becoming part of the
-          Trauma Care family.</p>
-        <p>If you wish to get in touch with us, you will find details about how to contact
-          us here too.</p>
-        <p class="tc-signature"><b>Professor Ian Greaves</b>Co-Founder</p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: where to start                                            -->
-  <!-- The four routes in. Covers three of the four landing pages named   -->
-  <!-- in requirements §1 (Membership, Courses, Donations) and puts the   -->
-  <!-- donation route high, per §2 "a clearer donation experience".       -->
-  <!-- ACF: flexible-content layout "routes", repeater of icon/title/     -->
-  <!-- text/link. Uses only existing components — no template CSS.        -->
-  <!-- ================================================================== -->
-  <section class="tc-section" aria-labelledby="routes-h">
-    <div class="tc-container">
-
-      <div class="tc-section-head tc-section-head--center">
-        <p class="tc-eyebrow">Where to start</p>
-        <h2 id="routes-h">Education, membership and support</h2>
-      </div>
-
-      <div class="tc-grid tc-grid--4">
-
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5c0-3-4-5.5-9-5.5Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="#" data-page="membership.html">Membership</a></h3>
-            <p class="tc-card__text">From £3 a month: the <i>TRAUMA</i> journal, the video
-              library, discounted tickets and automated CPD certificates.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">Explore membership</span></p>
-          </div>
-        </article>
-
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3ZM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="#" data-page="courses.html">Courses</a></h3>
-            <p class="tc-card__text">Practical, multidisciplinary training. Foundations in
-              Trauma follows the patient from the scene of a major incident to rehabilitation.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">See our courses</span></p>
-          </div>
-        </article>
-
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8v10H5V10h14Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="events.html">Events &amp; webinars</a></h3>
-            <p class="tc-card__text">Four days of education at the annual conference, plus CPD
-              webinars across the trauma pathway.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">Browse events</span></p>
-          </div>
-        </article>
-
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="#" data-page="donate.html">Donate</a></h3>
-            <p class="tc-card__text">Every donation funds education for the people who
-              treat trauma patients. Give once or monthly, and add Gift Aid.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">Support our work</span></p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: annual conference                                         -->
-  <!-- The flagship event (requirements §6). Every figure here is from    -->
-  <!-- the live conference page. Dates are deliberately omitted until the -->
-  <!-- client resolves the 28th/2026 vs 29th/2027 contradiction.          -->
-  <!-- ACF: flexible-content layout "featured event" — eyebrow, heading,  -->
-  <!-- intro, pricing line, two CTAs, stream repeater.                    -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--dark-alt tc-on-dark" aria-labelledby="conference-h">
-    <div class="tc-container">
-      <div class="tc-grid tc-grid--2">
-
-        <div class="tc-stack">
-          <p class="tc-eyebrow">8&ndash;11 March 2027 &middot; Yarnfield Park</p>
-          <h2 id="conference-h">The 29th Annual Trauma Care Conference</h2>
-          <p class="tc-lead">Four days at Yarnfield Park bringing together experts and
-            clinicians from across the entire trauma pathway &mdash; from the point of
-            injury and pre-hospital care through emergency medicine, critical care and
-            definitive treatment, to rehabilitation.</p>
-          <p>Day tickets are £115. Members save £25, early bird saves £15, and students,
-            unpaid responders and volunteers save £15. Discounts combine, so places start
-            at £60.</p>
-          <div class="tc-btn-group u-mt-8">
-            <a class="tc-btn tc-btn--inverse tc-btn--lg" href="#" data-page="event-register.html">Book your place</a>
-            <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="conference.html">See the programme</a>
-          </div>
-        </div>
-
-        <div class="tc-stack">
-          <h3>Eleven specialist streams</h3>
-          <ul class="tc-cluster tc-cluster--sm">
-            <li><span class="tc-tag">Pre-hospital emergency medicine</span></li>
-            <li><span class="tc-tag">HEMS</span></li>
-            <li><span class="tc-tag">Paramedic practice</span></li>
-            <li><span class="tc-tag">Critical care</span></li>
-            <li><span class="tc-tag">Nursing</span></li>
-            <li><span class="tc-tag">Military &amp; austere medicine</span></li>
-            <li><span class="tc-tag">Paediatrics</span></li>
-            <li><span class="tc-tag">Older people &amp; trauma</span></li>
-            <li><span class="tc-tag">Allied health professionals</span></li>
-            <li><span class="tc-tag">Community first responders</span></li>
-            <li><span class="tc-tag">Major trauma</span></li>
-          </ul>
-          <p>Every ticket includes lunch and refreshments, full exhibition access, time
-            between sessions to meet colleagues, free onsite parking and a CPD certificate
-            of attendance.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: membership                                                -->
-  <!-- Requirements §5. Sells, rather than signposting — the route card    -->
-  <!-- above already links here. The full pricing table stays on           -->
-  <!-- membership-tiers.html; repeating it here would duplicate that page. -->
-  <!-- ACF: flexible-content layout "membership", with a checklist         -->
-  <!-- repeater, a stat pair and a quote group.                            -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="membership-h">
-    <div class="tc-container">
-      <div class="tc-grid tc-grid--2">
-
-        <div class="tc-stack">
-          <p class="tc-eyebrow">Membership</p>
-          <h2 id="membership-h">Our members are the backbone of Trauma Care</h2>
-          <p class="tc-lead">By joining you receive some genuinely useful benefits &mdash;
-            and you actively contribute to our mission of providing affordable education to
-            all healthcare professionals.</p>
-
-          <ul class="tc-checklist">
-            <li>Our entire catalogue of videos from past webinars and events</li>
-            <li>Exclusive discounts on all Trauma Care events and in the shop</li>
-            <li>CPD certificates, stored for every live and recorded webinar</li>
-            <li>Our quarterly journal <i>TRAUMA</i>, delivered electronically or printed</li>
-          </ul>
-
-          <div class="tc-btn-group u-mt-8">
-            <a class="tc-btn tc-btn--primary tc-btn--lg" href="#" data-page="membership-tiers.html">Compare membership</a>
-            <a class="tc-btn tc-btn--secondary tc-btn--lg" href="#" data-page="membership-join.html">Join today</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="tc-stat tc-membership-price">
-            <span class="tc-stat__value">£3</span>
-            <span class="tc-stat__label">a month for non-registered healthcare
-              professionals, £8 for registered. Pay monthly or annually.</span>
-          </div>
-
-          <blockquote class="tc-quote u-mt-8">
-            <p class="tc-quote__text">The key to a successful future for Trauma Care lies
-              in its members.</p>
-          </blockquote>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: donate                                                    -->
-  <!-- Live homepage section 3, and requirements §2 "a clearer donation    -->
-  <!-- experience". D1–D3: one-off, recurring and Gift Aid live on         -->
-  <!-- donate.html; this band is the route to them.                        -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--brand" aria-labelledby="donate-h">
+  <section class="tc-section tc-section--brand" id="subscribe" aria-labelledby="subscribe-h">
     <div class="tc-container tc-container--narrow">
-      <div class="tc-section-head tc-section-head--center">
-        <p class="tc-eyebrow">Donate</p>
-        <h2 id="donate-h">Donate to Trauma Care</h2>
-        <p>We know you might not always be able to commit to a regular payment. Any
-          donation is gratefully received, and each one contributes directly to our
-          mission of providing quality education.</p>
+
+      <div class="tc-section-head">
+        <p class="tc-eyebrow">Newsletter</p>
+        <h2 id="subscribe-h">Subscribe to Trauma Care</h2>
+        <p class="tc-lead">By subscribing to Trauma Care you will stay informed on all
+          the news, latest events, webinars and courses. We will also keep you updated
+          on all important news and services.</p>
       </div>
 
-      <div class="tc-btn-group tc-btn-group--center">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="#" data-page="donate.html">Donate</a>
-      </div>
+      <form class="tc-subscribe-form" action="#" method="post">
 
-      <p class="tc-prose-center tc-text-small u-text-center u-mt-8">Give once or monthly. Add
-        Gift Aid and we receive 25% more, at no extra cost to you.
-        <a href="fundraise.html">Other ways to give</a>.</p>
+        <div class="tc-form-row">
+          <div class="tc-field">
+            <label class="tc-label" for="sub-first">First name</label>
+            <input class="tc-input" type="text" id="sub-first" name="first_name" autocomplete="given-name">
+          </div>
+          <div class="tc-field">
+            <label class="tc-label" for="sub-last">Last name</label>
+            <input class="tc-input" type="text" id="sub-last" name="last_name" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="tc-field">
+          <label class="tc-label" for="sub-email">Email address <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
+          <input class="tc-input" type="email" id="sub-email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="tc-form-row">
+          <div class="tc-field">
+            <label class="tc-label" for="sub-code">Country code</label>
+            <!-- Five entries stand in for the live list of ~200. The full list
+                 comes from the CRM field, not from hand-written markup. -->
+            <select class="tc-select" id="sub-code" name="country_code">
+              <option value="">Country code&hellip;</option>
+              <option value="44">+44 United Kingdom</option>
+              <option value="353">+353 Ireland</option>
+              <option value="1-us">+1 United States</option>
+              <option value="1-ca">+1 Canada</option>
+              <option value="61">+61 Australia</option>
+            </select>
+          </div>
+          <div class="tc-field">
+            <label class="tc-label" for="sub-phone">Phone number</label>
+            <input class="tc-input" type="tel" id="sub-phone" name="phone_number" autocomplete="tel-national">
+          </div>
+        </div>
+
+        <div class="tc-field">
+          <label class="tc-label" for="sub-occupation">Main medical occupation</label>
+          <p class="tc-hint" id="sub-occupation-hint">Please tell us your main medical occupation.</p>
+          <input class="tc-input" type="text" id="sub-occupation" name="occupation" aria-describedby="sub-occupation-hint">
+        </div>
+
+        <label class="tc-choice tc-subscribe-form__consent">
+          <input type="checkbox" name="gdpr_communications">
+          <span class="tc-choice__label">I want to be contacted about future news from
+            Trauma Care and our partners.</span>
+        </label>
+
+        <label class="tc-choice tc-subscribe-form__consent">
+          <input type="checkbox" name="gdpr_terms" required>
+          <span class="tc-choice__label">I agree to the GDPR terms and conditions. You
+            can unsubscribe from any email, or by contacting us. See our
+            <a href="#" data-page="privacy.html">privacy policy</a>.</span>
+        </label>
+
+        <button class="tc-btn tc-btn--primary tc-subscribe-form__submit" type="submit">Sign up</button>
+      </form>
+
     </div>
   </section>
-
-
-
 
 <!-- ==================================================================== -->
 <!-- template-part: sponsors                                              -->
@@ -535,46 +628,7 @@
 </section>
 <!-- /template-part: sponsors -->
 
-
-<!-- ==================================================================== -->
-<!-- template-part: newsletter                                            -->
-<!-- Beacon CRM later. Consent is explicit and unticked.                  -->
-<!-- ==================================================================== -->
-<section class="tc-newsletter tc-section" aria-labelledby="newsletter-h">
-  <div class="tc-container tc-newsletter__inner">
-
-    <div>
-      <p class="tc-eyebrow">Newsletter</p>
-      <h2 class="tc-newsletter__title" id="newsletter-h">Never miss a CPD webinar</h2>
-      <p class="tc-newsletter__text">
-        You will get our event announcements, new webinar
-        dates and the latest CPD poster, and nothing else.
-      </p>
-    </div>
-
-    <form class="tc-newsletter__form" action="#" method="post">
-      <div class="tc-newsletter__row">
-        <div class="tc-field">
-          <label class="tc-label" for="newsletter-email">Email address <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
-          <input class="tc-input" type="email" id="newsletter-email" name="email" autocomplete="email" required>
-        </div>
-        <button class="tc-btn tc-btn--primary" type="submit">Subscribe</button>
-      </div>
-
-      <label class="tc-choice tc-newsletter__consent">
-        <input type="checkbox" name="consent" required>
-        <span class="tc-choice__label">
-          Yes, email me Trauma Care news, events and CPD announcements.
-          You can unsubscribe from any email, or by contacting us. See our
-          <a href="#" data-page="privacy.html">privacy policy</a>.
-        </span>
-      </label>
-    </form>
-
-  </div>
-</section>
-<!-- /template-part: newsletter -->
-
+</main>
 
 <!-- ==================================================================== -->
 <!-- template-part: footer                                                -->

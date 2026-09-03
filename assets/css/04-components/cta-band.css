@@ -1,0 +1,23 @@
+/* ==========================================================================
+   COMPONENT — CTA BAND
+   --------------------------------------------------------------------------
+   A centred closing call to action: heading, one line of supporting copy, and
+   one or two buttons. Sits inside a .tc-section, which supplies the ground —
+   usually --dark-alt or --brand.
+
+   Promoted out of 05-templates/conference.css when a second page needed it.
+
+   ACF: heading, body, two CTAs.
+   ========================================================================== */
+
+.tc-cta-band { text-align: center; }
+
+.tc-cta-band .tc-lead {
+  max-width: 52ch;
+  margin: var(--tc-space-5) auto 0;
+}
+
+.tc-cta-band .tc-btn-group {
+  justify-content: center;
+  margin-block-start: var(--tc-space-8);
+}

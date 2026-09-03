@@ -5,7 +5,9 @@
    works when opened directly from the file system as well as over HTTP.
 
    Progressive enhancement is the rule. With this file removed:
-     · every top-level navigation item is still a link to a section page
+     · every submenu opens on hover or focus, so no destination is lost
+       (the dropdown parents have no landing page of their own, as on the
+       live site, so the panel is the only route to their children)
      · the mobile navigation renders in full, expanded, in the document flow
      · the search form renders inline instead of behind a toggle
      · the listing filter panel renders open
@@ -237,12 +239,54 @@
     });
   }
 
+  /* ==================================================================
+     Countdown — conference page
+
+     Enhancement only. The heading above it carries the date, and the
+     stylesheet hides the counter entirely without this script, so nothing
+     is lost. aria-live is off deliberately: a per-second announcement
+     would make the page unusable with a screen reader.
+     ================================================================== */
+
+  function initCountdown() {
+    var root = document.querySelector('[data-countdown]');
+    if (!root) return;
+
+    var target = new Date(root.getAttribute('data-countdown')).getTime();
+    if (isNaN(target)) return;
+
+    var fields = {
+      days: root.querySelector('[data-countdown-days]'),
+      hours: root.querySelector('[data-countdown-hours]'),
+      minutes: root.querySelector('[data-countdown-minutes]'),
+      seconds: root.querySelector('[data-countdown-seconds]')
+    };
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    function tick() {
+      var left = Math.max(0, target - Date.now());
+      var seconds = Math.floor(left / 1000);
+
+      fields.days.textContent = String(Math.floor(seconds / 86400));
+      fields.hours.textContent = pad(Math.floor(seconds / 3600) % 24);
+      fields.minutes.textContent = pad(Math.floor(seconds / 60) % 60);
+      fields.seconds.textContent = pad(seconds % 60);
+
+      if (left === 0) window.clearInterval(timer);
+    }
+
+    var timer = window.setInterval(tick, 1000);
+    tick();
+  }
+
   /* ------------------------------------------------------------------ */
 
   function init() {
     initStickyHeader();
     initNavigation();
     initDisclosures();
+    initCountdown();
   }
 
   if (document.readyState === 'loading') {

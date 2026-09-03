@@ -582,4 +582,10 @@ html:not(.js) .tc-search-panel[hidden] { display: block; }
 
 @media (min-width: 1280px) {
   html:not(.js) .tc-nav__panel[hidden] { display: none; }
+
+  /* The dropdown parents have no landing page of their own, so without the
+     script the panel is the only route to their children. Hover and
+     focus-within stand in for the disclosure buttons. */
+  html:not(.js) .tc-nav__item:hover .tc-nav__panel[hidden],
+  html:not(.js) .tc-nav__item:focus-within .tc-nav__panel[hidden] { display: block; }
 }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="presentation">
+  <!-- Portrait placeholder, used where a real photograph is missing.
+       Colours are hard coded because an external SVG loaded through an img
+       element cannot read the host document's custom properties. They are the
+       tokens tc-ink-100 (ground) and tc-ink-300 (figure); if the palette
+       moves, move these with it. Note: no double hyphens in this comment —
+       they are illegal in XML and stop the file parsing. -->
+  <rect width="400" height="400" fill="#f0f4f8"/>
+  <circle cx="200" cy="155" r="62" fill="#c2ccd8"/>
+  <path d="M84 400v-40a116 116 0 0 1 232 0v40Z" fill="#c2ccd8"/>
+</svg>

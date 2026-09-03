@@ -331,3 +331,26 @@
 :root {
   --tc-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.28 6.22a.75.75 0 0 1 0 1.06l-9.5 9.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.97 3.97 8.97-8.97a.75.75 0 0 1 1.06 0Z'/%3E%3C/svg%3E");
 }
+
+/* --------------------------------------------------------------------------
+   Pull quote on a dark ground
+   An argument set at reading size rather than display size, and long enough
+   to run to more than one paragraph — which is why it is not .tc-quote.
+   Promoted out of 05-templates/sponsorship.css when the team page needed it.
+   A pull quote at reading size rather than display size — it is an argument,
+   not a strapline, and it runs to two paragraphs.
+   -------------------------------------------------------------------------- */
+
+.tc-need-quote {
+  margin: var(--tc-space-6) 0 0;
+  padding-inline-start: var(--tc-space-6);
+  border-inline-start: 4px solid var(--tc-color-brand);
+}
+
+.tc-need-quote p {
+  font-size: var(--tc-fs-lg);
+  line-height: var(--tc-lh-relaxed);
+  color: var(--tc-color-text-inverse);
+}
+
+.tc-need-quote p + p { margin-block-start: var(--tc-space-5); }

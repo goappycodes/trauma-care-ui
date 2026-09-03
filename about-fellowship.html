@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trauma Care — improving the outcome of the trauma victim</title>
-<meta name="description" content="Trauma Care is the UK's largest trauma network. CPD webinars, an annual multidisciplinary conference, the TRAUMA journal and membership from £3 a month.">
+<title>The Trauma Care Fellowship Award — Trauma Care</title>
+<meta name="description" content="The Trauma Care Fellowship was established in 2020 to recognise exceptional contributions to trauma victim care. Meet every fellow from 2020 onwards.">
 
 <!-- Sets the `js` class before first paint so the no-JavaScript fallback
      styles never flash. Must stay inline and must stay in the head. -->
@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/05-templates/home.css">
+<link rel="stylesheet" href="assets/css/05-templates/fellowship.css">
 </head>
 
 <body>
@@ -226,355 +226,289 @@
 
 <main id="main">
 
+  <div class="tc-container">
+    <nav class="tc-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-fellowship.html" aria-current="page">Trauma Care Fellowship</a></li>
+      </ol>
+    </nav>
+  </div>
+
   <!-- ================================================================== -->
   <!-- SECTION: hero                                                      -->
-  <!-- ACF: eyebrow, heading, intro, primary CTA, secondary CTA, image,   -->
-  <!-- trust-line repeater.                                               -->
   <!-- ================================================================== -->
-  <section class="tc-hero tc-on-dark" aria-labelledby="hero-h">
-    <div class="tc-container tc-hero__inner">
+  <section class="tc-page-hero tc-on-dark" aria-labelledby="fellowship-h">
+    <div class="tc-container tc-page-hero__inner">
+      <p class="tc-eyebrow">About us</p>
+      <h1 id="fellowship-h">Trauma Care Fellowship</h1>
+      <p class="tc-lead">Established in 2020 to recognise exceptional contributions to
+        trauma victim care.</p>
 
-      <div>
-        <p class="tc-eyebrow">The UK&rsquo;s largest trauma network</p>
-        <h1 id="hero-h">Improving the outcome of the trauma victim</h1>
-        <p class="tc-lead tc-hero__lead">
-          From the roadside to rehabilitation, we bring together every profession in
-          the chain of care &mdash; improving outcomes through education, research and
-          publishing since 1996.
-        </p>
+      <div class="tc-btn-group tc-page-hero__actions">
+        <a class="tc-btn tc-btn--primary tc-btn--lg" href="#fellows">Meet the fellows</a>
+      </div>
+    </div>
+  </section>
 
-        <div class="tc-btn-group tc-hero__actions">
-          <a class="tc-btn tc-btn--primary tc-btn--lg" href="#" data-page="membership-join.html">Join Trauma Care</a>
-          <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#" data-page="webinars.html">Watch CPD webinars</a>
+
+  <!-- ================================================================== -->
+  <!-- SECTION: the award                                                 -->
+  <!-- ACF: heading, body, image.                                         -->
+  <!-- ================================================================== -->
+  <section class="tc-section" aria-labelledby="award-h">
+    <div class="tc-container tc-award">
+      <div class="tc-award__body">
+        <div class="tc-section-head">
+          <p class="tc-eyebrow">The award</p>
+          <h2 id="award-h">The Trauma Care Fellowship Award</h2>
         </div>
 
-        <ul class="tc-hero__trust">
-          <li>Registered charity 1078780</li>
-          <li>Founded 1996</li>
-          <li>200+ CPD recordings</li>
-        </ul>
+        <div class="tc-prose">
+          <p>The Trauma Care Fellowship was established in 2020 to recognise exceptional
+            contributions to trauma victim care. Criteria include academic and clinical
+            excellence, innovation, and service development.</p>
+          <p>The award is not limited by borders, as it is intended for those whose
+            contribution to trauma care, whether on a national or global scale, has been
+            truly outstanding.</p>
+          <p>Each fellow will receive a bronze of the famous medieval &ldquo;Wound
+            Man&rdquo;, specially commissioned by Trauma Care.</p>
+        </div>
       </div>
 
-      <!-- Trauma Care's own photograph, taken from the live site. It is the
-           only genuine photography they currently publish; a commissioned
-           library is still needed. -->
-      <div class="tc-media tc-media--16x9">
-        <img src="assets/img/fit-course-faculty-2024.jpg"
-             alt="Trauma Care faculty and delegates at a training event, wearing Trauma Care lanyards, with a search and rescue dog."
-             width="1420" height="640" fetchpriority="high">
-      </div>
-
+      <figure class="tc-award__figure">
+        <img src="assets/img/wound-man-statuette.png"
+             alt="The Wound Man — a bronze statuette of a standing figure pierced by arrows and blades, mounted on a wooden base"
+             width="392" height="392" loading="lazy">
+        <figcaption>The Wound Man bronze, commissioned by Trauma Care</figcaption>
+      </figure>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: welcome                                                   -->
-  <!-- Live homepage section 2, copy verbatim from traumacare.org.uk.      -->
-  <!-- ACF: eyebrow, heading, prose, signatory name and role.              -->
+  <!-- SECTION: the fellows                                               -->
+  <!-- ACF: a `fellow` post type ordered by year, or a repeater of        -->
+  <!-- portrait, name, post-nominals, year and biography.                 -->
+  <!-- Newest first, which is the live order.                             -->
   <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="welcome-h">
-    <div class="tc-container tc-container--prose">
-
-      <div class="tc-section-head tc-section-head--center">
-        <p class="tc-eyebrow">Welcome</p>
-        <h2 id="welcome-h">Welcome to Trauma Care</h2>
-      </div>
-
-      <div class="tc-prose">
-        <p class="tc-lead">Here you will find lots of useful information about our CPD
-          webinars, conferences and merchandise.</p>
-        <p>There is an exclusive section for Trauma Care Members, and you can find out how
-          to become one and the benefits you&rsquo;ll receive by clicking on
-          &ldquo;Membership&rdquo; at the top of this page. We hope that you&rsquo;ll find
-          something that will interest you and that you consider becoming part of the
-          Trauma Care family.</p>
-        <p>If you wish to get in touch with us, you will find details about how to contact
-          us here too.</p>
-        <p class="tc-signature"><b>Professor Ian Greaves</b>Co-Founder</p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: where to start                                            -->
-  <!-- The four routes in. Covers three of the four landing pages named   -->
-  <!-- in requirements §1 (Membership, Courses, Donations) and puts the   -->
-  <!-- donation route high, per §2 "a clearer donation experience".       -->
-  <!-- ACF: flexible-content layout "routes", repeater of icon/title/     -->
-  <!-- text/link. Uses only existing components — no template CSS.        -->
-  <!-- ================================================================== -->
-  <section class="tc-section" aria-labelledby="routes-h">
+  <section class="tc-section tc-section--subtle" id="fellows" aria-labelledby="fellows-h">
     <div class="tc-container">
-
-      <div class="tc-section-head tc-section-head--center">
-        <p class="tc-eyebrow">Where to start</p>
-        <h2 id="routes-h">Education, membership and support</h2>
+      <div class="tc-section-head">
+        <p class="tc-eyebrow">Recipients</p>
+        <h2 id="fellows-h">Trauma Care Fellows</h2>
+        <p class="tc-lead">Our Trauma Care Fellows, starting from 2020.</p>
       </div>
 
-      <div class="tc-grid tc-grid--4">
+      <ol class="tc-person-list">
 
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5c0-3-4-5.5-9-5.5Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="#" data-page="membership.html">Membership</a></h3>
-            <p class="tc-card__text">From £3 a month: the <i>TRAUMA</i> journal, the video
-              library, discounted tickets and automated CPD certificates.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">Explore membership</span></p>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/rod-mackenzie.jpg" alt="Dr Roderick MacKenzie" width="400" height="400" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2025 Fellow</p>
+            <h3 class="tc-person-row__name">Dr Roderick MacKenzie</h3>
+            <div class="tc-prose">
+              <p>Dr Roderick MacKenzie is a Consultant in Emergency Medicine and
+                Pre-Hospital Emergency Medicine at Cambridge University Hospitals. He is
+                also the Clinical Director of the East of England Major Trauma Centre at
+                Addenbrooke&rsquo;s Hospital and an Air Ambulance flight physician with
+                Magpas Air Ambulance.</p>
+              <p>He has over 20 years&rsquo; experience of the delivery of emergency
+                medical care and the organisation of emergency medical services across
+                the full spectrum of presentations and incidents, both in and out of
+                hospital.</p>
+              <p>Dr MacKenzie was the national lead for Emergency Medicine and is the
+                current Chairman of the Intercollegiate Board for Training in
+                Pre-Hospital Emergency Medicine.</p>
+              <p>In addition to his NHS clinical practice, he has experience of providing
+                expert opinion in relation to clinical negligence claims related to
+                Emergency Medicine, Air Ambulance and Ambulance care. His academic
+                interests relate to injury prevention and control and the role of human
+                factors in errors in emergency health care.</p>
+            </div>
           </div>
-        </article>
+        </li>
 
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3ZM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="#" data-page="courses.html">Courses</a></h3>
-            <p class="tc-card__text">Practical, multidisciplinary training. Foundations in
-              Trauma follows the patient from the scene of a major incident to rehabilitation.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">See our courses</span></p>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/timothy-coats.jpg" alt="Professor Timothy J Coats" width="400" height="400" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2024 Fellow</p>
+            <h3 class="tc-person-row__name">Professor Timothy J Coats</h3>
+            <p class="tc-person-row__role">Professor of Emergency Medicine, University of Leicester, UK</p>
+            <div class="tc-prose">
+              <p>Tim Coats trained in Emergency Medicine in Leeds and London, developing a
+                particular interest in pre-hospital trauma care, and completing an MD
+                thesis in 1996 on the use of AI methods to incorporate patterns of change
+                in physiology in a predictive model of outcome following injury. He
+                trained in pre-hospital care with the London Helicopter Emergency Medical
+                Service from 1990 to 1996.</p>
+              <p>Following being appointed as a Senior Lecturer at Barts and The London in
+                1996, with consultant responsibility for the London HEMS service, he
+                moved to the University of Leicester as Professor of Emergency Medicine in
+                2003. He is a past Chair of the College of Emergency Medicine Research
+                Committee, past Chair of the NIHR National Specialist Group for Injuries
+                and Emergencies, and past Chair of the Trauma Audit and Research Network
+                (TARN). In 2022, he became a NIHR Senior Investigator. His research
+                interests are changes in coagulation following major trauma, artificial
+                intelligence in healthcare &ldquo;big data&rdquo; applications, and
+                patient-reported outcomes after major trauma.</p>
+              <p>You can find him on X at <a href="https://x.com/tjcoats">@tjcoats</a>.</p>
+            </div>
           </div>
-        </article>
+        </li>
 
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8v10H5V10h14Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="events.html">Events &amp; webinars</a></h3>
-            <p class="tc-card__text">Four days of education at the annual conference, plus CPD
-              webinars across the trauma pathway.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">Browse events</span></p>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/martin-griffiths.jpg" alt="Mr Martin P Griffiths" width="400" height="400" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2023 Fellow</p>
+            <h3 class="tc-person-row__name">Mr Martin P Griffiths</h3>
+            <p class="tc-person-row__role">CBE DL FRCS FFSTEd FRSA</p>
+            <div class="tc-prose">
+              <p>Martin P Griffiths is a consultant Trauma and Vascular Surgeon at Barts
+                Health NHS Trust, where he developed the nation&rsquo;s first ward-based
+                intervention programme for the victims of interpersonal injury.</p>
+              <p>He is also National Clinical Director for Violence Reduction (NHS
+                England) and Clinical Director for the Violence Reduction Network (NHS
+                London), and has led the expansion of the public-health approach to
+                violence reduction in the capital. He has an interest in integrating peer
+                groups in the co-design of community and healthcare-based prevention and
+                education programmes.</p>
+              <p>He is an ambassador to the Mary Seacole Trust, a Charlton Athletic
+                Community Trust Trustee, Vice-President of the Hope Collective, and is a
+                Deputy Lieutenant of Greater London.</p>
+              <p>Clinically, he remains an active trauma surgeon and trainer, teaching on
+                multiple RCS courses, and is the Director of Medical Education at Barts
+                Health as an examiner for the FRCS.</p>
+            </div>
           </div>
-        </article>
+        </li>
 
-        <article class="tc-card tc-card--flat tc-card--link">
-          <div class="tc-card__body">
-            <span class="tc-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg>
-            </span>
-            <h3 class="tc-card__title"><a href="#" data-page="donate.html">Donate</a></h3>
-            <p class="tc-card__text">Every donation funds education for the people who
-              treat trauma patients. Give once or monthly, and add Gift Aid.</p>
-            <p class="tc-card__footer"><span class="tc-link-arrow">Support our work</span></p>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/keith-porter.jpg" alt="Professor Sir Keith Porter" width="400" height="400" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2023 Fellow</p>
+            <h3 class="tc-person-row__name">Professor Sir Keith Porter</h3>
+            <div class="tc-prose">
+              <p>Professor Porter was educated at Marlborough College and St
+                Thomas&rsquo;s Hospital, London. He was appointed Consultant Trauma
+                Surgeon at Birmingham Accident Hospital in 1986, a service that is now
+                delivered at Queen Elizabeth Hospital Birmingham, where he was the
+                Clinical Director of the Major Trauma Centre from 2010 to 2018 and
+                Professor of Clinical Traumatology until February 2023.</p>
+              <p>He was the clinical lead for injured soldiers returning to the UK for the
+                last decade, including both the Iraq and Afghanistan wars.</p>
+              <p>Professor Porter has been a leader in the development of the new medical
+                subspecialty of Pre-Hospital Emergency Medicine and in recent years has
+                been the Chairman of the Faculty of Pre-Hospital Care and also the
+                Intercollegiate Board for Training in Emergency Medicine. He is the
+                Honorary Secretary of Trauma Care and until recently the co-editor of the
+                journal <i>Trauma</i>.</p>
+              <p>Professor Porter has over 200 peer-review publications and has
+                co-authored and edited numerous books.</p>
+              <p>For his services to the military, he was knighted in the 2010
+                Queen&rsquo;s New Year&rsquo;s honours list.</p>
+            </div>
           </div>
-        </article>
+        </li>
 
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: annual conference                                         -->
-  <!-- The flagship event (requirements §6). Every figure here is from    -->
-  <!-- the live conference page. Dates are deliberately omitted until the -->
-  <!-- client resolves the 28th/2026 vs 29th/2027 contradiction.          -->
-  <!-- ACF: flexible-content layout "featured event" — eyebrow, heading,  -->
-  <!-- intro, pricing line, two CTAs, stream repeater.                    -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--dark-alt tc-on-dark" aria-labelledby="conference-h">
-    <div class="tc-container">
-      <div class="tc-grid tc-grid--2">
-
-        <div class="tc-stack">
-          <p class="tc-eyebrow">8&ndash;11 March 2027 &middot; Yarnfield Park</p>
-          <h2 id="conference-h">The 29th Annual Trauma Care Conference</h2>
-          <p class="tc-lead">Four days at Yarnfield Park bringing together experts and
-            clinicians from across the entire trauma pathway &mdash; from the point of
-            injury and pre-hospital care through emergency medicine, critical care and
-            definitive treatment, to rehabilitation.</p>
-          <p>Day tickets are £115. Members save £25, early bird saves £15, and students,
-            unpaid responders and volunteers save £15. Discounts combine, so places start
-            at £60.</p>
-          <div class="tc-btn-group u-mt-8">
-            <a class="tc-btn tc-btn--inverse tc-btn--lg" href="#" data-page="event-register.html">Book your place</a>
-            <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="conference.html">See the programme</a>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/karim-brohi.jpg" alt="Professor Karim Brohi" width="400" height="400" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2022 Fellow</p>
+            <h3 class="tc-person-row__name">Professor Karim Brohi</h3>
+            <p class="tc-person-row__role">FRCS FRCA</p>
+            <div class="tc-prose">
+              <p>Karim Brohi is the clinical director of the London Major Trauma Network,
+                Professor of Trauma Sciences at Queen Mary University of London (QMUL) and
+                a consultant vascular and trauma surgeon for Barts Health NHS Trust at the
+                Royal London Hospital. He was founding director of the Centre for Trauma
+                Sciences, and Director of the pan-faculty Crisis Prevention, Management
+                and Recovery Network. He is also a Non-Executive Director of the London
+                Ambulance Service NHS Trust.</p>
+              <p>At QMUL, Professor Brohi founded the MSc in Trauma Sciences programme at
+                the Centre for Trauma Sciences. Professor Brohi is very active in trauma
+                education through online media and as a keynote speaker at many events
+                both in the UK and overseas.</p>
+              <p>Professor Brohi founded the website
+                <a href="https://www.aftertrauma.org">Aftertrauma.org</a> in order to
+                provide research and resources to individuals and family members who have
+                been affected by injury and trauma.</p>
+              <p>Professor Brohi&rsquo;s research has focused on the human biological
+                response to injury, and especially critical bleeding and its effects. His
+                work on failure of blood clotting after injury has led to very significant
+                changes in the management of bleeding over the past decade. He coined the
+                term &ldquo;acute traumatic coagulopathy&rdquo; to describe how
+                coagulopathy caused by traumatic injury results in more severe bleeding
+                and organ failure.</p>
+              <p>Professor Brohi was instrumental in the development of the London Major
+                Trauma System in 2010, and has been its clinical director since 2016. In
+                2018, Professor Brohi received the American Heart Association&rsquo;s
+                Lifetime Achievement Award for Resuscitation Research for this work.</p>
+            </div>
           </div>
-        </div>
+        </li>
 
-        <div class="tc-stack">
-          <h3>Eleven specialist streams</h3>
-          <ul class="tc-cluster tc-cluster--sm">
-            <li><span class="tc-tag">Pre-hospital emergency medicine</span></li>
-            <li><span class="tc-tag">HEMS</span></li>
-            <li><span class="tc-tag">Paramedic practice</span></li>
-            <li><span class="tc-tag">Critical care</span></li>
-            <li><span class="tc-tag">Nursing</span></li>
-            <li><span class="tc-tag">Military &amp; austere medicine</span></li>
-            <li><span class="tc-tag">Paediatrics</span></li>
-            <li><span class="tc-tag">Older people &amp; trauma</span></li>
-            <li><span class="tc-tag">Allied health professionals</span></li>
-            <li><span class="tc-tag">Community first responders</span></li>
-            <li><span class="tc-tag">Major trauma</span></li>
-          </ul>
-          <p>Every ticket includes lunch and refreshments, full exhibition access, time
-            between sessions to meet colleagues, free onsite parking and a CPD certificate
-            of attendance.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: membership                                                -->
-  <!-- Requirements §5. Sells, rather than signposting — the route card    -->
-  <!-- above already links here. The full pricing table stays on           -->
-  <!-- membership-tiers.html; repeating it here would duplicate that page. -->
-  <!-- ACF: flexible-content layout "membership", with a checklist         -->
-  <!-- repeater, a stat pair and a quote group.                            -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="membership-h">
-    <div class="tc-container">
-      <div class="tc-grid tc-grid--2">
-
-        <div class="tc-stack">
-          <p class="tc-eyebrow">Membership</p>
-          <h2 id="membership-h">Our members are the backbone of Trauma Care</h2>
-          <p class="tc-lead">By joining you receive some genuinely useful benefits &mdash;
-            and you actively contribute to our mission of providing affordable education to
-            all healthcare professionals.</p>
-
-          <ul class="tc-checklist">
-            <li>Our entire catalogue of videos from past webinars and events</li>
-            <li>Exclusive discounts on all Trauma Care events and in the shop</li>
-            <li>CPD certificates, stored for every live and recorded webinar</li>
-            <li>Our quarterly journal <i>TRAUMA</i>, delivered electronically or printed</li>
-          </ul>
-
-          <div class="tc-btn-group u-mt-8">
-            <a class="tc-btn tc-btn--primary tc-btn--lg" href="#" data-page="membership-tiers.html">Compare membership</a>
-            <a class="tc-btn tc-btn--secondary tc-btn--lg" href="#" data-page="membership-join.html">Join today</a>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/david-alexander.jpg" alt="Professor David A Alexander" width="400" height="400" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2021 Fellow</p>
+            <h3 class="tc-person-row__name">Professor David A Alexander</h3>
+            <p class="tc-person-row__role">MA(Hons), CPsychol, PhD, (Hon)DSC, FBPS, FRSM, (Hon)FRCPsych</p>
+            <div class="tc-prose">
+              <p>David Alexander was Emeritus Professor of Mental Health at Robert Gordon
+                University (RGU) in Aberdeen. He undertook specialist postgraduate
+                training at the Universities of Aberdeen and Birmingham and at the FBI
+                Academy, USA.</p>
+              <p>In 1988, he led the psychiatric team following the Piper Alpha oil
+                platform disaster and subsequently established the regional traumatic
+                stress clinic at Royal Cornhill Hospital, Aberdeen. In 1999, he founded
+                the Aberdeen Centre for Trauma Research (ACTR). His expertise was
+                regularly sought in the wake of many major incidents and disasters
+                worldwide, including the 1998 Nairobi terrorist bombing, the Sikorsky S76
+                helicopter crash in 2002, the crash of the British Antarctic Survey Super
+                Puma helicopter in 2002 and the Indian Ocean tsunami of 2005.</p>
+              <p>He acted as advisor in mental health to the governments of Nigeria,
+                Pakistan (following the Kashmir earthquake) and Turkey, and visited Iraq
+                to advise on mental health capability at the request of the Royal College
+                of Psychiatrists.</p>
+              <p>In 2017, he was awarded a Doctor of Science by Abertay University in
+                recognition of his distinguished career.</p>
+            </div>
           </div>
-        </div>
+        </li>
 
-        <div>
-          <div class="tc-stat tc-membership-price">
-            <span class="tc-stat__value">£3</span>
-            <span class="tc-stat__label">a month for non-registered healthcare
-              professionals, £8 for registered. Pay monthly or annually.</span>
+        <li class="tc-person-row">
+          <img class="tc-person-row__photo" src="assets/img/people/david-nott.jpg" alt="Professor David Nott OBE" width="450" height="450" loading="lazy">
+          <div class="tc-person-row__body">
+            <p class="tc-badge tc-badge--brand">2020 Fellow</p>
+            <h3 class="tc-person-row__name">Professor David Nott OBE</h3>
+            <div class="tc-prose">
+              <p>Professor Nott is a Consultant Surgeon at St Mary&rsquo;s Hospital
+                London.</p>
+              <p>For more than twenty-five years, he has taken unpaid leave each year to
+                work for the aid agencies M&eacute;decins Sans Fronti&egrave;res, the
+                International Committee of the Red Cross and Syria Relief, providing
+                surgical treatment to patients in Bosnia, Afghanistan, Sierra Leone,
+                Liberia, Ivory Coast, Chad, Darfur, Yemen, the Democratic Republic of
+                Congo, Haiti, Iraq, Pakistan, Libya, Syria, Central African Republic, Gaza
+                and Nepal.</p>
+              <p>He has raised hundreds of thousands of pounds for charitable causes and
+                teaches advanced surgical skills to local medics and surgeons when he is
+                abroad.</p>
+              <p>In 2015, Professor Nott and his wife established the David Nott
+                Foundation, which supports surgeons in developing their operating skills
+                for warzones and austere environments.</p>
+              <p>He was awarded an OBE in 2016. In 2019, Picador published David&rsquo;s
+                memoir, <i>War Doctor</i>.</p>
+            </div>
           </div>
+        </li>
 
-          <blockquote class="tc-quote u-mt-8">
-            <p class="tc-quote__text">The key to a successful future for Trauma Care lies
-              in its members.</p>
-          </blockquote>
-        </div>
-
-      </div>
+      </ol>
     </div>
   </section>
 
 </main>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: donate                                                    -->
-  <!-- Live homepage section 3, and requirements §2 "a clearer donation    -->
-  <!-- experience". D1–D3: one-off, recurring and Gift Aid live on         -->
-  <!-- donate.html; this band is the route to them.                        -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--brand" aria-labelledby="donate-h">
-    <div class="tc-container tc-container--narrow">
-      <div class="tc-section-head tc-section-head--center">
-        <p class="tc-eyebrow">Donate</p>
-        <h2 id="donate-h">Donate to Trauma Care</h2>
-        <p>We know you might not always be able to commit to a regular payment. Any
-          donation is gratefully received, and each one contributes directly to our
-          mission of providing quality education.</p>
-      </div>
-
-      <div class="tc-btn-group tc-btn-group--center">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="#" data-page="donate.html">Donate</a>
-      </div>
-
-      <p class="tc-prose-center tc-text-small u-text-center u-mt-8">Give once or monthly. Add
-        Gift Aid and we receive 25% more, at no extra cost to you.
-        <a href="fundraise.html">Other ways to give</a>.</p>
-    </div>
-  </section>
-
-
-
-
-<!-- ==================================================================== -->
-<!-- template-part: sponsors                                              -->
-<!-- ACF repeater on the options page: logo, name, tier, URL.             -->
-<!-- Tiles are text placeholders until logo files are supplied.           -->
-<!-- ==================================================================== -->
-<section class="tc-section tc-section--tight" aria-labelledby="sponsors-h">
-  <div class="tc-container">
-    <div class="tc-section-head tc-section-head--center">
-      <p class="tc-eyebrow">With thanks to</p>
-      <h2 id="sponsors-h" class="tc-h3">Our sponsors and partners</h2>
-      <p class="tc-prose-center tc-text-small tc-text-muted">Without their support we could
-        not keep our education affordable.</p>
-    </div>
-
-    <ul class="tc-sponsors__grid">
-      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/slater-gordon.png" alt="Slater + Gordon" width="1590" height="780" loading="lazy"></a></li>
-      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/galen.png" alt="Galen" width="1997" height="1342" loading="lazy"></a></li>
-      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/qualsafe.png" alt="Qualsafe" width="600" height="141" loading="lazy"></a></li>
-      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/university-of-plymouth.png" alt="University of Plymouth" width="900" height="500" loading="lazy"></a></li>
-      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/gloucestershire.jpeg" alt="Gloucestershire" width="1181" height="396" loading="lazy"></a></li>
-      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/tcar-education.png" alt="TCAR Education Programs" width="305" height="89" loading="lazy"></a></li>
-    </ul>
-
-    <div class="tc-btn-group tc-btn-group--center u-mt-8">
-      <a class="tc-btn tc-btn--secondary" href="#" data-page="partners.html">Become a partner</a>
-    </div>
-  </div>
-</section>
-<!-- /template-part: sponsors -->
-
-
-<!-- ==================================================================== -->
-<!-- template-part: newsletter                                            -->
-<!-- Beacon CRM later. Consent is explicit and unticked.                  -->
-<!-- ==================================================================== -->
-<section class="tc-newsletter tc-section" aria-labelledby="newsletter-h">
-  <div class="tc-container tc-newsletter__inner">
-
-    <div>
-      <p class="tc-eyebrow">Newsletter</p>
-      <h2 class="tc-newsletter__title" id="newsletter-h">Never miss a CPD webinar</h2>
-      <p class="tc-newsletter__text">
-        You will get our event announcements, new webinar
-        dates and the latest CPD poster, and nothing else.
-      </p>
-    </div>
-
-    <form class="tc-newsletter__form" action="#" method="post">
-      <div class="tc-newsletter__row">
-        <div class="tc-field">
-          <label class="tc-label" for="newsletter-email">Email address <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
-          <input class="tc-input" type="email" id="newsletter-email" name="email" autocomplete="email" required>
-        </div>
-        <button class="tc-btn tc-btn--primary" type="submit">Subscribe</button>
-      </div>
-
-      <label class="tc-choice tc-newsletter__consent">
-        <input type="checkbox" name="consent" required>
-        <span class="tc-choice__label">
-          Yes, email me Trauma Care news, events and CPD announcements.
-          You can unsubscribe from any email, or by contacting us. See our
-          <a href="#" data-page="privacy.html">privacy policy</a>.
-        </span>
-      </label>
-    </form>
-
-  </div>
-</section>
-<!-- /template-part: newsletter -->
-
 
 <!-- ==================================================================== -->
 <!-- template-part: footer                                                -->

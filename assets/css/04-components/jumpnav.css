@@ -1,0 +1,52 @@
+/* ==========================================================================
+   COMPONENT — JUMP NAV
+   --------------------------------------------------------------------------
+   A strip of in-page links under the hero, for long pages that are read in
+   sections. Scrolls sideways on narrow screens rather than wrapping to three
+   rows, and sits on the subtle ground so it stays distinct from the white
+   band below it.
+
+   Promoted out of 05-templates/events.css when the team page needed it.
+
+   Not a generated table of contents: on the events page two of its six items
+   are other pages, which cannot be derived from the headings. WordPress: an
+   ACF repeater of label + link.
+   ========================================================================== */
+
+.tc-jumpnav {
+  border-block-end: 1px solid var(--tc-color-border);
+  background-color: var(--tc-color-bg-subtle);
+}
+
+.tc-jumpnav__list {
+  display: flex;
+  gap: var(--tc-space-2);
+  margin: 0;
+  padding-block: var(--tc-space-3);
+  list-style: none;
+  overflow-x: auto;
+  /* Stops the last pill hugging the edge mid-scroll. */
+  scroll-padding-inline: var(--tc-gutter);
+}
+
+.tc-jumpnav__list li { flex: none; }
+
+.tc-jumpnav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding-inline: var(--tc-space-4);
+  border-radius: var(--tc-radius-full);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-medium);
+  color: var(--tc-color-text-body);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--tc-duration-fast) var(--tc-ease),
+              color var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-jumpnav a:hover {
+  background-color: var(--tc-color-bg-brand-subtle);
+  color: var(--tc-color-brand-deep);
+}

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   PAGE HERO
+   --------------------------------------------------------------------------
+   The single-column hero used by inner pages: eyebrow, heading, intro, and
+   up to two actions on a solid dark ground, so contrast never depends on an
+   image. Promoted out of 05-templates/events.css when the sponsorship page
+   needed the same thing.
+
+   The conference page keeps its own hero (.tc-conf-hero) — it carries a facts
+   panel alongside the text and is a different component, not a variant.
+
+   ACF: eyebrow, heading, intro, two CTAs.
+   ========================================================================== */
+
+.tc-page-hero {
+  background-color: var(--tc-color-bg-inverse);
+  padding-block: clamp(2.5rem, 1.5rem + 5vw, 4.5rem);
+}
+
+/* The measure is capped on the children, not on the container itself —
+   capping the container would strip its gutters and centre the whole block
+   away from the page's left edge. */
+.tc-page-hero__inner > * { max-width: 46rem; }
+
+.tc-page-hero .tc-eyebrow { margin-block-end: var(--tc-space-4); }
+
+.tc-page-hero .tc-lead { margin-block-start: var(--tc-space-6); }
+
+.tc-page-hero__actions { margin-block-start: var(--tc-space-8); }

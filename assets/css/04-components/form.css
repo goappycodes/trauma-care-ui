@@ -298,3 +298,21 @@
 :root {
   --tc-icon-alert: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 5a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Zm0 9.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z'/%3E%3C/svg%3E");
 }
+
+/* --------------------------------------------------------------------------
+   Form row — two fields side by side above 640px, stacked below. Promoted
+   here when a second form needed it.
+   -------------------------------------------------------------------------- */
+
+.tc-form-row {
+  display: grid;
+  gap: var(--tc-space-6);
+}
+
+@media (min-width: 640px) {
+  .tc-form-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* .tc-field stacks its own siblings; inside a row the grid gap does that
+   instead, so the stacking margin has to come off. */
+.tc-form-row .tc-field + .tc-field { margin-block-start: 0; }

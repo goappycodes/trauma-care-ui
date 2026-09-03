@@ -1,0 +1,35 @@
+/* ==========================================================================
+   TEMPLATE — CORPORATE SPONSORSHIP
+   --------------------------------------------------------------------------
+   Loaded by corporate-sponsorship.html only, after main.css.
+
+   WordPress: wp_enqueue_style('tc-sponsorship', …) guarded by the page
+   template, with 'tc-main' as its dependency.
+
+   The hero, tier cards, checklist, badges, buttons, form fields and form rows
+   are all shared components and are not restyled here. What is left is small.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Package cards
+   The tier card was built for membership plans, where the name carries the
+   audience. Here the level is also a label, so it gets a badge above the
+   name and the name loses the audience line's fixed height.
+   -------------------------------------------------------------------------- */
+
+.tc-tier__flag {
+  align-self: flex-start;
+  margin: 0 0 var(--tc-space-4);
+}
+
+.tc-tier__audience { min-height: 0; }
+
+/* --------------------------------------------------------------------------
+   Enquiry form
+   -------------------------------------------------------------------------- */
+
+.tc-enquiry-form > * + * { margin-block-start: var(--tc-space-6); }
+
+.tc-enquiry-form__consent { display: flex; }
+
+.tc-enquiry-form__submit { margin-block-start: var(--tc-space-8); }

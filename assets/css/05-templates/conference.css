@@ -1,0 +1,375 @@
+/* ==========================================================================
+   TEMPLATE — CONFERENCE
+   --------------------------------------------------------------------------
+   Loaded by conference.html only, after main.css.
+
+   WordPress: wp_enqueue_style('tc-conference', …) guarded by the event
+   template, with 'tc-main' as its dependency so this order is preserved.
+
+   Anything here that a second template later needs gets promoted to
+   04-components/ rather than copied. The ticket card, checklist, tags and
+   alert are already shared components and are not restyled here.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero
+   Title and intro left, the four facts a delegate checks first on the right.
+   Text sits on a solid dark ground, so contrast never depends on an image.
+
+   ACF: eyebrow, heading, intro, two CTAs, fact repeater, sponsor group.
+   -------------------------------------------------------------------------- */
+
+.tc-conf-hero {
+  background-color: var(--tc-color-bg-inverse);
+  padding-block: clamp(2.5rem, 1.5rem + 5vw, 4.5rem);
+}
+
+.tc-conf-hero__inner {
+  display: grid;
+  gap: var(--tc-space-9);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .tc-conf-hero__inner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--tc-space-10);
+  }
+}
+
+.tc-conf-hero .tc-eyebrow { margin-block-end: var(--tc-space-4); }
+
+.tc-conf-hero h1 { max-width: 16ch; }
+
+.tc-conf-hero .tc-lead { margin-block-start: var(--tc-space-6); }
+
+.tc-conf-hero__actions { margin-block-start: var(--tc-space-8); }
+
+/* Facts panel — a definition list, because that is what it is. */
+.tc-conf-facts {
+  margin: 0;
+  padding: var(--tc-space-7);
+  border: 1px solid var(--tc-color-border-inverse);
+  border-radius: var(--tc-radius-lg);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.tc-conf-facts > div + div {
+  margin-block-start: var(--tc-space-5);
+  padding-block-start: var(--tc-space-5);
+  border-block-start: 1px solid var(--tc-color-border-inverse);
+}
+
+.tc-conf-facts dt {
+  font-size: var(--tc-fs-xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-green-300);
+}
+
+.tc-conf-facts dd {
+  margin: var(--tc-space-2) 0 0;
+  font-size: var(--tc-fs-md);
+  line-height: var(--tc-lh-normal);
+  color: var(--tc-color-text-inverse);
+}
+
+/* The headline-sponsor lockup is .tc-sponsor-credit in
+   04-components/sponsors.css — the events hero needed the same thing, so it
+   was promoted out of this file rather than copied into that one. */
+
+/* --------------------------------------------------------------------------
+   Countdown
+   The date heading is the content. The counter is an enhancement on top of
+   it and is hidden entirely without JavaScript, rather than left showing
+   four em dashes.
+
+   ACF: one date-time field, rendered into data-countdown as an ISO string.
+   -------------------------------------------------------------------------- */
+
+.tc-countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--tc-space-3);
+  max-width: 620px;
+  margin: var(--tc-space-8) auto;
+}
+
+@media (max-width: 520px) {
+  .tc-countdown { grid-template-columns: repeat(2, 1fr); }
+}
+
+.tc-countdown__unit {
+  padding: var(--tc-space-5) var(--tc-space-3);
+  text-align: center;
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-color-bg-subtle);
+}
+
+.tc-countdown__value {
+  display: block;
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-4xl);
+  font-weight: var(--tc-fw-extrabold);
+  line-height: var(--tc-lh-none);
+  letter-spacing: var(--tc-tracking-tight);
+  color: var(--tc-color-brand-deep);
+  /* Digits change every second; tabular figures stop the box twitching. */
+  font-variant-numeric: tabular-nums;
+}
+
+.tc-countdown__label {
+  display: block;
+  margin-block-start: var(--tc-space-2);
+  font-size: var(--tc-fs-xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-muted);
+}
+
+html:not(.js) .tc-countdown { display: none; }
+
+/* --------------------------------------------------------------------------
+   Tickets and discounts
+   Price card left at a fixed comfortable width, everything a delegate has to
+   check before paying on the right.
+   -------------------------------------------------------------------------- */
+
+.tc-conf-tickets {
+  display: grid;
+  gap: var(--tc-space-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .tc-conf-tickets { grid-template-columns: minmax(320px, 400px) 1fr; }
+}
+
+.tc-conf-discounts > * + * { margin-block-start: var(--tc-space-6); }
+
+.tc-discount-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-3);
+}
+
+.tc-discount-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--tc-space-2) var(--tc-space-4);
+  padding: var(--tc-space-4) var(--tc-space-5);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-color-surface);
+}
+
+.tc-discount-list__saving {
+  flex: none;
+  min-width: 6.5rem;
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  color: var(--tc-color-brand-deep);
+}
+
+.tc-discount-list__who {
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-body);
+}
+
+.tc-conf-discounts__combined {
+  margin: 0;
+  padding: var(--tc-space-5) var(--tc-space-6);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-color-bg-brand-subtle);
+  font-size: var(--tc-fs-md);
+  color: var(--tc-ink-800);
+}
+
+/* --------------------------------------------------------------------------
+   Specialisms
+   A wrapping list of stream names on the dark band. They are not links —
+   there are no stream pages yet — so they are spans inside the tag shell.
+   -------------------------------------------------------------------------- */
+
+.tc-specialisms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--tc-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-specialisms .tc-tag {
+  background-color: transparent;
+  border-color: var(--tc-color-border-inverse);
+  color: var(--tc-color-text-inverse);
+}
+
+.tc-conf-specialisms__note {
+  margin-block-start: var(--tc-space-9);
+  color: var(--tc-color-text-inverse-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Day themes
+   Four columns on desktop, one per conference day. The live site publishes
+   these as two poster images; setting them as text keeps them searchable and
+   legible at any zoom, and the posters stay downloadable below.
+   -------------------------------------------------------------------------- */
+
+.tc-days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--tc-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-day {
+  display: flex;
+  flex-direction: column;
+  padding: var(--tc-space-6);
+  border: 1px solid var(--tc-color-border);
+  border-block-start: 4px solid var(--tc-color-brand);
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-color-surface);
+}
+
+.tc-day__date {
+  margin: 0 0 var(--tc-space-5);
+  padding-block-end: var(--tc-space-4);
+  border-block-end: 1px solid var(--tc-color-border);
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  color: var(--tc-color-text);
+}
+
+.tc-day__themes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-3);
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-normal);
+  color: var(--tc-color-text-body);
+}
+
+.tc-day__themes b { color: var(--tc-color-text); }
+
+/* --------------------------------------------------------------------------
+   Poster booking buttons
+   Each half of the charity's poster books the days it covers. The whole card
+   is the button, so the thumbnail is decorative and the label carries the
+   accessible name.
+   -------------------------------------------------------------------------- */
+
+.tc-posters {
+  margin-block-start: var(--tc-space-9);
+  padding-block-start: var(--tc-space-8);
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+.tc-posters h3 { margin: 0 0 var(--tc-space-1); }
+
+.tc-posters__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tc-space-6);
+  margin: var(--tc-space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Both buttons take the same width whatever their label, so the pair reads as
+   one control rather than two sizes. */
+.tc-posters__list li { flex: 1 1 18rem; max-width: 24rem; }
+
+.tc-posters__list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tc-space-4);
+  height: 100%;
+  padding: var(--tc-space-3);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-medium);
+  text-decoration: none;
+  color: var(--tc-color-text);
+  transition: border-color var(--tc-duration-fast) var(--tc-ease),
+              box-shadow var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-posters__list a:hover {
+  border-color: var(--tc-color-brand-strong);
+  box-shadow: var(--tc-shadow-sm);
+}
+
+.tc-posters__list img {
+  flex: none;
+  width: 56px;
+  height: 75px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--tc-radius-xs);
+  border: 1px solid var(--tc-color-border);
+}
+
+/* The label sits between the thumbnail and the arrow and takes the slack, so
+   the arrow stays pinned to the right edge of both cards. */
+.tc-posters__list a > span { flex: 1; }
+
+.tc-posters__meta {
+  display: block;
+  margin-block-start: var(--tc-space-1);
+  font-weight: var(--tc-fw-regular);
+  font-size: var(--tc-fs-xs);
+  color: var(--tc-color-text-muted);
+}
+
+.tc-posters__arrow {
+  flex: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: var(--tc-color-brand-strong);
+  transition: transform var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-posters__list a:hover .tc-posters__arrow { transform: translateX(3px); }
+
+/* --------------------------------------------------------------------------
+   Terms
+   The checklist reads as a benefit list elsewhere; here it carries booking
+   conditions, so the marks are set in ink rather than brand green.
+   -------------------------------------------------------------------------- */
+
+.tc-conf-terms li::before { background-color: var(--tc-ink-400); }
+
+
+/* The live page labels the benefit list "Included with your ticket". Inside
+   the ticket card it sits between the price and the list, so it is set as a
+   small label rather than at heading size. */
+.tc-tier__included {
+  margin: 0 0 var(--tc-space-4);
+  font-family: var(--tc-font-body);
+  font-size: var(--tc-fs-xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-muted);
+}

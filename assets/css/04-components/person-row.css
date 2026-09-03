@@ -1,0 +1,80 @@
+/* ==========================================================================
+   COMPONENT — PERSON ROW
+   --------------------------------------------------------------------------
+   A portrait beside a biography that runs to several paragraphs. A row rather
+   than a card grid: a four-up grid of 300-word biographies is unreadable.
+
+   Used by the fellowship page and the team page. Promoted out of
+   05-templates/fellowship.css when the second page needed it.
+
+   Where a person has no photograph, point the image at
+   assets/img/portrait-placeholder.svg with an empty alt — the heading in the
+   body carries the name, and the graphic is not a picture of anyone.
+
+   WordPress: a `person` post — portrait, name, post-nominals, role,
+   biography — or an ACF repeater where the people never need their own URL.
+   ========================================================================== */
+
+/* Capped narrower than the container: at full width a biography runs to about
+   140 characters a line. */
+.tc-person-list {
+  max-width: var(--tc-container-narrow);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-6);
+}
+
+.tc-person-row {
+  display: grid;
+  gap: var(--tc-space-6);
+  padding: clamp(1.5rem, 1rem + 2vw, var(--tc-space-8));
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-color-surface);
+}
+
+@media (min-width: 700px) {
+  .tc-person-row {
+    grid-template-columns: 200px 1fr;
+    gap: var(--tc-space-8);
+    align-items: start;
+  }
+}
+
+.tc-person-row__photo {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  /* The portraits are supplied at different crops and framings; centring the
+     top half keeps faces in frame in a square. */
+  object-position: center top;
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-ink-100);
+}
+
+.tc-person-row__body .tc-badge { margin-block-end: var(--tc-space-3); }
+
+.tc-person-row__name {
+  font-size: var(--tc-fs-xl);
+  margin: 0;
+}
+
+/* Post-nominals, job titles and committee roles: supporting detail, not the
+   name. */
+.tc-person-row__role {
+  margin: var(--tc-space-2) 0 0;
+  font-size: var(--tc-fs-sm);
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-brand-strong);
+}
+
+.tc-person-row__body .tc-prose {
+  max-width: var(--tc-measure);
+  margin-block-start: var(--tc-space-5);
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-relaxed);
+}
