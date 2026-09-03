@@ -129,3 +129,11 @@ code, kbd {
    including white-background CTAs. */
 .tc-on-dark :where(a) { color: var(--tc-color-link-inverse); }
 .tc-on-dark :where(a):hover { color: var(--tc-white); }
+
+/* Centred body copy. Without a measure it runs to ~110 characters a line.
+   Promoted out of 05-templates/home.css: the shared sponsors template part
+   uses it, so every page needs it and only the homepage loaded it. */
+.tc-prose-center {
+  max-width: 60ch;
+  margin-inline: auto;
+}

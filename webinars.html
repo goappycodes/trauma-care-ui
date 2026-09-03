@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fundraise for Trauma Care — Trauma Care</title>
-<meta name="description" content="Support Trauma Care by becoming a member, donating, or simply telling your colleagues about us. Download the trustees' annual report for 2023/24.">
+<title>CPD webinars — Trauma Care</title>
+<meta name="description" content="Live CPD webinars from Trauma Care, open to all. Register for upcoming sessions, catch up on past recordings, and download the latest CPD poster.">
 
 <!-- Sets the `js` class before first paint so the no-JavaScript fallback
      styles never flash. Must stay inline and must stay in the head. -->
@@ -230,7 +230,7 @@
     <nav class="tc-breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li><a href="index.html">Home</a></li>
-        <li><a href="fundraise.html" aria-current="page">Fundraising opportunities</a></li>
+        <li><a href="webinars.html" aria-current="page">Upcoming webinars</a></li>
       </ol>
     </nav>
   </div>
@@ -238,82 +238,225 @@
   <!-- ================================================================== -->
   <!-- SECTION: hero                                                      -->
   <!-- ================================================================== -->
-  <section class="tc-page-hero tc-on-dark" aria-labelledby="fundraise-h">
+  <section class="tc-page-hero tc-on-dark" aria-labelledby="webinars-h">
     <div class="tc-container tc-page-hero__inner">
-      <p class="tc-eyebrow">Support us</p>
-      <h1 id="fundraise-h">Fundraise for Trauma Care</h1>
-      <p class="tc-lead">&hellip;and make a difference.</p>
+      <p class="tc-eyebrow">Webinars</p>
+      <h1 id="webinars-h">Trauma Care CPD webinars</h1>
+      <p class="tc-lead">A fantastic way to learn from the comfort of your own home. You
+        do not need to become a member to attend, but members receive a CPD certificate,
+        sent automatically at the conclusion of the event.</p>
 
       <div class="tc-btn-group tc-page-hero__actions">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Donate now<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
-        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#" data-page="membership-join.html">Become a member</a>
+        <a class="tc-btn tc-btn--primary tc-btn--lg" href="#upcoming">See what is coming up</a>
+        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#" data-page="membership-join.html">Join today</a>
       </div>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: get involved                                              -->
+  <!-- SECTION: upcoming live webinars                                    -->
+  <!-- ACF: a `webinar` post type — title, subtitle, date, time, speaker  -->
+  <!-- note, registration URL — queried by date. The card is the shared   -->
+  <!-- .tc-featured-event, so a list of them needs no new CSS.            -->
   <!-- ================================================================== -->
-  <section class="tc-section" aria-labelledby="involved-h">
-    <div class="tc-container tc-container--narrow">
-      <div class="tc-section-head">
-        <p class="tc-eyebrow">How you can help</p>
-        <h2 id="involved-h">Get involved</h2>
-      </div>
-
-      <div class="tc-prose">
-        <p>We have a long-standing, strong commitment to improving the outcome of trauma
-          victims by establishing best practice throughout the whole chain of care. We
-          achieve this through education, research and publishing. However, we cannot
-          continue this mission without your amazing support.</p>
-        <p>If you want to get involved, you can either
-          <a href="#" data-page="membership-join.html">become a member</a> or donate
-          below.</p>
-        <p>Simply subscribing, watching our live webinars and telling your friends and
-          colleagues about us helps, too.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: donate                                                    -->
-  <!-- Donations are collected by PayPal Giving Fund, off-site, so the    -->
-  <!-- destination is named in the supporting line.                       -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--brand tc-cta-band" aria-labelledby="donate-h">
+  <section class="tc-section" id="upcoming" aria-labelledby="upcoming-h">
     <div class="tc-container">
-      <h2 id="donate-h">Donate today</h2>
-      <p class="tc-lead">Your donation can make a huge difference to the life of a
-        trauma victim. Donations are handled by PayPal.</p>
+      <div class="tc-section-head">
+        <p class="tc-eyebrow">Live sessions</p>
+        <h2 id="upcoming-h">Upcoming webinars</h2>
+        <p class="tc-lead">You can sign up for any of our upcoming live events below.
+          When you register, please use the same email address you use for your Trauma
+          Care membership.</p>
+      </div>
+
+      <div class="tc-prose u-mb-6">
+        <p>Members receive a CPD certificate automatically within 24 hours of each event
+          finishing. Non-members can purchase a certificate during the presentation.</p>
+      </div>
+
+      <article class="tc-featured-event tc-featured-event--compact" aria-labelledby="motorsport-h">
+        <img class="tc-featured-event__banner"
+             src="assets/img/webinars/health-in-motorsport.jpg"
+             alt="A racing motorcycle leaning hard into a bend on a road circuit"
+             width="1200" height="746" loading="lazy">
+
+        <div class="tc-featured-event__body">
+          <p class="tc-badge tc-badge--solid">Upcoming</p>
+          <h3 id="motorsport-h" class="tc-h4">Health in Motorsport</h3>
+          <p>Medical lessons from the Isle of Man TT racing.</p>
+
+          <dl class="tc-featured-event__meta">
+            <div>
+              <dt>Date</dt>
+              <dd><time datetime="2026-07-16">16 July 2026</time></dd>
+            </div>
+            <div>
+              <dt>Time</dt>
+              <dd>20:00 GMT</dd>
+            </div>
+            <div>
+              <dt>Certificate</dt>
+              <dd>CPD certificate for members</dd>
+            </div>
+          </dl>
+
+          <p class="tc-text-small">Motorsport gives a unique opportunity to learn about
+            the hyper-acute phase of injury and to improve treatment. Gareth has been TT
+            medical director for many years, as well as being one of the lead clinicians
+            with the London HEMS service.</p>
+
+          <div class="tc-btn-group">
+            <!-- The live page carries two different Zoom registration URLs for this
+                 one webinar: WN_lQAowwPaQBaQ8vPxkYK0EQ on the visible "Register"
+                 button and WN_2bSMuE7MTaKwBYF1pA4CZQ inside the collapsed detail
+                 panel. We use the visible one — the link an attendee actually
+                 clicks — and the mismatch is flagged in docs/content-sources.md. -->
+            <a class="tc-btn tc-btn--primary tc-btn--sm" href="https://zoom.us/webinar/register/WN_lQAowwPaQBaQ8vPxkYK0EQ" target="_blank" rel="noopener noreferrer">Register via Zoom<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+          </div>
+        </div>
+      </article>
+
+      <p class="tc-text-muted u-mt-8">More webinars coming soon &mdash; check back
+        regularly.</p>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: past webinars                                             -->
+  <!-- The YouTube channel is public; the full library is behind          -->
+  <!-- membership. Both routes are named so neither audience is stuck.    -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--subtle" aria-labelledby="past-h">
+    <div class="tc-container tc-container--narrow">
+      <div class="tc-section-head">
+        <p class="tc-eyebrow">Catch up</p>
+        <h2 id="past-h">Previous webinars</h2>
+        <p class="tc-lead">Catch up with previous recordings on our YouTube channel.
+          There are over 200 more webinars available in the member&rsquo;s portal,
+          too.</p>
+      </div>
+
       <div class="tc-btn-group">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Donate here<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+        <a class="tc-btn tc-btn--secondary" href="https://www.youtube.com/channel/UC-5SOa7Osv0Scbty3g3vnQw" target="_blank" rel="noopener noreferrer">Past webinars on YouTube<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+        <a class="tc-btn tc-btn--ghost" href="#" data-page="video-library.html">Browse the video library</a>
       </div>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: AGM                                                       -->
-  <!-- ACF: heading, body, file field for the report.                     -->
+  <!-- SECTION: CPD poster                                                -->
+  <!-- ACF: heading, body, file field for the current edition.            -->
   <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="agm-h">
+  <section class="tc-section" aria-labelledby="poster-h">
+    <div class="tc-container tc-media-row tc-media-row--reverse">
+      <div class="tc-media-row__body">
+        <p class="tc-eyebrow">Download</p>
+        <h2 id="poster-h">The latest CPD poster</h2>
+
+        <div class="tc-prose">
+          <p>Our webinar posters are updated regularly. Each edition highlights our
+            upcoming CPD presentations and any events that are soon to be taking place.
+            Download the latest version and share it with your colleagues and friends, so
+            you all stay in the know about our upcoming CPD events.</p>
+          <p>You can also download previous versions of our posters to remind yourself of
+            past webinars.</p>
+        </div>
+
+        <div class="tc-btn-group u-mt-8">
+          <a class="tc-btn tc-btn--primary" href="assets/docs/cpd-poster-edition-30.pdf">Download edition 30</a>
+          <a class="tc-btn tc-btn--secondary" href="cpd-posters.html">View previous posters</a>
+        </div>
+      </div>
+
+      <figure class="tc-media-row__figure">
+        <img src="assets/img/posters/cpd-poster-edition-30.jpg"
+             alt="Edition 30 of the Trauma Care CPD webinar poster, listing six presentations with their speakers, dates and start times"
+             width="760" height="992" loading="lazy">
+        <figcaption>Edition 30, the current poster</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: subscribe                                                 -->
+  <!-- The same form the events page carries — the live site runs the     -->
+  <!-- same modal on both — but with this page's own heading and copy.    -->
+  <!-- Beacon CRM later. Both consents are explicit and unticked.         -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--brand" id="subscribe" aria-labelledby="subscribe-h">
     <div class="tc-container tc-container--narrow">
+
       <div class="tc-section-head">
-        <p class="tc-eyebrow">Accountability</p>
-        <h2 id="agm-h">Trauma Care AGM information</h2>
+        <p class="tc-eyebrow">Newsletter</p>
+        <h2 id="subscribe-h">Subscribe to Trauma Care</h2>
+        <p class="tc-lead">Never miss another webinar. Subscribe to Trauma Care and
+          receive all the latest news on our events.</p>
       </div>
 
-      <div class="tc-prose">
-        <p>The AGM is held virtually and can be attended by Trauma Care members and
-          invited guests only. Three months after the event, the report is made
-          available for public viewing. You can download the 2023/24 report below.</p>
-      </div>
+      <form class="tc-subscribe-form" action="#" method="post">
 
-      <div class="tc-btn-group u-mt-8">
-        <a class="tc-btn tc-btn--secondary" href="assets/docs/trauma-care-annual-report-2023-24.docx">2023/2024 report</a>
-      </div>
+        <div class="tc-form-row">
+          <div class="tc-field">
+            <label class="tc-label" for="wb-first">First name</label>
+            <input class="tc-input" type="text" id="wb-first" name="first_name" autocomplete="given-name">
+          </div>
+          <div class="tc-field">
+            <label class="tc-label" for="wb-last">Last name</label>
+            <input class="tc-input" type="text" id="wb-last" name="last_name" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="tc-field">
+          <label class="tc-label" for="wb-email">Email address <span class="tc-required" aria-hidden="true">*</span><span class="tc-visually-hidden">(required)</span></label>
+          <input class="tc-input" type="email" id="wb-email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="tc-form-row">
+          <div class="tc-field">
+            <label class="tc-label" for="wb-code">Country code</label>
+            <!-- Five entries stand in for the live list of ~200. The full list
+                 comes from the CRM field, not from hand-written markup. -->
+            <select class="tc-select" id="wb-code" name="country_code">
+              <option value="">Country code&hellip;</option>
+              <option value="44">+44 United Kingdom</option>
+              <option value="353">+353 Ireland</option>
+              <option value="1-us">+1 United States</option>
+              <option value="1-ca">+1 Canada</option>
+              <option value="61">+61 Australia</option>
+            </select>
+          </div>
+          <div class="tc-field">
+            <label class="tc-label" for="wb-phone">Phone number</label>
+            <input class="tc-input" type="tel" id="wb-phone" name="phone_number" autocomplete="tel-national">
+          </div>
+        </div>
+
+        <div class="tc-field">
+          <label class="tc-label" for="wb-occupation">Main medical occupation</label>
+          <p class="tc-hint" id="wb-occupation-hint">Please tell us your main medical occupation.</p>
+          <input class="tc-input" type="text" id="wb-occupation" name="occupation" aria-describedby="wb-occupation-hint">
+        </div>
+
+        <label class="tc-choice tc-subscribe-form__consent">
+          <input type="checkbox" name="gdpr_communications">
+          <span class="tc-choice__label">I want to be contacted about future news from
+            Trauma Care and our partners.</span>
+        </label>
+
+        <label class="tc-choice tc-subscribe-form__consent">
+          <input type="checkbox" name="gdpr_terms" required>
+          <span class="tc-choice__label">I agree to the GDPR terms and conditions. You
+            can unsubscribe from any email, or by contacting us. See our
+            <a href="#" data-page="privacy.html">privacy policy</a>.</span>
+        </label>
+
+        <button class="tc-btn tc-btn--primary tc-subscribe-form__submit" type="submit">Get it now</button>
+      </form>
+
     </div>
   </section>
 

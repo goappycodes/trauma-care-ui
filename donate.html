@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fundraise for Trauma Care — Trauma Care</title>
-<meta name="description" content="Support Trauma Care by becoming a member, donating, or simply telling your colleagues about us. Download the trustees' annual report for 2023/24.">
+<title>Donate — Trauma Care</title>
+<meta name="description" content="Give once or set up a monthly gift to Trauma Care, and add Gift Aid so we receive 25% more at no extra cost to you. Every donation funds education for the people who treat trauma patients.">
 
 <!-- Sets the `js` class before first paint so the no-JavaScript fallback
      styles never flash. Must stay inline and must stay in the head. -->
@@ -14,7 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- No template stylesheet: every block on this page is a shared component. -->
+<!-- No template stylesheet. The third of the four flexible landing pages in
+     requirements §1 — see courses.html and membership.html. Every band is a
+     shared component. -->
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -223,99 +225,232 @@
 </header>
 <!-- /template-part: header -->
 
-
 <main id="main">
 
   <div class="tc-container">
     <nav class="tc-breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li><a href="index.html">Home</a></li>
-        <li><a href="fundraise.html" aria-current="page">Fundraising opportunities</a></li>
+        <li><a href="donate.html" aria-current="page">Donate</a></li>
       </ol>
     </nav>
   </div>
 
   <!-- ================================================================== -->
-  <!-- SECTION: hero                                                      -->
+  <!-- BLOCK: page hero                                                   -->
+  <!-- Every donation currently leaves the site through PayPal Giving      -->
+  <!-- Fund — the same destination fundraise.html already uses. Per the    -->
+  <!-- transactional-forms warning in template-map.md, a real amount/      -->
+  <!-- frequency/Gift Aid capture form is a Beacon-embedded widget we do   -->
+  <!-- not control; until it exists, the honest primary action is the      -->
+  <!-- live donation destination, not an invented on-page form.            -->
   <!-- ================================================================== -->
-  <section class="tc-page-hero tc-on-dark" aria-labelledby="fundraise-h">
+  <section class="tc-page-hero tc-on-dark" aria-labelledby="donate-h">
     <div class="tc-container tc-page-hero__inner">
-      <p class="tc-eyebrow">Support us</p>
-      <h1 id="fundraise-h">Fundraise for Trauma Care</h1>
-      <p class="tc-lead">&hellip;and make a difference.</p>
+      <p class="tc-eyebrow">Donate</p>
+      <h1 id="donate-h">Donate to Trauma Care</h1>
+      <p class="tc-lead">Every donation funds education for the people who treat
+        trauma patients. We know you might not always be able to commit to a regular
+        payment &mdash; any donation is gratefully received, and each one contributes
+        directly to our mission of providing quality education.</p>
 
       <div class="tc-btn-group tc-page-hero__actions">
         <a class="tc-btn tc-btn--donate tc-btn--lg" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Donate now<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
-        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#" data-page="membership-join.html">Become a member</a>
+        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="fundraise.html">Other ways to give</a>
       </div>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: get involved                                              -->
+  <!-- BLOCK: ways to give                                                -->
+  <!-- Closes gaps D1–D3 from the content audit (no recurring giving, no  -->
+  <!-- Gift Aid capture beyond a footnote). All three cards route to the   -->
+  <!-- same PayPal Giving Fund page today, because that is the only        -->
+  <!-- destination that actually processes a payment — PayPal's own       -->
+  <!-- checkout is where frequency and Gift Aid are chosen. A single       -->
+  <!-- consolidated Beacon flow replaces all three CTAs at once; see the   -->
+  <!-- note below the grid.                                                -->
   <!-- ================================================================== -->
-  <section class="tc-section" aria-labelledby="involved-h">
-    <div class="tc-container tc-container--narrow">
-      <div class="tc-section-head">
-        <p class="tc-eyebrow">How you can help</p>
-        <h2 id="involved-h">Get involved</h2>
-      </div>
-
-      <div class="tc-prose">
-        <p>We have a long-standing, strong commitment to improving the outcome of trauma
-          victims by establishing best practice throughout the whole chain of care. We
-          achieve this through education, research and publishing. However, we cannot
-          continue this mission without your amazing support.</p>
-        <p>If you want to get involved, you can either
-          <a href="#" data-page="membership-join.html">become a member</a> or donate
-          below.</p>
-        <p>Simply subscribing, watching our live webinars and telling your friends and
-          colleagues about us helps, too.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: donate                                                    -->
-  <!-- Donations are collected by PayPal Giving Fund, off-site, so the    -->
-  <!-- destination is named in the supporting line.                       -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--brand tc-cta-band" aria-labelledby="donate-h">
+  <section class="tc-section" id="ways-to-give" aria-labelledby="ways-h">
     <div class="tc-container">
-      <h2 id="donate-h">Donate today</h2>
-      <p class="tc-lead">Your donation can make a huge difference to the life of a
-        trauma victim. Donations are handled by PayPal.</p>
-      <div class="tc-btn-group">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Donate here<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+      <div class="tc-section-head tc-section-head--center">
+        <p class="tc-eyebrow">Three ways to give</p>
+        <h2 id="ways-h">Give once, monthly, or add Gift Aid</h2>
+        <p class="tc-prose-center">Choose whichever suits you &mdash; every option
+          takes you to the same secure checkout.</p>
       </div>
+
+      <div class="tc-grid tc-grid--3 u-mt-10">
+
+        <article class="tc-card tc-card--flat">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <!-- A single coin dropping: one gift, given once. -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="15.5" r="6.5"/>
+                <path d="M12 11.5v8M9.3 13.6c0-1 1-1.7 2.7-1.7s2.7.7 2.7 1.5c0 2-5.4 1-5.4 3 0 .8 1 1.5 2.7 1.5s2.7-.6 2.7-1.6" fill="none" stroke="var(--tc-color-surface)" stroke-width="1.3" stroke-linecap="round"/>
+                <path d="M9 2.5h6a2.5 2.5 0 0 1 2.5 2.5v2.8a6.5 6.5 0 0 0-2-1.55V5.5a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v.75a6.5 6.5 0 0 0-2 1.55V5A2.5 2.5 0 0 1 9 2.5Z"/>
+              </svg>
+            </span>
+            <h3 class="tc-h4">A one-off gift</h3>
+            <p class="tc-card__text">Any donation is gratefully received. Give what you
+              can, whenever you can &mdash; there is no minimum, and every gift
+              contributes directly to our mission of providing quality education.</p>
+            <div class="tc-btn-group u-mt-6">
+              <a class="tc-btn tc-btn--secondary tc-btn--full" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Give a one-off gift<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <!-- A repeat/cycle arrow: a gift that renews itself. -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4.5a7.5 7.5 0 0 1 6.7 4.13l1.66-.96.35 4.2-3.98-1.36 1.6-.93A5.5 5.5 0 0 0 12 6.5v-2Z"/>
+                <path d="M12 19.5a7.5 7.5 0 0 1-6.7-4.13l-1.66.96-.35-4.2 3.98 1.36-1.6.93A5.5 5.5 0 0 0 12 17.5v2Z"/>
+              </svg>
+            </span>
+            <h3 class="tc-h4">A monthly gift</h3>
+            <p class="tc-card__text">Give once or monthly &mdash; a regular gift, of any
+              size, gives Trauma Care a predictable income to plan its education
+              programme around, rather than reacting one appeal at a time.</p>
+            <div class="tc-btn-group u-mt-6">
+              <a class="tc-btn tc-btn--secondary tc-btn--full" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Set up a monthly gift<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tc-card tc-card--flat">
+          <div class="tc-card__body">
+            <span class="tc-card__icon" aria-hidden="true">
+              <!-- A tick inside a shield: the HMRC-backed uplift. -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.5 4.5 5.3v6.1c0 5 3.2 8.6 7.5 10.1 4.3-1.5 7.5-5.1 7.5-10.1V5.3L12 2.5Z"/>
+                <path d="m8.7 12.3 2.2 2.2 4.4-4.6" fill="none" stroke="var(--tc-color-surface)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3 class="tc-h4">Add Gift Aid</h3>
+            <p class="tc-card__text">If you are a UK taxpayer, add Gift Aid and we
+              receive 25% more, at no extra cost to you &mdash; the standard HMRC
+              uplift on every pound you give.</p>
+            <div class="tc-btn-group u-mt-6">
+              <a class="tc-btn tc-btn--secondary tc-btn--full" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Give with Gift Aid<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="tc-text-small tc-text-muted u-mt-8">Donations are handled by PayPal
+        Giving Fund. You will choose the amount, frequency and Gift Aid on their
+        secure site.</p>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: AGM                                                       -->
-  <!-- ACF: heading, body, file field for the report.                     -->
+  <!-- BLOCK: why your gift matters                                       -->
   <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="agm-h">
+  <section class="tc-section tc-section--subtle" aria-labelledby="why-h">
     <div class="tc-container tc-container--narrow">
       <div class="tc-section-head">
-        <p class="tc-eyebrow">Accountability</p>
-        <h2 id="agm-h">Trauma Care AGM information</h2>
+        <p class="tc-eyebrow">Why it matters</p>
+        <h2 id="why-h">Your gift keeps education affordable</h2>
+        <p class="tc-lead">We are dedicated to advancing and providing access to
+          essential trauma education at the lowest possible cost. That only works if
+          it is supported &mdash; by sponsors, by members, and by people who simply
+          want to help.</p>
       </div>
 
-      <div class="tc-prose">
-        <p>The AGM is held virtually and can be attended by Trauma Care members and
-          invited guests only. Three months after the event, the report is made
-          available for public viewing. You can download the 2023/24 report below.</p>
+      <ul class="tc-checklist">
+        <li>Every year we deliver high-quality, affordable learning events across the
+          whole chain of trauma care</li>
+        <li>Members receive CPD certificates and large discounts on ticket prices,
+          which your donation helps make possible for everyone else</li>
+        <li>We have forged partnerships with multiple academic institutions to make
+          trauma education more readily available to undergraduate students</li>
+        <li>No other organisation brings together such a wide range of professionals
+          &mdash; from doctors and paramedics to military medical personnel and
+          administrators</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- BLOCK: other ways to support                                       -->
+  <!-- ================================================================== -->
+  <section class="tc-section" id="other-ways" aria-labelledby="other-h">
+    <div class="tc-container">
+      <div class="tc-section-head">
+        <p class="tc-eyebrow">Not ready to donate?</p>
+        <h2 id="other-h">Other ways to support us</h2>
       </div>
 
-      <div class="tc-btn-group u-mt-8">
-        <a class="tc-btn tc-btn--secondary" href="assets/docs/trauma-care-annual-report-2023-24.docx">2023/2024 report</a>
+      <div class="tc-grid tc-grid--3">
+
+        <article class="tc-card">
+          <div class="tc-card__body">
+            <h3 class="tc-card__title"><a href="membership.html">Become a member</a></h3>
+            <p class="tc-card__text">From &pound;3 a month, membership brings the video
+              library, event discounts and a CPD certificate &mdash; and every
+              subscription funds the same mission.</p>
+          </div>
+        </article>
+
+        <article class="tc-card">
+          <div class="tc-card__body">
+            <h3 class="tc-card__title"><a href="corporate-sponsorship.html">Corporate sponsorship</a></h3>
+            <p class="tc-card__text">Partner with Trauma Care and put your organisation
+              in front of the UK&rsquo;s largest trauma network, from &pound;5,000 a
+              year.</p>
+          </div>
+        </article>
+
+        <article class="tc-card">
+          <div class="tc-card__body">
+            <h3 class="tc-card__title"><a href="fundraise.html">Fundraise for us</a></h3>
+            <p class="tc-card__text">Run, host an event, or ask your workplace to
+              match your giving &mdash; see the fundraising ideas and resources we can
+              offer.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
+
+<!-- ==================================================================== -->
+<!-- template-part: sponsors                                              -->
+<!-- ACF repeater on the options page: logo, name, tier, URL.             -->
+<!-- Tiles are text placeholders until logo files are supplied.           -->
+<!-- ==================================================================== -->
+<section class="tc-section tc-section--tight" aria-labelledby="sponsors-h">
+  <div class="tc-container">
+    <div class="tc-section-head tc-section-head--center">
+      <p class="tc-eyebrow">With thanks to</p>
+      <h2 id="sponsors-h" class="tc-h3">Our sponsors and partners</h2>
+      <p class="tc-prose-center tc-text-small tc-text-muted">Without their support we could
+        not keep our education affordable.</p>
+    </div>
+
+    <ul class="tc-sponsors__grid">
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/slater-gordon.png" alt="Slater + Gordon" width="1590" height="780" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/galen.png" alt="Galen" width="1997" height="1342" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/qualsafe.png" alt="Qualsafe" width="600" height="141" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/university-of-plymouth.png" alt="University of Plymouth" width="900" height="500" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/gloucestershire.jpeg" alt="Gloucestershire" width="1181" height="396" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/tcar-education.png" alt="TCAR Education Programs" width="305" height="89" loading="lazy"></a></li>
+    </ul>
+
+    <div class="tc-btn-group tc-btn-group--center u-mt-8">
+      <a class="tc-btn tc-btn--secondary" href="#" data-page="partners.html">Become a partner</a>
+    </div>
+  </div>
+</section>
+<!-- /template-part: sponsors -->
 
 </main>
 
@@ -473,6 +608,6 @@
 </footer>
 <!-- /template-part: footer -->
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

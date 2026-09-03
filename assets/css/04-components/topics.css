@@ -1,0 +1,20 @@
+/* ==========================================================================
+   COMPONENT — TOPICS
+   --------------------------------------------------------------------------
+   A wrapped row of subject tags: what a course or a conference stream covers.
+   The tag itself is .tc-tag, a shared component — this only lays them out.
+
+   Promoted out of 05-templates/events.css when the courses page needed it.
+   That left events.css with nothing in it, so it was deleted.
+
+   WordPress: an ACF repeater of one text field, or a `topic` taxonomy.
+   ========================================================================== */
+
+.tc-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tc-space-2);
+  margin: var(--tc-space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}

@@ -216,8 +216,12 @@
   box-shadow: var(--tc-shadow-lg);
 }
 
+/* Tier names wrap to two lines at some widths and one at others, which throws
+   the prices out of line across a row of cards. Reserving two lines keeps the
+   price, the benefits and the button on the same baseline in every card. */
 .tc-tier__name {
   font-size: var(--tc-fs-xl);
+  min-height: 2.6em;
   margin: 0;
 }
 

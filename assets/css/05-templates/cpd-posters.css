@@ -1,0 +1,82 @@
+/* ==========================================================================
+   TEMPLATE — CPD POSTERS
+   --------------------------------------------------------------------------
+   Only the poster archive lives here. Every other block on the page is a
+   shared component. If a second template ever needs the grid, it gets
+   promoted to 04-components/ rather than copied.
+
+   WordPress: a `poster` post type — edition number, year, cover image, PDF.
+   ========================================================================== */
+
+
+/* The card is sized by its cover, not by a text measure, so the track
+   minimum is a poster width: five across on a laptop and three on a tablet.
+   Every cover is portrait, which is why the frame below is. Phones are handled
+   separately at the foot of this file. */
+.tc-poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: var(--tc-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tc-poster-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-3);
+  height: 100%;
+  padding: var(--tc-space-3);
+  border: 1px solid var(--tc-color-border);
+  border-radius: var(--tc-radius-md);
+  background-color: var(--tc-color-surface);
+  font-weight: var(--tc-fw-semibold);
+  text-decoration: none;
+  color: var(--tc-color-text);
+  transition: border-color var(--tc-duration-fast) var(--tc-ease),
+              box-shadow var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-poster-card:hover {
+  border-color: var(--tc-color-brand-strong);
+  box-shadow: var(--tc-shadow-sm);
+  text-decoration: none;
+  color: var(--tc-color-text);
+}
+
+/* Covers are not all cut to the same ratio — the 2021 editions are shorter
+   than the current ones — so the frame is fixed and the image is cropped
+   from the top, where the masthead is. */
+.tc-poster-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--tc-radius-xs);
+  background-color: var(--tc-ink-100);
+}
+
+.tc-poster-card__label {
+  display: block;
+  margin-block-start: auto;
+  font-size: var(--tc-fs-sm);
+}
+
+.tc-poster-card__year {
+  display: block;
+  margin-block-start: var(--tc-space-1);
+  font-weight: var(--tc-fw-regular);
+  color: var(--tc-color-text-muted);
+}
+
+/* On a phone the auto-fill floor would give one poster per row at nearly the
+   full screen width, which is a lot of scrolling for an index. Two fixed
+   columns keep the whole archive skimmable. */
+@media (max-width: 519px) {
+  .tc-poster-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--tc-space-4);
+  }
+}

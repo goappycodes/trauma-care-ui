@@ -99,9 +99,3 @@
   color: var(--tc-color-text);
 }
 
-/* Centred body copy inside a 960px container. Without a measure it runs
-   to ~110 characters a line. */
-.tc-prose-center {
-  max-width: 60ch;
-  margin-inline: auto;
-}

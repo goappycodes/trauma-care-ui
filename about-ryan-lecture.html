@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fundraise for Trauma Care — Trauma Care</title>
-<meta name="description" content="Support Trauma Care by becoming a member, donating, or simply telling your colleagues about us. Download the trustees' annual report for 2023/24.">
+<title>The Ryan Lecture — Trauma Care</title>
+<meta name="description" content="Given annually at the Trauma Care conference by a distinguished speaker, the Ryan Lecture marks the lifetime contribution of Professor James &quot;Jim&quot; Ryan.">
 
 <!-- Sets the `js` class before first paint so the no-JavaScript fallback
      styles never flash. Must stay inline and must stay in the head. -->
@@ -14,8 +14,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- No template stylesheet: every block on this page is a shared component. -->
 <link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/05-templates/ryan-lecture.css">
 </head>
 
 <body>
@@ -230,7 +230,7 @@
     <nav class="tc-breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li><a href="index.html">Home</a></li>
-        <li><a href="fundraise.html" aria-current="page">Fundraising opportunities</a></li>
+        <li><a href="about-ryan-lecture.html" aria-current="page">The Ryan Lecture</a></li>
       </ol>
     </nav>
   </div>
@@ -238,84 +238,162 @@
   <!-- ================================================================== -->
   <!-- SECTION: hero                                                      -->
   <!-- ================================================================== -->
-  <section class="tc-page-hero tc-on-dark" aria-labelledby="fundraise-h">
+  <section class="tc-page-hero tc-on-dark" aria-labelledby="ryan-h">
     <div class="tc-container tc-page-hero__inner">
-      <p class="tc-eyebrow">Support us</p>
-      <h1 id="fundraise-h">Fundraise for Trauma Care</h1>
-      <p class="tc-lead">&hellip;and make a difference.</p>
+      <p class="tc-eyebrow">About us</p>
+      <h1 id="ryan-h">The Ryan Lecture</h1>
+      <p class="tc-lead">Given annually at the Trauma Care conference by a
+        distinguished speaker invited by the Trauma Care Council.</p>
 
       <div class="tc-btn-group tc-page-hero__actions">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Donate now<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
-        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="#" data-page="membership-join.html">Become a member</a>
+        <a class="tc-btn tc-btn--primary tc-btn--lg" href="#lecturers">See every lecturer</a>
+        <a class="tc-btn tc-btn--inverse-outline tc-btn--lg" href="conference.html">The 29th Annual Conference</a>
       </div>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: get involved                                              -->
+  <!-- SECTION: the lecture and the man it is named for                   -->
+  <!-- ACF: heading, body, image. Shares .tc-media-row with the events    -->
+  <!-- and fellowship pages.                                              -->
   <!-- ================================================================== -->
-  <section class="tc-section" aria-labelledby="involved-h">
+  <section class="tc-section" aria-labelledby="about-lecture-h">
+    <div class="tc-container tc-media-row">
+      <div class="tc-media-row__body">
+        <div class="tc-section-head">
+          <p class="tc-eyebrow">The lecture</p>
+          <h2 id="about-lecture-h">Named for a founding chairperson</h2>
+        </div>
+
+        <div class="tc-prose">
+          <p>The Ryan Lecture was established to mark the lifetime contribution to the
+            management of victims of trauma made by Professor James &ldquo;Jim&rdquo;
+            Ryan, the founding chairperson of Trauma Care. It is given annually at the
+            Trauma Care conference by a distinguished speaker invited by the Trauma Care
+            Council.</p>
+          <p>Professor Ryan&rsquo;s long and distinguished military career ended as
+            Colonel in the Royal Army Medical Corps, as Joint Professor of Military
+            Surgery at the Royal Army Medical College, London and the Royal College of
+            Surgeons of England. His military experience included service in Northern
+            Ireland, Cyprus, the Falkland Islands, Nepal, the Balkans, the Caucasus, the
+            Middle East and Central Asia.</p>
+          <p>On leaving the military, Jim Ryan was, from 1995 to 2007, the first Leonard
+            Cheshire Professor in Conflict Recovery at the Department of Surgery,
+            University College London. He was also visiting professor in trauma care and
+            honorary consultant in emergency medicine at University College London
+            Hospitals. In 2002 he became International Professor of Surgery at the United
+            Services University for the Health Sciences in Maryland, USA. In 2007 he was
+            appointed emeritus professor at the Centre for Trauma, Conflict and
+            Catastrophe Medicine at St George&rsquo;s University of London.</p>
+          <p>Professor Ryan was convener for the Diploma in the Medical Care of
+            Catastrophes at the Society of Apothecaries in London. He is the immediate
+            past President of the Conflict and Catastrophe Faculty at the Society and a
+            past President of the Catastrophe and Conflict Forum at the RSM. He was
+            awarded the OBE for services to military and humanitarian medicine in
+            2011.</p>
+        </div>
+      </div>
+
+      <figure class="tc-media-row__figure">
+        <img src="assets/img/people/jim-ryan.jpg"
+             alt="Professor James &quot;Jim&quot; Ryan OBE"
+             width="400" height="400" loading="lazy">
+        <figcaption>Professor James &ldquo;Jim&rdquo; Ryan OBE, founding chairperson</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- ================================================================== -->
+  <!-- SECTION: the roll of lecturers                                     -->
+  <!-- A description list: the year is the term, the lecturer the         -->
+  <!-- description. In WordPress, an ACF repeater of year + name.         -->
+  <!-- ================================================================== -->
+  <section class="tc-section tc-section--subtle" id="lecturers" aria-labelledby="lecturers-h">
     <div class="tc-container tc-container--narrow">
       <div class="tc-section-head">
-        <p class="tc-eyebrow">How you can help</p>
-        <h2 id="involved-h">Get involved</h2>
+        <p class="tc-eyebrow">Every year since 2005</p>
+        <h2 id="lecturers-h">The Ryan Lecturers</h2>
       </div>
 
-      <div class="tc-prose">
-        <p>We have a long-standing, strong commitment to improving the outcome of trauma
-          victims by establishing best practice throughout the whole chain of care. We
-          achieve this through education, research and publishing. However, we cannot
-          continue this mission without your amazing support.</p>
-        <p>If you want to get involved, you can either
-          <a href="#" data-page="membership-join.html">become a member</a> or donate
-          below.</p>
-        <p>Simply subscribing, watching our live webinars and telling your friends and
-          colleagues about us helps, too.</p>
-      </div>
+      <dl class="tc-roll">
+        <div><dt>2005</dt><dd>Professor James Ryan OBE</dd></div>
+        <div><dt>2006</dt><dd>Mr Steve Mannion</dd></div>
+        <div><dt>2007</dt><dd>Professor (Colonel) Tim Hodgetts CBE QHS</dd></div>
+        <div><dt>2008</dt><dd>Mr Steven Mannion</dd></div>
+        <div><dt>2009</dt><dd>Professor Sir Keith Porter Kt</dd></div>
+        <div><dt>2010</dt><dd>Professor Sir Keith Willett Kt CBE</dd></div>
+        <div><dt>2011</dt><dd>Professor Karim Brohi</dd></div>
+        <div><dt>2012</dt><dd>Professor Mervyn Singer</dd></div>
+        <div><dt>2013</dt><dd>Professor James O&rsquo;Connor</dd></div>
+        <div><dt>2014</dt><dd>Dr Lynne Gerber-Smith</dd></div>
+        <div><dt>2015</dt><dd>Professor Chris Moran OBE</dd></div>
+        <div><dt>2016</dt><dd>Dr Peter Oakley</dd></div>
+        <div><dt>2017</dt><dd>Mr Gareth Davies</dd></div>
+        <div><dt>2018</dt><dd>Professor Richard Williams OBE</dd></div>
+        <div><dt>2019</dt><dd>Professor (Surgeon Captain) Jason Smith QHS RN</dd></div>
+        <div><dt>2020</dt><dd>Mr David Nott OBE</dd></div>
+        <div><dt>2021</dt><dd>Dr John Etherington CBE</dd></div>
+        <div><dt>2022</dt><dd>Dr David Zideman LVO, QHP(C)</dd></div>
+        <div><dt>2023</dt><dd>Professor Anthony Redmond OBE</dd></div>
+        <div><dt>2024</dt><dd>Professor Tim Coats</dd></div>
+        <div><dt>2025</dt><dd>Dr Stephen Hearns</dd></div>
+      </dl>
     </div>
   </section>
 
 
   <!-- ================================================================== -->
-  <!-- SECTION: donate                                                    -->
-  <!-- Donations are collected by PayPal Giving Fund, off-site, so the    -->
-  <!-- destination is named in the supporting line.                       -->
+  <!-- SECTION: the need                                                  -->
+  <!-- The same block the sponsorship and team pages carry.               -->
   <!-- ================================================================== -->
-  <section class="tc-section tc-section--brand tc-cta-band" aria-labelledby="donate-h">
-    <div class="tc-container">
-      <h2 id="donate-h">Donate today</h2>
-      <p class="tc-lead">Your donation can make a huge difference to the life of a
-        trauma victim. Donations are handled by PayPal.</p>
-      <div class="tc-btn-group">
-        <a class="tc-btn tc-btn--donate tc-btn--lg" href="https://www.paypal.com/fundraiser/charity/137537" target="_blank" rel="noopener noreferrer">Donate here<span class="tc-visually-hidden"> (opens in a new tab)</span></a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================================================================== -->
-  <!-- SECTION: AGM                                                       -->
-  <!-- ACF: heading, body, file field for the report.                     -->
-  <!-- ================================================================== -->
-  <section class="tc-section tc-section--subtle" aria-labelledby="agm-h">
+  <section class="tc-section tc-section--dark-alt tc-on-dark" aria-labelledby="need-h">
     <div class="tc-container tc-container--narrow">
-      <div class="tc-section-head">
-        <p class="tc-eyebrow">Accountability</p>
-        <h2 id="agm-h">Trauma Care AGM information</h2>
-      </div>
+      <p class="tc-eyebrow">The need</p>
+      <h2 id="need-h" class="tc-visually-hidden">The need</h2>
 
-      <div class="tc-prose">
-        <p>The AGM is held virtually and can be attended by Trauma Care members and
-          invited guests only. Three months after the event, the report is made
-          available for public viewing. You can download the 2023/24 report below.</p>
-      </div>
-
-      <div class="tc-btn-group u-mt-8">
-        <a class="tc-btn tc-btn--secondary" href="assets/docs/trauma-care-annual-report-2023-24.docx">2023/2024 report</a>
-      </div>
+      <blockquote class="tc-need-quote">
+        <p>Trauma is a serious public health problem, with notable social and economic
+          costs. In the UK, 17,000 deaths each year are a direct result of injuries.
+          Annually, injuries lead to 720,000 hospital admissions and 6 million visits to
+          emergency departments.</p>
+        <p>Victims of trauma receive care and attention from many individuals within a
+          wide range of specialities and professional backgrounds. Without commonly
+          agreed standards, patients&rsquo; outcome may be less than optimal.</p>
+      </blockquote>
     </div>
   </section>
+
+<!-- ==================================================================== -->
+<!-- template-part: sponsors                                              -->
+<!-- ACF repeater on the options page: logo, name, tier, URL.             -->
+<!-- Tiles are text placeholders until logo files are supplied.           -->
+<!-- ==================================================================== -->
+<section class="tc-section tc-section--tight" aria-labelledby="sponsors-h">
+  <div class="tc-container">
+    <div class="tc-section-head tc-section-head--center">
+      <p class="tc-eyebrow">With thanks to</p>
+      <h2 id="sponsors-h" class="tc-h3">Our sponsors and partners</h2>
+      <p class="tc-prose-center tc-text-small tc-text-muted">Without their support we could
+        not keep our education affordable.</p>
+    </div>
+
+    <ul class="tc-sponsors__grid">
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/slater-gordon.png" alt="Slater + Gordon" width="1590" height="780" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/galen.png" alt="Galen" width="1997" height="1342" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/qualsafe.png" alt="Qualsafe" width="600" height="141" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/university-of-plymouth.png" alt="University of Plymouth" width="900" height="500" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/gloucestershire.jpeg" alt="Gloucestershire" width="1181" height="396" loading="lazy"></a></li>
+      <li><a class="tc-sponsor" href="#" data-page="partners.html"><img src="assets/img/partners/tcar-education.png" alt="TCAR Education Programs" width="305" height="89" loading="lazy"></a></li>
+    </ul>
+
+    <div class="tc-btn-group tc-btn-group--center u-mt-8">
+      <a class="tc-btn tc-btn--secondary" href="#" data-page="partners.html">Become a partner</a>
+    </div>
+  </div>
+</section>
+<!-- /template-part: sponsors -->
 
 </main>
 

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   COMPONENT — MEDIA ROW
+   --------------------------------------------------------------------------
+   Prose beside a picture. The body always comes first in the source, so a
+   screen reader and a phone both meet the heading before the image;
+   `--reverse` only swaps the visual columns, and only once there are two.
+
+   Promoted out of 05-templates/events.css (.tc-event-row) and
+   05-templates/fellowship.css (.tc-award) when a third page needed the same
+   shape. Those two differed only in column ratio and image cap, which is not
+   enough to justify two components.
+
+   WordPress: an ACF flexible-content layout — heading, body, image, optional
+   link, and a "image on the left" toggle.
+   ========================================================================== */
+
+.tc-media-row {
+  display: grid;
+  gap: var(--tc-space-8);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .tc-media-row {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--tc-space-10);
+  }
+
+  .tc-media-row--reverse > .tc-media-row__body { order: 2; }
+}
+
+/* Rhythm inside the text column: the eyebrow sits closer to the heading it
+   labels than the heading does to the copy it introduces. */
+.tc-media-row__body .tc-eyebrow { margin-block-end: var(--tc-space-3); }
+.tc-media-row__body h2 { margin-block-end: var(--tc-space-6); }
+
+.tc-media-row__figure {
+  margin: 0;
+  text-align: center;
+}
+
+.tc-media-row__figure img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: var(--tc-radius-lg);
+}
+
+/* A wide group shot earns the full column. */
+.tc-media-row__figure--wide img { max-width: 100%; }
+
+/* A cut-out object — the Wound Man bronze — needs no rounded frame, and
+   reads better a little smaller than a photograph. */
+.tc-media-row__figure--object img {
+  max-width: 320px;
+  border-radius: 0;
+}
+
+.tc-media-row__figure figcaption {
+  margin-block-start: var(--tc-space-4);
+  font-size: var(--tc-fs-sm);
+  color: var(--tc-color-text-muted);
+}

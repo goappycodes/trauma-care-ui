@@ -1,0 +1,144 @@
+/* ==========================================================================
+   TEMPLATE — CONTACT
+   --------------------------------------------------------------------------
+   Loaded by contact.html only, after main.css.
+
+   WordPress: wp_enqueue_style('tc-contact', …) guarded by the page template,
+   with 'tc-main' as its dependency.
+
+   The hero, cards, section head and grid are shared components. What is left
+   is the contact details, the opening hours, and the FAQ accordion.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Contact details
+   The email address and phone number are the point of the card, so they are
+   set larger than the copy above them.
+   -------------------------------------------------------------------------- */
+
+.tc-contact-detail {
+  margin: var(--tc-space-5) 0 0;
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   Opening hours
+   A description list — the day is the term, the hours the description.
+   -------------------------------------------------------------------------- */
+
+.tc-hours {
+  margin: var(--tc-space-4) 0 0;
+  font-size: var(--tc-fs-sm);
+}
+
+.tc-hours > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--tc-space-2) var(--tc-space-4);
+  padding-block: var(--tc-space-3);
+  border-block-end: 1px solid var(--tc-color-border);
+}
+
+.tc-hours > div:last-child { border-block-end: 0; }
+
+.tc-hours dt { color: var(--tc-color-text-body); }
+
+.tc-hours dd {
+  margin: 0;
+  font-weight: var(--tc-fw-semibold);
+  color: var(--tc-color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Map
+   The embed ships with width="600" height="450". Those stay on the element as
+   a pre-CSS size hint, but the frame is sized here instead so it fills the
+   container at a fixed height on every screen.
+
+   The postal address is not repeated on this page — the footer carries it
+   sitewide, so the map stands on its own.
+   -------------------------------------------------------------------------- */
+
+.tc-map {
+  height: 350px;
+  margin-block-start: var(--tc-space-8);
+  overflow: hidden;
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-ink-100);
+}
+
+.tc-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ accordion
+   Native <details>/<summary>. No script: it opens and closes on its own, is
+   keyboard-operable for free, and the answers stay in the document so they
+   are searchable even while collapsed.
+   -------------------------------------------------------------------------- */
+
+.tc-faq {
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+.tc-faq__item {
+  border-block-end: 1px solid var(--tc-color-border);
+}
+
+.tc-faq__q {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tc-space-4);
+  padding-block: var(--tc-space-5);
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-semibold);
+  line-height: var(--tc-lh-snug);
+  color: var(--tc-color-text);
+  cursor: pointer;
+  /* The default triangle is replaced by the drawn chevron below. */
+  list-style: none;
+}
+
+.tc-faq__q::-webkit-details-marker { display: none; }
+
+/* Chevron drawn in CSS, so it inherits colour and needs no icon file. It is
+   the last flex item, pinned right, and rotates when the panel opens. */
+.tc-faq__q::after {
+  content: "";
+  flex: none;
+  width: 0.6em;
+  height: 0.6em;
+  margin-inline-start: auto;
+  margin-block-start: 0.35em;
+  border-inline-end: 2px solid var(--tc-color-brand-strong);
+  border-block-end: 2px solid var(--tc-color-brand-strong);
+  transform: rotate(45deg);
+  transition: transform var(--tc-duration-fast) var(--tc-ease);
+}
+
+.tc-faq__item[open] .tc-faq__q::after { transform: rotate(-135deg); }
+
+.tc-faq__q:hover { color: var(--tc-color-brand-deep); }
+
+.tc-faq__a {
+  padding-block-end: var(--tc-space-6);
+  max-width: var(--tc-measure);
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-relaxed);
+  color: var(--tc-color-text-body);
+}
+
+.tc-faq__a p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tc-faq__q::after { transition: none; }
+}

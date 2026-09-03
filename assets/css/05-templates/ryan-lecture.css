@@ -1,0 +1,62 @@
+/* ==========================================================================
+   TEMPLATE — THE RYAN LECTURE
+   --------------------------------------------------------------------------
+   Loaded by about-ryan-lecture.html only, after main.css.
+
+   WordPress: wp_enqueue_style('tc-ryan-lecture', …) guarded by the page
+   template, with 'tc-main' as its dependency.
+
+   Everything else on the page — hero, media row, pull quote, section head —
+   is a shared component. This file holds the roll of lecturers and nothing
+   more.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Roll of lecturers
+   A description list: the year is the term, the lecturer the description.
+   Each pair is wrapped in a div so the two can sit on one line — dt and dd
+   cannot be flex items of the dl itself without breaking the pairing.
+
+   Two columns above 720px. Twenty-one entries in one column is a long scroll
+   for what is really a reference list.
+   -------------------------------------------------------------------------- */
+
+.tc-roll {
+  margin: 0;
+  display: grid;
+  gap: 0;
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+@media (min-width: 720px) {
+  .tc-roll {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--tc-space-9);
+  }
+}
+
+.tc-roll > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--tc-space-2) var(--tc-space-5);
+  padding-block: var(--tc-space-4);
+  border-block-end: 1px solid var(--tc-color-border);
+}
+
+.tc-roll dt {
+  flex: none;
+  min-width: 3.5rem;
+  font-family: var(--tc-font-display);
+  font-size: var(--tc-fs-lg);
+  font-weight: var(--tc-fw-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--tc-color-brand-deep);
+}
+
+.tc-roll dd {
+  margin: 0;
+  font-size: var(--tc-fs-sm);
+  line-height: var(--tc-lh-normal);
+  color: var(--tc-color-text-body);
+}

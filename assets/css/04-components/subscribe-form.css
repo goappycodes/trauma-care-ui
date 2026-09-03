@@ -1,0 +1,18 @@
+/* ==========================================================================
+   COMPONENT — SUBSCRIBE FORM
+   --------------------------------------------------------------------------
+   The full mailing-list sign-up: name, email, phone, occupation and two
+   consents. Larger than the newsletter band in the footer template part,
+   which asks only for an email.
+
+   Promoted out of 05-templates/events.css when the webinars page needed it.
+
+   WordPress: Beacon CRM later. Both consents stay explicit and unticked.
+   ========================================================================== */
+
+
+.tc-subscribe-form > * + * { margin-block-start: var(--tc-space-6); }
+
+.tc-subscribe-form__consent { display: flex; }
+
+.tc-subscribe-form__submit { margin-block-start: var(--tc-space-8); }

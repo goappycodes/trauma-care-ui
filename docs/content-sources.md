@@ -139,10 +139,28 @@ structural; it should not encode a policy the brief does not fix.
 | "Free" / "Free to attend" badges | "Open to all" |
 | "Free to everyone" filter option | "Open to all" |
 | "funds free education" | "funds education" |
+| "All of our CPD webinars are **completely free to attend**" | Dropped; the access statement around it is kept |
+| "members will receive a **free** CPD Certificate" | "members receive a CPD certificate" |
+| "Catch-up with previous recordings **for free**" | "Catch up with previous recordings" |
+| "Download the latest poster **FOR FREE!**" | "The latest CPD poster" |
+| "our posters are completely **free** to download" | "our posters are updated regularly" |
+| "your upcoming **free** CPD presentations / events" (×2) | "your upcoming CPD presentations / events" |
+| "Download the latest poster **FOR FREE!**" (posters page) | "The latest poster" |
+| "our webinar posters are **free** to download" | "our webinar posters are updated regularly" |
+| "Catch-up with previous recordings **FOR FREE!**" | "Catch up with previous recordings" |
+| "**There are no fees** and you can opt-out at any time" | "You can opt out at any time" |
+| "**Free** CPD Certificates" (membership benefits) | "CPD certificates" |
+| "**Free** Automated CPD Certificates" (each membership tier) | "Automated CPD certificates" |
 
 **Access statements are kept.** "Open to all" and "public recordings" describe
 who may attend, not what it costs — a separate fact, and one both documents
 support through the non-member YouTube route (spec §2.3, §17).
+
+**`webinars.html` is the page this ruling costs the most.** Its live `<title>`
+is *Trauma Care Free CPD Webinars* and the word recurs in six places on the
+page. Worse, the poster PDF the page links to — and the preview image we ship
+with it — carry *Free CPD Webinars* in the artwork itself, so the page and its
+own download currently disagree. **Settle this before that page is signed off.**
 
 **To restore:** confirm with the client that webinars remain free to attend
 after the Beacon migration, then reinstate. The wording above is the full list.
@@ -183,7 +201,8 @@ after the Beacon migration, then reinstate. The wording above is the full list.
 | Donate card — "Give once or monthly, and add Gift Aid" | ✏️ | Requirements §4, not yet true of the live site |
 
 **Note on section choice.** The four routes cover three of the four flexible
-landing pages named in requirements §1 (Membership, Courses, Donations) and
+landing pages named in requirements §1 (Membership, Courses, Donations) &mdash;
+all three are now built, leaving only Campaign &mdash; and
 raise the donation route, per §2. Webinars are folded into Events, matching
 §6 "Events & webinars". The word "free" appears nowhere in the requirements —
 that framing comes from the live site.
@@ -601,3 +620,489 @@ and that it is cleared for use before launch.**
 
 **"Profile will be available soon"** is live copy for two trustees, kept
 verbatim. It has been on the site long enough to be worth chasing.
+
+---
+
+## about-ryan-lecture.html — The Ryan Lecture
+
+Source page: `traumacare.org.uk/ryanlecture`, read 3 September 2026. Nothing on
+this page is hidden. Coverage checked line by line: 47 of 47 distinct pieces of
+copy are present, including all twenty-one lecturers.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "The Ryan Lecture" | ✅ | Live page heading and `<title>` |
+| "Given annually at the Trauma Care conference by a distinguished speaker invited by the Trauma Care Council." | ✅ | Live, verbatim, promoted to the hero as the lead |
+| Opening paragraph — "established to mark the lifetime contribution…" | ✅ | Live, verbatim |
+| Professor Ryan's military career | ✅ | Live, verbatim. "included services in" → "included service in" |
+| Leonard Cheshire professorship, 1995–2007 | ✅ | Live, verbatim |
+| Maryland and St George's appointments | ✅ | Live, verbatim |
+| Society of Apothecaries, RSM, OBE 2011 | ✅ | Live, verbatim. Quotation marks around the diploma title dropped |
+| Portrait of Professor Ryan | ✅ | Their own image, already in the prototype from the events page |
+| "The Ryan Lecturers", 2005–2025 | ✅ | Live, verbatim — all twenty-one, in year order |
+| "The need" quote | ✅ | The same block the sponsorship and team pages carry |
+| "Named for a founding chairperson" (section heading) | ✏️ | Ours. The live page repeats "The Ryan Lecture" as its only heading |
+| Section eyebrows — "About us", "The lecture", "Every year since 2005" | ✏️ | Ours |
+| Hero CTAs — "See every lecturer", "The 29th Annual Conference" | ✏️ | Ours. The live page has no actions |
+
+**❓ The live meta description says the lecture is "in memory of" Jim Ryan.**
+The full line is *"…in memory of one of Trauma Care's founders - Professor Jim
+Ryan"*. **Professor Ryan is alive**: he is listed as a current patron on the Our
+People page, and he gave the first Ryan Lecture himself in 2005. The page body
+gets it right — the lecture marks his *lifetime contribution* — so that is the
+wording used here, and the meta description is not reproduced. **The live
+description needs correcting.**
+
+**Two spellings of the same lecturer.** The roll lists "Mr Steve Mannion" for
+2006 and "Mr Steven Mannion" for 2008. Both are reproduced as published; one of
+them is presumably wrong.
+
+**Not carried over.** Two decorative stock backgrounds behind the live intro and
+lecturers bands. Sections are told apart by ground colour, as everywhere else.
+
+---
+
+## contact.html — Contact us
+
+Source page: `traumacare.org.uk/Contact`, read 3 September 2026. Nothing on this
+page is hidden. Coverage checked line by line: 43 of 43 distinct pieces of copy
+are present.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "Contact us" | ✅ | Live page heading and `<title>` |
+| "The Trauma Care team is here to support you with all your questions." | ✅ | Live, verbatim; the exclamation mark is dropped |
+| "The best way to contact us is via email. We aim to respond to all enquiries within 48 working hours." | ✅ | Live, verbatim |
+| admin@traumacare.org.uk | ✅ | Live |
+| 0121 271 0380 | ✅ | Live prints it as "0121 2710380"; spaced here as it is everywhere else on the site |
+| Opening hours — Mon/Tue 09.00–17.00, Wed closed, Thu/Fri 09.00–17.00 | ✅ | Live, verbatim |
+| Postal address — Trauma Care UK, Office 5:19, 156 Great Charles Street Queensway, Birmingham, B3 3HN | ✅ | Live, verbatim. **Not repeated in the page body** — the footer carries it on every page, and the map now stands in its place |
+| "FAQs" and the five questions | ✅ | Live, verbatim as questions; numbering dropped because the accordion supplies the order |
+| FAQ 1 — previous CPD webinars | ✅ | Live, verbatim |
+| FAQ 2 — becoming a member | ✅ | Live. **Live has a typo, "Trauma Carea"**, corrected. The bare URL `traumacare.org.uk/members` becomes a link to the membership page, and the doubled full stops are cleaned up |
+| FAQ 3 — another way to support | ✅ | Live, verbatim. "Fundraising page" becomes a real link |
+| FAQ 4 — changed postal address | ✅ | Live, verbatim. "MEMBER LOGIN" set as **Member log in**, which is what our header button says |
+| FAQ 5 — forgotten password | ✅ | Live, verbatim |
+| Card headings — Email, Phone, Opening hours, Postal address | ✏️ | Ours. The live page runs the details together in one block |
+| "The quickest way to get an answer…" and "The office is staffed four days a week…" | ✏️ | Ours, restating facts from the copy beside them |
+| Hero CTAs — "Email the office", "Read the FAQs" | ✏️ | Ours. The live page has no actions |
+
+**❓ The FAQ intro points at a chat widget that this prototype does not have.**
+Live: *"If the answer to your question is not listed below, then please use the
+floating chat/support function to the right."* That floating widget is a Kartra
+feature, and there is no equivalent in the prototype. The sentence now ends
+"please email the office", linked. **If the client wants live chat on the new
+site, it has to be specified** — it is not in the requirements or the spec.
+
+**Google Maps embed added.** The contact page carries a Google Maps iframe of
+the office, supplied by the client, sitting beside the postal address. Two
+things about it:
+
+- It is **third-party content**. The frame loads Google resources and sets
+  Google cookies as soon as the page renders, before any consent is given.
+  The site already has a cookie policy and a cancellation policy; **this embed
+  should be gated behind cookie consent before launch**, or replaced with a
+  static map image that loads nothing until clicked.
+- The supplied embed code had **no `title`**, which leaves screen-reader users
+  with an unnamed frame. One has been added naming the office and street.
+
+**Instructions that describe the old navigation.** Three answers tell the reader
+to use the "Membership" tab, the "Support Us" drop-down, or the "MEMBER LOGIN"
+option. Those labels still match the new header, so the copy stands — but they
+are the kind of instruction that breaks silently when a menu is renamed. Worth
+replacing with links at some point; two of the three already carry one here.
+
+---
+
+## academic-partners.html — Academic partners
+
+Source page: `traumacare.org.uk/academicpartners`, read 3 September 2026.
+Nothing on this page is hidden. Coverage checked line by line: 28 of 28
+distinct pieces of copy are present.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "Academic partners" | ✅ | Live page heading and `<title>` |
+| "…dedicated to advancing and providing access to essential trauma education **at the lowest possible cost**" | ✅ | Live reads "either for free or at the lowest possible cost". "For free" removed under the withheld-claims rule |
+| "forged partnerships with multiple academic institutions…" through "…undergraduate students" | ✅ | Live, verbatim |
+| "Find out more" | ✅ | Live button. Anchors to the benefits section, as it does on the live page |
+| "Become an academic partner" | ✅ | Live section heading, set in sentence case |
+| "The benefits below are guaranteed for every academic partner…" | ✅ | Live, verbatim; the exclamation mark is dropped |
+| Discounted student memberships — £10 per student, free tutor memberships | ✅ | Live, verbatim. **"Free" kept**: these are inclusions in a paid partnership, not a public pricing claim — the same reading applied to the sponsorship packages |
+| Educational materials | ✅ | Live, verbatim |
+| Automated CPD certificates | ✅ | Live reads "**free**, automated CPD Certificates". "Free" removed — this is the exact phrase already in the withheld-claims table |
+| Accredible | ✅ | Live, verbatim |
+| Access to 100+ recorded webinars | ✅ | Live, verbatim. "over 100+" corrected to "over 100" |
+| "Interested? Please email admin@traumacare.org.uk to find out more" | ✅ | Live closing line, set as a CTA band |
+| Section eyebrows — "Our partners", "For institutions" | ✏️ | Ours |
+| "Email us" (hero CTA) | ✏️ | Ours. The live hero has only "Find Out More" |
+| Four benefit icons | ✏️ | Ours, drawn as inline SVG. They answer the live page's Font Awesome set — `fa-user-plus`, `fa-book`, `fa-certificate`, `fa-laptop` — with the same subjects rather than the same glyphs: person-plus, open book, certificate with a seal, screen with a play button. Decorative, so `aria-hidden` |
+
+**No partner logos on this page.** The live page names no institution and shows
+no logo — it is an offer page, not a list of who has taken it up. The sponsors
+strip elsewhere in the prototype does carry three universities (Plymouth,
+Gloucestershire and, on the live sponsorship page, Wolverhampton and Suffolk).
+**Worth asking whether this page should name its academic partners** — a page
+about the scheme with no examples is a weaker pitch than it needs to be.
+
+**No sponsors strip.** The live academic partners page does not carry one.
+
+**Not carried over.** Two decorative stock backgrounds. Sections are told apart
+by ground colour, as everywhere else.
+
+---
+
+## webinars.html — Trauma Care CPD webinars
+
+Source page: `traumacare.org.uk/webinars-2026`, read 3 September 2026.
+Read at DOM level, so the collapsed detail panel and the two subscribe modals
+are included. Coverage checked line by line: 40 of 40 distinct pieces of copy
+are present.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "Trauma Care CPD Webinars" | ✅ | Live hero heading. The live `<title>` is "Trauma Care **Free** CPD Webinars" — see the flag below |
+| "JOIN TODAY!" | ✅ | Live hero button, set in sentence case |
+| "a fantastic way to learn from the comfort of your own home" | ✅ | Live, verbatim |
+| "You do not need to become a member to attend, but members will receive a … CPD Certificate, sent automatically to you at the conclusion of the event" | ✅ | Live. "Free" removed before "CPD Certificate" — the exact phrase already in the withheld-claims table |
+| "All of our CPD webinars are completely free to attend" | 🚫 | Withheld. The access statement around it is kept; only the pricing claim is dropped |
+| "You can sign up for any of our upcoming live events below" | ✅ | Live, verbatim |
+| "When you register, please use the same email address you use for your Trauma Care membership" | ✅ | Live, verbatim |
+| "Non-members can purchase a certificate during the presentation" | ✅ | Live, verbatim |
+| "Members receive a … CPD Certificate automatically within 24 hours after the conclusion of each event" | ✅ | Live. "Free" removed |
+| "Health in Motorsport" / "Medical lessons from the Isle of Man TT racing" | ✅ | Live card title and subtitle |
+| "Date: 16/07/2026" / "Time: 20:00 GMT" | ✅ | Live. Rendered as "16 July 2026" in a `<time datetime="2026-07-16">` |
+| "Motorsport gives a unique opportunity to learn about the hyper-acute phase of injury and to improve treatment. Gareth has been TT medical director for many years, as well as being one of the lead clinicians with the London HEMS service." | ✅ | Live, verbatim, from inside the collapsed *View details* panel |
+| "Free CPD Certificate for members" | ✅ | Live card note. "Free" removed |
+| Card image | ✅ | Live `12996_17839419226LKIsleofManTT.jpg` → `assets/img/webinars/health-in-motorsport.jpg` |
+| "More webinars coming soon - check back regularly" | ✅ | Live, verbatim |
+| "Catch-up with previous recordings…" / "There are over 200 more webinars available in the Member's Portal, too!" | ✅ | Live. "For free" removed from the first line |
+| "PAST WEBINARS" → YouTube channel | ✅ | Live link, real URL |
+| "DOWNLOAD EDITION 30" | ✅ | Live button. The PDF is shipped at `assets/docs/cpd-poster-edition-30.pdf` (3.4 MB) |
+| "Download the latest poster FOR FREE!" | 🚫 | Withheld. Replaced by "The latest CPD poster" |
+| "Our webinar posters are … updated regularly. Each edition highlights our upcoming … presentations and any events that are soon to be taking place. Download the latest version … and share it with your colleagues and friends, so you all stay in-the-know about our upcoming … CPD events!" | ✅ | Live. Three instances of "free" removed from this paragraph |
+| "You can also download previous version of our posters" | ✅ | Live. Typo corrected to "versions" |
+| "View Previous Posters" | ✅ | Live button. Stub — `cpd-posters.html` is not built |
+| Poster preview image | ✅ | Live `35385327691930_image.png` → `assets/img/webinars/cpd-poster-edition-30.jpg` |
+| "Subscribe to Trauma Care" / "Never miss another webinar!" | ✅ | Live, from the hidden subscribe modal `_qpd7i96lo` — this page's own copy, not the events page's |
+| "GET IT NOW!" | ✅ | Live modal submit label, set in sentence case |
+| Section eyebrows — "Webinars", "Live sessions", "Catch up", "Download", "Newsletter" | ✏️ | Ours |
+| "See what is coming up" (hero CTA) | ✏️ | Ours. The live hero has only *JOIN TODAY!* |
+| "Browse the video library" | ✏️ | Ours. The live page names the member's portal in prose but gives no link to it |
+
+### Flags
+
+**Two different Zoom registrations for one webinar.** The visible *Register*
+button points at `WN_lQAowwPaQBaQ8vPxkYK0EQ`; the *Register via Zoom* link
+inside the collapsed detail panel points at `WN_2bSMuE7MTaKwBYF1pA4CZQ`. The
+prototype uses the visible one, on the grounds that it is the link an attendee
+actually clicks. **Someone at the charity needs to check which registration has
+the sign-ups** — if both have been clicked, the attendee list is split across
+two Zoom events.
+
+**The only "upcoming" webinar is in the past.** It is dated 16 July 2026 and
+was still listed as upcoming when the page was read on 3 September 2026, seven
+weeks later. Nothing in the prototype hides a past event either — a date-ordered
+query fixes this on the new site, but until then the live page is telling
+visitors to register for something that has already happened.
+
+**This page is the one most affected by the withheld-"free" ruling.** The
+word appears in the live `<title>`, the hero, the certificate note, the card,
+the catch-up line and four times in the poster paragraph. Every one is stripped
+here. **Get the client's ruling before this page is signed off** — if the
+webinars genuinely are free to attend, that is the single strongest thing the
+page has to say and it is currently unsaid.
+
+**The poster artwork contradicts the ruling.** `cpd-poster-edition-30.pdf` and
+the preview image we ship both read *Free CPD Webinars* across the top, and the
+poster's own footer reads "become a member of Trauma Care and receive free CPD
+Certificates for attending". The page copy and the asset it links to therefore
+disagree. Either the ruling is lifted or the poster is re-cut; it cannot stay
+as it is.
+
+**Not carried over.** Four decorative stock backgrounds (`AdobeStock_314859869`,
+`AdobeStock_309745900`, `AdobeStock_331412577`, `white_concrete_wall`).
+Sections are told apart by ground colour, as everywhere else.
+
+**No sponsors strip.** The live webinars page does not carry one.
+
+---
+
+## cpd-posters.html — CPD posters
+
+Source pages: `traumacare.org.uk/CPD-Posters` **and**
+`traumacare.org.uk/past-cpd-posters`, both read 3 September 2026. The two are
+merged into one page — see `template-map.md`. Coverage checked line by line:
+85 of 85 distinct pieces of copy, and all 30 editions, are present.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "Trauma Care CPD Posters" | ✅ | Live heading of the first page |
+| "Download the latest poster FOR FREE!" | 🚫 | Withheld. Replaced by "The latest poster" |
+| "DOWNLOAD EDITION 30" | ✅ | Live button, twice. The PDF ships at `assets/docs/cpd-poster-edition-30.pdf` |
+| "Our webinar posters are … updated regularly. Each edition highlights our upcoming … CPD presentations and events. Download the latest version … and share it with your colleagues and friends so you can stay informed!" | ✅ | Live. Two instances of "free" removed |
+| "View Previous Posters" | ✅ | Live button. Points at `#archive` on the same page rather than a second page |
+| "You can also download previous versions of our posters, and use them as a checklist for CPD catch-up" | ✅ | Live, folded into the archive lead |
+| "Don't forget to join our mailing list to stay up-to-date with our latest event announcements and exclusive offers" | ✅ | Live, folded into the subscribe lead |
+| "VIEW UPCOMING WEBINARS" | ✅ | Live button, wired to `webinars.html` |
+| "Previous CPD Posters" / "Previous CPD Posters are available to download below" | ✅ | Live, from the archive page |
+| "You can use these posters as a reminder of which webinars you still need to watch in our video library" | ✅ | Live, verbatim |
+| "We have some previous webinars available on our YouTube Channel and our entire back catalogue available in the Members Area!" | ✅ | Live, verbatim |
+| "Catch-up with previous recordings FOR FREE!" | ✅ | Live. "For free" removed |
+| "PAST WEBINARS" → YouTube channel | ✅ | Live link, real URL |
+| Thirty poster editions, their numbers and years | ✅ | Live. Every cover downloaded; Edition 30's PDF shipped, the other 29 linked to the charity's file store |
+| "Subscribe to Trauma Care to stay up-to-date with the latest news and details of our upcoming CPD webinars and events." | ✅ | Live, from the hidden subscribe modal |
+| "There are no fees and you can opt-out at any time!" | ✅ | Live. "There are no fees" removed under the withheld-claims rule; "you can opt out at any time" kept |
+| "Subscribe Now" | ✅ | Live modal submit label, set in sentence case |
+| "Our Sponsors and Partners" + blurb | ✅ | Live. The shared sponsors template part; this page carries one, unlike the webinars page |
+| Section eyebrows — "Webinars", "Current edition", "The back catalogue", "Newsletter" | ✏️ | Ours |
+| "Print one for the mess room, the coffee room or the noticeboard…" | ✏️ | Ours. The live copy says to share the poster but never says how it is meant to be used |
+| "Catch up with previous recordings" as a section | ✏️ | Ours in shape only — the heading and both destinations are live copy from the archive page |
+
+### Flags
+
+**Edition 13's download button is dead on the live site.** Its "DOWNLOAD NOW!"
+link is `javascript: void(0);`. The PDF exists on the CDN and the card's own
+markup contains the correct URL, so the button has simply lost its href. Our
+card links the real file.
+
+**Edition 10 is a JPEG, not a PDF.** `…Trauma_Care_Upcoming_Free_CPD_Webinars.jpg`
+is served as the download for that edition. Reproduced as-is and labelled PDF
+on the live site; ours labels it PDF too, which is wrong for that one card.
+**Worth re-cutting that edition as a PDF** rather than papering over it in
+markup.
+
+**Edition and file do not always match.** Edition 11 is labelled 2022 but its
+file is `Trauma_Care_Monthly_Poster_finished_29.09.20.pdf` — the September 2020
+artwork, which is also what Edition 12 and Edition 16 point at variants of.
+Edition 15 is labelled 2023 and sits between two 2022 editions. Somebody should
+open the back catalogue and check which file belongs to which edition before it
+is imported into the media library; the prototype reproduces the live pairings
+exactly so the errors stay visible.
+
+**Both CDN prefixes again.** Editions 12–15 and the 2021 covers come from
+`/traumacare/`; everything else from `/traumacareuk/`. This is the same split
+that produced the earlier false "missing images" report — see the note on the
+team page. Any future asset sweep must read the URL from the markup rather than
+rebuild it from a filename.
+
+**Every cover carries the withheld claim.** All thirty posters have *Free CPD
+Webinars* set across the masthead, and most add "become a member of Trauma Care
+and receive free CPD Certificates for attending" at the foot. The page's copy
+strips those claims; the artwork it displays thirty times does not. This is the
+same contradiction flagged on the webinars page, at thirty times the volume,
+and it is the strongest practical argument for **getting the client's ruling on
+"free" before either page is signed off**.
+
+**Not carried over.** Four decorative stock backgrounds and the Elfsight logo
+showcase widget, which renders the sponsor logos on the live page and leaves
+"Panel only seen by widget owner" in the DOM. Our sponsors strip is the shared
+template part.
+
+---
+
+## membership.html — Membership
+
+Source page: `traumacare.org.uk/members`, read 3 September 2026. Read at DOM
+level, so the hidden subscribe modal is included. Coverage checked line by
+line: 57 of 57 distinct pieces of copy are present.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "Trauma Care Membership" | ✅ | Live heading |
+| "The key to a successful future for Trauma Care lies in its members" | ✅ | Live strapline. Marked up as the quotation it is; the same line already runs on the homepage |
+| "Our members are the backbone of Trauma Care. Without you, we simply wouldn't exist." | ✅ | Live, verbatim |
+| "By joining us, not only do you receive some fantastic benefits, but you also actively contribute to our mission of providing affordable education to all healthcare professionals." | ✅ | Live. "Fantastic" toned to "genuinely useful", matching the homepage wording of the same sentence |
+| "We aim to help you help those in need." | ✅ | Live, verbatim |
+| Four member benefits | ✅ | Live, verbatim, except "**Free** CPD Certificates" — see the note below |
+| "Membership Plans" / "Become a member of the UK's largest trauma network." / "We offer a variety of membership plans to suit your educational needs." | ✅ | Live, verbatim. "A variety" reads oddly over two cards — **reword if the two-tier decision stands** |
+| Student — audience, four bullets, £3 / month, "Student Membership" | 🚫 | **Dropped.** The requirements doc specifies two tiers, RHP and NRHP; the live site has three. Settled 3 September 2026 in favour of the requirements doc — see `content-audit.md` |
+| Registered Healthcare Professional — audience, four bullets, £8 / month, "Standard Membership" | ✅ | Live, verbatim |
+| Non-Registered Healthcare Professional — audience, four bullets, £3 / month, "NRHP Membership" | ✅ | Live, verbatim |
+| "We are delighted that membership is growing at a very healthy rate…" through "…as members." | ✅ | Live, verbatim |
+| "Trauma Care is unique. No other organisation brings together such a wide range of professionals." | ✅ | Live, verbatim, set as the pull quote |
+| "Our aims are clear: to improve patient care through education, publishing and research. Trauma Care deserves your support, and we want to support you." | ✅ | Live, verbatim |
+| "Professor Colonel Ian Greaves, Trauma Care Chairman" | ✅ | Live attribution |
+| "TRAUMA JOURNAL" and its description | ✅ | Live, with the duplicated word repaired — see the note below |
+| "Become a Member to receive your quarterly copy…" | ✅ | Live, verbatim |
+| "FIND OUT MORE" → `journals.sagepub.com/home/tra` | ✅ | Live link, real URL |
+| "JOIN NOW" | ✅ | Live button. Anchors to `#plans`, as it does on the live page |
+| Journal cover image | ✅ | Live `Trauma_Care_Journal.png` → `assets/img/membership/trauma-journal-cover.jpg` |
+| "Subscribing to Trauma Care is completely free…" | 🚫 | Withheld, as on the events page |
+| "By subscribing to Trauma Care, you will stay informed on all the news, latest events, webinars and courses. We will also keep you updated on all important news and services." | ✅ | Live, from the hidden subscribe modal |
+| "We respect your privacy. Your data will not be shared or sold." | ✅ | Live, from the same modal. Kept — it is a data statement, not a pricing claim |
+| "SIGN UP" | ✅ | Live modal submit label, set in sentence case |
+| Section eyebrows — "Membership", "From the chairman", "Included with membership", "Newsletter" | ✏️ | Ours |
+| "See the plans" (hero CTA) | ✏️ | Ours. The live hero has no button at all |
+| "Not ready to join?" (subscribe lead) | ✏️ | Ours, to explain why a subscribe form sits under three paid plans |
+
+### Flags
+
+**"Free CPD Certificates" is stripped here, and the rule needs a ruling.**
+Inside a £3-a-month card, "free" means "included in what you already pay" —
+the same reading that **kept** "free stand" and "20 free premium memberships"
+in the sponsorship packages. But the sponsorship case is different in a way
+that matters: there, "free" marks an item that would otherwise be **charged on
+top of** the package. Nothing in a membership tier is charged on top, so the
+word adds nothing and the phrase is already in the withheld table. Stripped
+here and on `academic-partners.html`, kept on `corporate-sponsorship.html`.
+**That distinction is ours, not the client's — get it confirmed.**
+
+**The Student tier is gone, and its members are not.** The page now shows RHP
+and NRHP, per the requirements doc. But students are paying £3 a month on the
+live site today, and removing a card does not cancel a subscription. Someone
+has to decide whether they move to NRHP at the same price or are grandfathered,
+**before the Beacon migration runs**, not after.
+
+**"Access" versus "Full Access" to the video library.** The £8 tier says "Full
+Access to Video Library"; both £3 tiers say "Access to Video Library". Nothing
+on the page explains the difference, and it is the only benefit that separates
+the tiers apart from the audience each is for. Reproduced exactly. **Either it
+is a real restriction and needs stating, or it is a stray word and the £8 tier
+is currently unsellable on its own merits.**
+
+**The button labels do not match the cards they sit in.** "Standard Membership"
+sits under "Registered Healthcare Professional", and "NRHP Membership" expects
+the reader to have kept the acronym from the heading above it. These are
+internal product names showing through. Reproduced as-is; **worth renaming to
+match the cards**.
+
+**The journal description is garbled on the live site.** It reads "all aspects
+of trauma care prevention: prevention through prehospital management, accident
+and emergency medicine…". SAGE's own description reads "all aspects of trauma
+care are included: prevention, prehospital management, accident and emergency
+medicine…". Ours restores the list.
+
+**The journal cover is from July 2020.** Volume 22, issue 3 — six years old, on
+a page advertising a quarterly journal. Shipped as-is with the volume and issue
+in the caption, so the staleness is visible rather than hidden. In WordPress
+the cover is a single image field on the block, replaced each quarter.
+
+**The homepage promises annual payment; this page does not offer it.**
+`index.html` says "Pay monthly or annually"; the live membership page shows
+only monthly prices and the Kartra checkouts are monthly price points. One of
+the two is wrong.
+
+**Not carried over.** Three decorative stock backgrounds. No sponsors strip —
+the live membership page does not carry one.
+
+---
+
+## courses.html — Courses
+
+**No source page.** `/courses`, `/education`, `/training`, `/fit` and
+`/foundations-in-trauma` all return 404 on traumacare.org.uk, checked
+3 September 2026. This page is built to requirements §1, which names Courses as
+one of four flexible landing pages.
+
+That makes its provenance rule the opposite of every other page here: instead
+of checking that nothing from a source page was left out, the check is that
+**nothing on this page was invented**. Every factual claim is quoted from a
+page already built from the live site. A script verifies all 29 and names the
+source for each.
+
+| Content | Status | Source / note |
+|---|---|---|
+| Foundations in Trauma Course — status, body, audience, eight topics, faculty photograph | ✅ | The live events page, via `events.html#fit-course`. Reproduced word for word |
+| "Trauma Care was founded in 1996 to address the need for commonly agreed standards…" | ✅ | The mission statement, live on every page footer |
+| "a universally accepted standard of practice for trauma patients" | ✅ | `academic-partners.html`, live copy |
+| "advancing and providing access to essential trauma education at the lowest possible cost" | ✅ | `academic-partners.html`. "Either for free or" already removed under the withheld-claims rule |
+| "forged partnerships with multiple academic institutions… more readily available to undergraduate students" / "£10 per student" / tutors join at no charge | ✅ | `academic-partners.html`, live copy |
+| "Members of Trauma Care receive CPD certificates and large discounts on ticket prices" | ✅ | `events.html`, live copy |
+| "No other organisation brings together such a wide range of professionals" | ✅ | The chairman, on `membership.html` |
+| Conference streams named in the *Other ways to learn* card | ✅ | The live conference programme, via `conference.html` |
+| Webinar certificate and "over 200 more" | ✅ | `webinars.html`, live copy |
+| "We write and publish our own books and manuals" / "copies for their library" | ✅ | `academic-partners.html`, live copy |
+| "Every session is practical or quiz-based — no lecture-only days" | ✏️ | Ours, generalised from the FIT line "Every aspect of the course is practical or quiz-based" |
+| "The patient journey is the syllabus" | ✏️ | Ours, restating the FIT description |
+| Hero lead, section eyebrows, "Tell me when it returns", "Register interest" | ✏️ | Ours |
+| Register-interest form | ✅ | The same six fields and two consents as every other subscribe form on the site |
+
+### Flags
+
+**The charity publishes one course, and it is postponed.** A page called
+Courses that offers nothing to book is a weak page, and no amount of layout
+fixes that. The honest options are: bring the FIT Course back with dates, or
+widen the page to cover the education the charity *does* run — which is what
+the *Other ways to learn* band does as a stopgap. **This is a content decision,
+not a design one, and it needs the client.**
+
+**"Returning in 2026" is running out of road.** The live events page says "keep
+an eye out for the return of the FIT Course in 2026", and it is already
+September 2026 with no dates published. The same sentence appears on this page
+because it is the charity's own. It needs updating or removing before launch.
+
+**No pricing.** The live site never states what the FIT Course costs, so
+neither does this page. If the course returns, the page needs a price, an
+audience-specific discount line, and a booking route — probably the same
+Ticket Tailor path the conference uses.
+
+**Courses is not in the primary navigation.** It was, and is, a footer-only
+link, because the live IA has no Education section. If the requirements' four
+landing pages are meant to be reachable, the header needs an Education parent —
+which is a change to the live IA and needs raising with the client.
+
+---
+
+## donate.html — Donate
+
+**No source page.** The live site has no dedicated donation page — its only
+donation route is a single outbound PayPal Giving Fund link, reused on
+`fundraise.html`. This page is built to requirements §1, which names Donate as
+one of four flexible landing pages, and closes the specific gaps content-audit
+finding #4 named: "no recurring giving, no Gift Aid capture, no suggested
+amounts, no impact framing, no thank-you page".
+
+As with `courses.html`, the provenance rule is inverted: instead of checking
+that nothing from a source page was left out, the check is that **nothing on
+this page was invented**. A script verifies 16 factual phrases against the
+page each is quoted from.
+
+| Content | Status | Source / note |
+|---|---|---|
+| "Every donation funds education for the people who treat trauma patients" | ✅ | `index.html`, the homepage donate cross-sell card, live copy |
+| "We know you might not always be able to commit to a regular payment… any donation is gratefully received, and each one contributes directly to our mission of providing quality education" | ✅ | `index.html` donate band. "Quality free education" already reads "quality education" there under the withheld-claims rule |
+| "Give once or monthly" | ✅ | `index.html` donate card and band, live copy |
+| "Add Gift Aid and we receive 25% more, at no extra cost to you" | ✅ | `index.html` donate band. The 25% figure is the standard HMRC rate, not the charity's own claim |
+| PayPal Giving Fund URL and "Donations are handled by PayPal" | ✅ | `fundraise.html`, live link and copy |
+| "Essential trauma education at the lowest possible cost" | ✅ | `academic-partners.html`, live copy |
+| "High-quality, affordable learning events" | ✅ | `events.html`, live copy |
+| "CPD certificates and large discounts on ticket prices" | ✅ | `events.html`, live copy |
+| "We have forged partnerships with multiple academic institutions to make trauma education more readily available to undergraduate students" | ✅ | `academic-partners.html` / `courses.html`, live copy, verbatim |
+| "No other organisation brings together such a wide range of professionals" | ✅ | `membership.html` (the chairman's statement), live copy |
+| "£3 a month" (membership cross-sell) | ✅ | `membership.html`, live tier price |
+| "£5,000 a year" (sponsorship cross-sell) | ✅ | `corporate-sponsorship.html`, live Silver tier price |
+| Section eyebrows, "Give a one-off gift" / "Set up a monthly gift" / "Give with Gift Aid" button labels, "Other ways to support us" | ✏️ | Ours |
+
+### Flags
+
+**Three cards, one destination.** *One-off*, *Monthly* and *Gift Aid* each get
+their own explanatory card, but every button goes to the same PayPal Giving
+Fund URL — because that is the only destination that actually processes a
+payment today. Per the transactional-forms warning in `template-map.md`, the
+real amount/frequency/Gift Aid form is a Beacon-embedded widget this project
+does not control; building three different fake forms would invent a payment
+experience nobody has specified. A footnote under the grid says the choice is
+made on PayPal's own checkout. **When Beacon's donation widget exists, this
+becomes one embedded form and the three cards stop being three links.**
+
+**No suggested-amount tiles.** Real donation pages typically pair amounts with
+what they fund — "£25 covers a CPD certificate". No unit-cost figures exist
+anywhere in the source material for Trauma Care's own costs, and inventing
+them would fabricate the charity's operational data. **This needs the client**,
+not a guess.
+
+**No thank-you page.** It depends on a real payment flow completing, which a
+static prototype cannot do — PayPal's own confirmation is what a donor
+currently sees. Worth specifying for the Beacon integration.
+
+**A fabricated figure was caught in review, not by a script.** A first draft of
+the *Corporate sponsorship* cross-sell card invented "from £2,500 a year" —
+no such figure exists anywhere in the source material. The real floor is
+£5,000, `corporate-sponsorship.html`'s Silver tier. The coverage scripts check
+that sourced content is *present*; they do not check that unsourced numbers
+are *absent*. Treat this as a warning about every number in every page still
+to be written, not just this one.
+
+**Not carried over.** No decorative stock backgrounds — none were sourced for
+a page with no live original to inherit them from.

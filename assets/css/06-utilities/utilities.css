@@ -18,9 +18,12 @@
 .u-mx-auto     { margin-inline: auto; }
 
 .u-mt-4 { margin-block-start: var(--tc-space-4); }
+.u-mt-6 { margin-block-start: var(--tc-space-6); }
 .u-mt-8 { margin-block-start: var(--tc-space-8); }
+.u-mt-10 { margin-block-start: var(--tc-space-10); }
 .u-mb-4 { margin-block-end: var(--tc-space-4); }
 .u-mb-6 { margin-block-end: var(--tc-space-6); }
+.u-mb-8 { margin-block-end: var(--tc-space-8); }
 
 /* Horizontal scroll container for wide tables.
    tabindex="0" on the element makes it keyboard scrollable. */

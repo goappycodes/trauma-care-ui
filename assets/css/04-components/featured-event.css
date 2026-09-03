@@ -1,0 +1,117 @@
+/* ==========================================================================
+   COMPONENT — FEATURED EVENT
+   --------------------------------------------------------------------------
+   One event or webinar pulled out of a list: the one with a place to book or
+   register. Bordered card with a brand rule down its leading edge.
+
+   Promoted out of 05-templates/events.css when the webinars page needed it.
+
+   WordPress: the next event queried by date, or an ACF post-object override.
+   ========================================================================== */
+
+
+.tc-featured-event {
+  padding: clamp(1.5rem, 1rem + 2.5vw, var(--tc-space-9));
+  border: 1px solid var(--tc-color-border);
+  border-inline-start: 5px solid var(--tc-color-brand);
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-color-surface);
+  box-shadow: var(--tc-shadow-sm);
+}
+
+.tc-featured-event h2 { margin-block-start: var(--tc-space-4); }
+
+.tc-featured-event .tc-lead {
+  max-width: var(--tc-measure);
+  margin-block-start: var(--tc-space-4);
+}
+
+.tc-featured-event .tc-btn-group { margin-block-start: var(--tc-space-8); }
+
+.tc-featured-event__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--tc-space-5);
+  margin: var(--tc-space-8) 0 0;
+  padding-block-start: var(--tc-space-6);
+  border-block-start: 1px solid var(--tc-color-border);
+}
+
+.tc-featured-event__meta dt {
+  font-size: var(--tc-fs-xs);
+  font-weight: var(--tc-fw-semibold);
+  letter-spacing: var(--tc-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tc-color-text-muted);
+}
+
+.tc-featured-event__meta dd {
+  margin: var(--tc-space-2) 0 0;
+  font-size: var(--tc-fs-md);
+  color: var(--tc-color-text);
+}
+
+/* A supporting picture, not the point of the card: kept small so the title,
+   the date and the register button stay the first things read. */
+.tc-featured-event__banner {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-block-end: var(--tc-space-6);
+  border-radius: var(--tc-radius-md);
+}
+
+/* --------------------------------------------------------------------------
+   Compact — a list item rather than a page's headline event
+   --------------------------------------------------------------------------
+   The full card is sized to carry one conference at the top of a page. A list
+   of webinars needs the same information in a fraction of the height, so the
+   picture moves alongside the text and the internal rhythm tightens.
+   -------------------------------------------------------------------------- */
+
+.tc-featured-event--compact {
+  display: grid;
+  gap: var(--tc-space-5);
+  padding: var(--tc-space-5);
+}
+
+/* Stacked, the picture is a letterbox strip — the card has to stay short
+   enough to read in one screen on a phone. Alongside the text it goes back to
+   a normal crop, where its height is set by the column, not by the card. */
+.tc-featured-event--compact .tc-featured-event__banner {
+  max-width: 100%;
+  aspect-ratio: 16 / 7;
+  margin-block-end: 0;
+}
+
+@media (min-width: 640px) {
+  .tc-featured-event--compact {
+    grid-template-columns: 200px 1fr;
+    align-items: start;
+    gap: var(--tc-space-6);
+  }
+
+  .tc-featured-event--compact .tc-featured-event__banner { aspect-ratio: 16 / 10; }
+}
+
+.tc-featured-event--compact h3 { margin-block-start: var(--tc-space-3); }
+/* The card runs the full container width, which is far wider than a line of
+   text should be. */
+.tc-featured-event--compact p {
+  max-width: var(--tc-measure);
+  margin-block-start: var(--tc-space-2);
+}
+
+.tc-featured-event--compact .tc-featured-event__meta {
+  gap: var(--tc-space-4);
+  margin-block-start: var(--tc-space-5);
+  padding-block-start: var(--tc-space-4);
+}
+
+.tc-featured-event--compact .tc-featured-event__meta dd {
+  font-size: var(--tc-fs-base);
+}
+
+.tc-featured-event--compact .tc-btn-group { margin-block-start: var(--tc-space-5); }

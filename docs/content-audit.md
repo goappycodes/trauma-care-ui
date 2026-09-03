@@ -52,17 +52,22 @@ Support contact *(move to public Contact page)* · Portal front page *(delete)* 
 
 ### Membership
 
-The live site offers **three** tiers, not the two named in the requirements doc:
+The live site offers **three** tiers, not the two named in the requirements doc.
+**Resolved 3 September 2026: the requirements doc wins — Student is dropped and
+`membership.html` ships RHP and NRHP only.**
 
 | Tier | Audience | Price | Benefits |
 |---|---|---|---|
-| Student | Studying to become practitioners, nurses, paramedics or associated practitioners | £3/month | TRAUMA digital · Video library · Ticket discounts · Free automated CPD certificates |
+| ~~Student~~ | ~~Studying to become practitioners, nurses, paramedics or associated practitioners~~ | ~~£3/month~~ | **Dropped.** Not in the requirements doc |
 | Registered Healthcare Professional (RHP) | Registered practitioners, nurses, paramedics | £8/month | As above, plus **full** video library access |
 | Non-Registered Healthcare Professional (NRHP) | Non-registered practitioners, nurses, paramedics | £3/month | As Student |
 
-> **Open question:** the requirements doc specifies two tiers (RHP / NRHP); the live site has three. Only
-> monthly pricing is published, but the doc requires monthly **and** annual options. Needs client
-> confirmation before the pricing component is designed.
+> **Still open:** only monthly pricing is published, but the doc requires monthly **and** annual
+> options — and `index.html` already claims "pay monthly or annually". Needs client confirmation.
+>
+> **Note for migration:** students currently paying £3/month exist on the live site. Dropping the
+> tier from the page does not cancel their subscriptions. Someone has to decide whether they move
+> to NRHP at the same price, or are grandfathered.
 
 Membership pull-quote: *"The key to a successful future for Trauma Care lies in its members."*
 
@@ -199,7 +204,7 @@ These recur across the current site and should become components:
 
 ## 7. Open questions for the client
 
-1. Membership tiers — two (RHP/NRHP) or three (including Student)? Are annual prices confirmed?
+1. ~~Membership tiers — two (RHP/NRHP) or three (including Student)?~~ **Settled: two.** Are annual prices confirmed, and what happens to existing Student members?
 2. Conference — which edition number and dates are correct for the next event?
 3. Founding year — 1994 or 1996?
 4. Is the existing logo fixed, and is a **vector** version available? Only a 2200px PNG is public.
